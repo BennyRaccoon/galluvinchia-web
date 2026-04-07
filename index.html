@@ -418,7 +418,7 @@
 
   /* Leaflet overrides */
   .leaflet-container {
-    background: var(--parchment-dark) !important;
+    background: #C3B7AE !important;
     font-family: 'Cinzel', serif !important;
   }
 
@@ -944,10 +944,12 @@
       minZoom: -2,
       maxZoom: 3,
       zoomSnap: 0.5,
+      maxBounds: bounds,
+      maxBoundsViscosity: 1.0,
     });
 
     L.imageOverlay(MAP_IMAGE_URL, bounds).addTo(map);
-    map.fitBounds(bounds);
+    map.setView([MAP_HEIGHT / 2, 0], -2);
 
     // Icon: diamond dot, size varies by type
     function makeIcon(type) {
