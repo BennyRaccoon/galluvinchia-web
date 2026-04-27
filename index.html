@@ -586,6 +586,23 @@
       display: none !important;
     }
 
+    .lang-toggle {
+      background: var(--parchment-mid) !important;
+      border: 1px solid var(--border-strong) !important;
+      border-radius: 4px;
+      padding: 5px 8px;
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      transition: background 0.2s ease;
+      display: block;
+    }
+
+    .lang-toggle:hover {
+      background: var(--stone) !important;
+    }
+
     .leaflet-control-attribution {
       background: rgba(13, 11, 8, 0.8) !important;
       color: var(--text-muted) !important;
@@ -690,8 +707,8 @@
         </div>
       </div>
       <div class="map-caption">
-        <span>Galluvinchia &mdash; Known Lands</span>
-        <span>Scroll to zoom &bull; Click to explore</span>
+        <span data-i18n="caption-title">Galluvinchia &mdash; Known Lands</span>
+        <span data-i18n="caption-hint">Scroll to zoom &bull; Click to explore</span>
       </div>
     </div>
   </main>
@@ -707,8 +724,8 @@
           stroke-linejoin="round" stroke-width="2" aria-hidden="true">
           <path d="M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z" />
         </svg>
-        <span class="footer-bar__name">The Roleplay</span>
-        <span class="footer-bar__cta">Become part of the story</span>
+        <span class="footer-bar__name" data-i18n="nav-roleplay-name">The Roleplay</span>
+        <span class="footer-bar__cta" data-i18n="nav-roleplay-cta">Become part of the story</span>
         <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
           <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
             stroke-linejoin="round" />
@@ -724,8 +741,8 @@
           <circle cx="19" cy="21" r="1" />
           <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
         </svg>
-        <span class="footer-bar__name">Shop</span>
-        <span class="footer-bar__cta">Books &amp; merch</span>
+        <span class="footer-bar__name" data-i18n="nav-shop-name">Shop</span>
+        <span class="footer-bar__cta" data-i18n="nav-shop-cta">Books &amp; merch</span>
         <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
           <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
             stroke-linejoin="round" />
@@ -742,8 +759,8 @@
           <circle cx="16" cy="9" r="2.9" />
           <circle cx="6" cy="5" r="3" />
         </svg>
-        <span class="footer-bar__name">Patreon</span>
-        <span class="footer-bar__cta">Support Galluvinchia</span>
+        <span class="footer-bar__name" data-i18n="nav-patreon-name">Patreon</span>
+        <span class="footer-bar__cta" data-i18n="nav-patreon-cta">Support Galluvinchia</span>
         <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
           <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
             stroke-linejoin="round" />
@@ -759,8 +776,8 @@
           <circle cx="10" cy="8" r="5" />
           <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
         </svg>
-        <span class="footer-bar__name">Discord</span>
-        <span class="footer-bar__cta">Join the guild</span>
+        <span class="footer-bar__name" data-i18n="nav-discord-name">Discord</span>
+        <span class="footer-bar__cta" data-i18n="nav-discord-cta">Join the guild</span>
         <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
           <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
             stroke-linejoin="round" />
@@ -788,20 +805,20 @@
       {
         name: "East of Galluvinchia", nameES: "Este de Galluvinchia", type: "region",
         lore: "Mostly unknown lands. The arid Breath of Sand desert stretches endlessly, hiding ancient ruins and the last oasis kept alive by the Horangi family.",
-        loreES: "Tierras en su mayoría desconocidas. El árido desierto del Aliento de Arena se extiende sin fin, ocultando ruinas antiguas y el último oasis mantenido vivo por la familia Horangi.",
+        loreES: "Tierras en su mayoría desconocidas. El árido desierto del Suspiro de Arena se extiende sin fin, ocultando ruinas antiguas y el último oasis mantenido vivo por la familia Horangi.",
         tags: ["region"], x: 3500, y: 2000, showAtZoom: -2,
       },
       {
         name: "West of Galluvinchia", nameES: "Oeste de Galluvinchia", type: "region",
-        lore: "Dense forests and coastlines. Home of most of the population, living under Pax Aremedia.",
-        loreES: "Densas selvas y costas. Hogar de casi toda la civilziación, viviendo bajo Pax Aremedia.",
+        lore: "Dense forests and coastlines. Home of most of the population, living under the safety of Pax Aremedia.",
+        loreES: "Densas selvas y costas. Hogar de casi toda la civilización, viviendo bajo la seguridad de Pax Aremedia.",
         tags: ["region"], x: 1000, y: 2000, showAtZoom: -2,
       },
       {
         name: "North of Galluvinchia", nameES: "Norte de Galluvinchia", type: "region",
         lore: "Cold mountains and giant territories. Ice Peak looms over the lands.",
-        loreES: "Montañas frías y territorios de gigantes. El Pico de Hielo se cierne sobre las tierras donde Salgu gobernó antes de que el Eczema Blanco alejara a su pueblo.",
-        tags: ["region", "giants", "salgu"], x: 1400, y: 750, showAtZoom: -2,
+        loreES: "Montañas frías y territorios de gigantes. Puntahelada se cierne sobre estas tierras.",
+        tags: ["region"], x: 1400, y: 750, showAtZoom: -2,
       },
 
       // ── CITIES (showAtZoom: -1) ───────────────────────────────────
@@ -809,18 +826,18 @@
         name: "The Lord of Carbohyrr", nameES: "El Señor de Carbohyrr", type: "city",
         lore: "A mountain fortress famous for its blacksmiths and hot springs.",
         loreES: "Una fortaleza montañosa famosa por sus herreros y aguas termales.",
-        tags: [], x: 1970, y: 2100, showAtZoom: -1,
+        tags: ["moroes"], x: 1970, y: 2100, showAtZoom: -1,
       },
       {
         name: "An'Ramoda", nameES: "An'Ramoda", type: "city",
-        lore: "Walled city of the north with the strongest army in Galluvinchia bajo el poder de Aremedia.",
+        lore: "Walled city in the north, home of the mightiest army in Galluvinchia lead by the strong will of Aremedia.",
         loreES: "Ciudad amurallada del norte con el ejército más poderoso de Galluvinchia bajo el poder de Aremedia.",
         tags: ["aremedia"], x: 1770, y: 1300, showAtZoom: -1,
       },
       {
         name: "Lady of Marmaros", nameES: "La Dama de Mármaros", type: "city",
         lore: "City of mages and arcane power, home to the Academy of Magic Wonders.",
-        loreES: "Ciudad de magos y poder arcano, hogar de la Academia de las Maravillas Mágicas.",
+        loreES: "Ciudad de magos y poder arcano, hogar de la Academia de las Magias Maravillosas.",
         tags: ["academy"], x: 1670, y: 1720, showAtZoom: -1,
       },
       {
@@ -833,32 +850,32 @@
       // ── TOWNS (showAtZoom: 0) ─────────────────────────────────────
       {
         name: "Jewel of Evergrowth", nameES: "La Joya Siemprecreciente", type: "town",
-        lore: "A hamlet growing around the roots of the First Tree with the help of Leeve.",
+        lore: "A hamlet growing under the shade of the First Tree with the help of Leeve.",
         loreES: "Un poblado que crece al rededor de las raíces del Primer Árbol con la ayuda de Leeve.",
-        tags: ["The Jewel of Evergrowth", "leeve"], x: 745, y: 1620, showAtZoom: 0,
+        tags: ["tJoE", "leeve"], x: 745, y: 1620, showAtZoom: 0,
       },
       {
         name: "An'Zulejosh", nameES: "An'Zulejosh", type: "town",
         lore: "Main coastal port at the north of Galluvinchia. A city of trade and mosaic tiles, connected to the Quick Maria's last voyage.",
-        loreES: "Principal puerto costero al norte de Galluvinchia. Ciudad de comercio y azulejos de mosaico, conectada al último viaje de la Furiosa María.",
-        tags: ["city", "port", "trade"], x: 1370, y: 1600, showAtZoom: 0,
+        loreES: "Principal puerto costero al norte de Galluvinchia. Ciudad de negocios y azulejos para mosaicos, conectada al último viaje de la Furiosa María.",
+        tags: ["port"], x: 1370, y: 1600, showAtZoom: 0,
       },
       {
         name: "Doormi", nameES: "Doormi", type: "town",
         lore: "City blessed by Morphia and home to the Academy of Magic Waves and Dreams.",
         loreES: "Ciudad bendecida por Morphia y Hogar de la Academia de las Ondas Etéreas y los Sueños.",
-        tags: ["city", "morphia", "academy"], x: 1270, y: 1950, showAtZoom: 0,
+        tags: ["morphia", "academy"], x: 1270, y: 1950, showAtZoom: 0,
       },
       {
         name: "Lakobordo", nameES: "Lakobordo", type: "town",
-        lore: "City hub of commerce between the different cities at the West of Galluvinchia.",
-        loreES: "Eje del comercio entre las diferentes ciudades al oeste de Galluvinchia.",
-        tags: [], x: 1570, y: 2250, showAtZoom: 0,
+        lore: "City hub of commerce between the different cities a the center of Galluvinchia.",
+        loreES: "Eje del comercio terrestre entre las diferentes ciudades en el centro de Galluvinchia.",
+        tags: ["hub"], x: 1570, y: 2250, showAtZoom: 0,
       },
       {
         name: "Montebordo", nameES: "Montebordo", type: "town",
         lore: "Small hamlet full of pagans, quite remote nowadays.",
-        loreES: "Pequeño pueblo lleno de paganos, bastante remoto a dia de hoy.",
+        loreES: "Pequeño pueblo lleno de paganos, casi abandonado a dia de hoy.",
         tags: [], x: 2250, y: 2030, showAtZoom: 0,
       },
       {
@@ -879,22 +896,22 @@
         name: "Hunter's Den", nameES: "Guarida del Cazador", type: "poi",
         lore: "Base of Huntmaster Rachel Tempiras, one hour from the Jewel. She recently lost her brother to the spider caves nearby.",
         loreES: "Base de la Maestra de Caza Rachel Tempiras, a una hora de la Joya. Recientemente perdió a su hermano en las cuevas de arañas cercanas.",
-        tags: ["The Jewel of Evergrowth"], x: 825, y: 1700, showAtZoom: 1,
+        tags: ["tJoE"], x: 825, y: 1700, showAtZoom: 1,
       },
       {
         name: "Feles Miles' House", nameES: "Casa de Feles Miles", type: "poi",
-        lore: "Hidden deep in the forest, a huge library smelling of incense. The retired adventurer who knows more than he tells — and who discovered the way to the silver mines.",
-        loreES: "Escondida en lo profundo del bosque, una enorme biblioteca con olor a incienso. El aventurero retirado que sabe más de lo que dice, y que descubrió el camino a las minas de plata.",
-        tags: ["The Jewel of Evergrowth"], x: 665, y: 1600, showAtZoom: 1,
+        lore: "Hidden deep in the forest, a huge library smelling of incense and a retired adventurer.",
+        loreES: "Escondida en lo profundo del bosque, una enorme biblioteca con olor a incienso y un aventurero retirado.",
+        tags: ["tJoE"], x: 665, y: 1600, showAtZoom: 1,
       },
       {
-        name: "Silver Mines of Twin Peak", nameES: "Minas de Plata del Pico Gemelo", type: "poi",
-        lore: "Managed by Sara Flora. Miners are turning to stone. A basilisk lurks in the underground waters. And somewhere deeper, the Cathedral in the Stone waits to be found.",
-        loreES: "Gestionadas por Sara Flora. Los mineros se están convirtiendo en piedra. Un basilisco acecha en las aguas subterráneas. Y en algún lugar más profundo, la Catedral en la Piedra espera ser encontrada.",
-        tags: ["The Jewel of Evergrowth", "Hand of the Holy Virtue"], x: 690, y: 1475, showAtZoom: 1,
+        name: "Silver Mines", nameES: "Minas de Plata", type: "poi",
+        lore: "Recently opened and bringing growth to the island, there is something stirring in its walls.",
+        loreES: "Abiertas recientemente y haciendo crecer a la isla, algo mas habita sus paredes.",
+        tags: ["tJoE"], x: 690, y: 1475, showAtZoom: 1,
       },
       {
-        name: "Breath of Sand — Last Oasis", nameES: "Aliento de Arena — Último Oasis", type: "poi",
+        name: "Breath of Sand", nameES: "Suspiro de Arena", type: "poi",
         lore: "A small community living in the last remains of green in this sea of sand.",
         loreES: "Una pequeña comunidad vive en los últimos resquicios de naturaleza en este oceano de arena.",
         tags: [], x: 2750, y: 2100, showAtZoom: 1,
@@ -909,7 +926,7 @@
         name: "Aurora Densasilva", nameES: "Aurora Densasilva", type: "poi",
         lore: "The impenetrable and twisted eternal forest.",
         loreES: "El inexpugnable y retorcido bosque eterno.",
-        tags: ["forest"], x: 2250, y: 1500, showAtZoom: 1,
+        tags: [], x: 2250, y: 1500, showAtZoom: 1,
       },
       {
         name: "Ourobolis", nameES: "Ourobolis", type: "poi",
@@ -925,8 +942,8 @@
       },
       {
         name: "Ozan Tizuki", nameES: "Ozan Tizuki", type: "poi",
-        lore: "Once the seat of elven civilization. Now Panos sits here on his stolen throne, his memory shattered by elven magic, guarding the Pillar of Rebirth. The corpses of the Kagerisu family ride as his knights.",
-        loreES: "Antaño la sede de la civilización élfica. Ahora Panos se sienta aquí en su trono robado, su memoria destrozada por la magia élfica, guardando el Pilar del Renacimiento. Los cadáveres de la familia Kagerisu cabalgan como sus caballeros.",
+        lore: "Once the seat of elven civilization.",
+        loreES: "Antaño la sede de la civilización élfica.",
         tags: [], x: 4800, y: 1450, showAtZoom: 1,
       },
       {
@@ -937,27 +954,31 @@
       },
       {
         name: "Picarosh", nameES: "Picarosh", type: "poi",
-        lore: ".", loreES: ".",
+        lore: "The town of gastronomy, with the tastiest monthly contests.",
+        loreES: "El pueblo de la gastronomía con los concursos de cocina mas sabrosos de Galluvinchia.",
         tags: ["aremedia"], x: 1830, y: 1400, showAtZoom: 1,
       },
       {
         name: "Craikov", nameES: "Craikov", type: "poi",
-        lore: ".", loreES: ".",
+        lore: "The port of An´Ramoda.",
+        loreES: "El puerto de An´Ramoda.",
         tags: ["aremedia"], x: 1920, y: 1300, showAtZoom: 1,
       },
       {
-        name: "Saint Erentsburgh", nameES: "San Erensburgo", type: "poi",
-        lore: ".", loreES: ".",
+        name: "Saint Erensburgh", nameES: "San Erensburgo", type: "poi",
+        lore: "Popular town for its underground gardens.",
+        loreES: "Sus jardines subterráneos son un espectáculo único.",
         tags: ["aremedia"], x: 1720, y: 1200, showAtZoom: 1,
       },
       {
         name: "Tanishia", nameES: "Tanishia", type: "poi",
-        lore: ".", loreES: ".",
+        lore: "The best wine comes from Tanishia.",
+        loreES: "No hay mejor vino que el de Tanishia.",
         tags: ["aremedia"], x: 1620, y: 1320, showAtZoom: 1,
       },
       {
         name: "Gretscznievlycov", nameES: "Gretscznievlycov", type: "poi",
-        lore: ".", loreES: ".",
+        lore: "Windmills and golden hills.", loreES: "Molinos y una planicie dorada.",
         tags: ["aremedia"], x: 1640, y: 1385, showAtZoom: 1,
       },
     ];
@@ -999,12 +1020,57 @@
         });
       }
 
+      const i18n = {
+        en: {
+          'caption-title':    'Galluvinchia — Known Lands',
+          'caption-hint':     'Scroll to zoom • Click to explore',
+          'nav-roleplay-name': 'The Roleplay',
+          'nav-roleplay-cta':  'Become part of the story',
+          'nav-shop-name':    'Shop',
+          'nav-shop-cta':     'Books & merch',
+          'nav-patreon-name': 'Patreon',
+          'nav-patreon-cta':  'Support Galluvinchia',
+          'nav-discord-name': 'Discord',
+          'nav-discord-cta':  'Join the guild',
+          'marquee': 'Become a legend ◆ Get the book ◆ Join its adventures ◆ ',
+        },
+        es: {
+          'caption-title':    'Galluvinchia — Tierras Conocidas',
+          'caption-hint':     'Scroll para zoom • Clic para explorar',
+          'nav-roleplay-name': 'El Juego de Rol',
+          'nav-roleplay-cta':  'Sé parte de la historia',
+          'nav-shop-name':    'Tienda',
+          'nav-shop-cta':     'Libros y merch',
+          'nav-patreon-name': 'Patreon',
+          'nav-patreon-cta':  'Apoya Galluvinchia',
+          'nav-discord-name': 'Discord',
+          'nav-discord-cta':  'Únete al gremio',
+          'marquee': 'Conviértete en leyenda ◆ Consigue el libro ◆ Únete a sus aventuras ◆ ',
+        },
+      };
+
+      function applyTranslations() {
+        const t = i18n[currentLang];
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (t[key] !== undefined) el.textContent = t[key];
+        });
+        const seg = `<span class="marquee-content">${(t.marquee + ' ').repeat(4)}</span>`;
+        const track = document.querySelector('.marquee-track');
+        if (track) track.innerHTML = seg;
+        document.documentElement.lang = currentLang;
+      }
+
+      let currentLang = 'en';
+
       function makePopup(p) {
+        const name = currentLang === 'es' ? (p.nameES || p.name) : p.name;
+        const lore = currentLang === 'es' ? (p.loreES || p.lore) : p.lore;
         const tags = (p.tags || []).map(t => `<span class="gall-popup-tag">${t}</span>`).join('');
         return `<div class="gall-popup">
           <div class="gall-popup-type">${p.type}</div>
-          <div class="gall-popup-name">${p.name}</div>
-          <div class="gall-popup-lore">${p.lore}</div>
+          <div class="gall-popup-name">${name}</div>
+          <div class="gall-popup-lore">${lore}</div>
           ${tags ? `<div>${tags}</div>` : ''}
         </div>`;
       }
@@ -1035,7 +1101,7 @@
 
         labelMarker.bindPopup(makePopup(p), { maxWidth: 260 });
 
-        labelData.push({ labelMarker, showAtZoom: p.showAtZoom ?? -2 });
+        labelData.push({ marker, labelMarker, showAtZoom: p.showAtZoom ?? -2, place: p });
       });
 
       function updateLabels() {
@@ -1051,6 +1117,42 @@
 
       map.on('zoomend', updateLabels);
       setTimeout(updateLabels, 100);
+
+      const LangControl = L.Control.extend({
+        options: { position: 'topright' },
+        onAdd() {
+          const btn = L.DomUtil.create('button', 'lang-toggle');
+          btn.innerHTML = '<img src="es.svg" width="22" height="22" alt="Español">';
+          btn.title = 'Cambiar a español';
+          L.DomEvent.on(btn, 'click', toggleLang);
+          L.DomEvent.disableClickPropagation(btn);
+          return btn;
+        }
+      });
+      new LangControl().addTo(map);
+
+      function toggleLang() {
+        currentLang = currentLang === 'en' ? 'es' : 'en';
+        const btn = document.querySelector('.lang-toggle');
+        if (btn) {
+          btn.innerHTML = currentLang === 'es'
+            ? '<img src="gb.svg" width="22" height="22" alt="English">'
+            : '<img src="es.svg" width="22" height="22" alt="Español">';
+          btn.title = currentLang === 'es' ? 'Switch to English' : 'Cambiar a español';
+        }
+        applyTranslations();
+        labelData.forEach(({ marker, labelMarker, place }) => {
+          const labelName = currentLang === 'es' ? (place.nameES || place.name) : place.name;
+          const el = labelMarker.getElement();
+          if (el) {
+            const inner = el.querySelector('.map-label-inner');
+            if (inner) inner.textContent = labelName;
+          }
+          const content = makePopup(place);
+          marker.setPopupContent(content);
+          labelMarker.setPopupContent(content);
+        });
+      }
     }
   </script>
 </body>
