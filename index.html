@@ -1,1080 +1,1058 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galluvinchia — Interactive Map</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Almendra+Display&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galluvinchia — Interactive Map</title>
+  <meta name="description" content="Explore the known lands of Galluvinchia — an interactive map of the fantasy world behind the Fables of Galluvinchia tabletop RPG. Discover cities, towns, ruins, and points of interest.">
+  <meta name="keywords" content="Galluvinchia, interactive map, fantasy world, tabletop RPG, TTRPG, Fables of Galluvinchia, The Bun Cult, fantasy map, worldbuilding">
+  <meta name="author" content="The Bun Cult">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#c9a84c">
+  <link rel="canonical" href="https://galluvinchia.com">
 
-  :root {
-    --gold: #c9a84c;
-    --gold-light: #e8d49a;
-    --gold-dark: #8a6b28;
-    --blood: #8b1a1a;
-    --ink: #0d0b08;
-    --parchment-dark: #1a1510;
-    --parchment-mid: #241e16;
-    --stone: #2e2720;
-    --text-primary: #e8dcc8;
-    --text-muted: #9a8a72;
-    --border: rgba(201, 168, 76, 0.25);
-    --border-strong: rgba(201, 168, 76, 0.6);
-  }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Galluvinchia">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Galluvinchia — Interactive Map">
+  <meta property="og:description" content="Explore the known lands of Galluvinchia — an interactive map of the fantasy world behind the Fables of Galluvinchia tabletop RPG.">
+  <meta property="og:url" content="https://galluvinchia.com">
+  <meta property="og:image" content="https://galluvinchia.com/share1.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Interactive map of the fantasy world of Galluvinchia">
 
-  html, body {
-    height: 100%;
-    background: var(--ink);
-    color: var(--text-primary);
-    font-family: 'Almendra', Georgia, serif;
-    overflow-x: hidden;
-  }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Galluvinchia — Interactive Map">
+  <meta name="twitter:description" content="Explore the known lands of Galluvinchia — an interactive map of the fantasy world behind the Fables of Galluvinchia tabletop RPG.">
+  <meta name="twitter:image" content="https://galluvinchia.com/share2.webp">
+  <meta name="twitter:image:alt" content="Interactive map of the fantasy world of Galluvinchia">
 
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  <!-- LD-JSON: WebSite + WebApplication -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Galluvinchia",
+      "url": "https://galluvinchia.com",
+      "description": "Official website for the fantasy world of Galluvinchia and the Fables of Galluvinchia tabletop RPG.",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Bun Cult",
+        "url": "https://thebuncult.com"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Galluvinchia — Interactive Map",
+      "url": "https://galluvinchia.com",
+      "description": "An interactive map of the known lands of Galluvinchia. Explore cities, towns, ruins, and points of interest from the Fables of Galluvinchia tabletop RPG.",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "image": "https://galluvinchia.com/share1.webp",
+      "about": {
+        "@type": "CreativeWork",
+        "name": "Fables of Galluvinchia",
+        "description": "A fantasy tabletop roleplaying game set in the world of Galluvinchia, featuring rich lore, original art, and interconnected stories.",
+        "url": "https://www.drivethrurpg.com/en/product/561689/fables-of-galluvinchia-the-jewel-of-evergrowth",
+        "genre": "Tabletop Role-Playing Game",
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Bun Cult",
+          "url": "https://thebuncult.com",
+          "sameAs": [
+            "https://www.patreon.com/c/thebuncult",
+            "https://discord.gg/94khqNMdzT"
+          ]
+        }
+      }
+    }
+  ]
+  </script>
 
-  /* Texture overlay */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
-      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
-    pointer-events: none;
-    z-index: 0;
-  }
+  <link rel="icon" type="image/png" href="favicon.png">
 
-  /* ── HEADER ── */
-  header {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    padding: 3.5rem 2rem 2rem;
-    border-bottom: 1px solid var(--border);
-    background: linear-gradient(180deg, rgba(13,11,8,1) 0%, rgba(26,21,16,0.6) 100%);
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  .eyebrow {
-    font-family: 'Cinzel', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.4em;
-    color: var(--gold-dark);
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.2s forwards;
-  }
+    :root {
+      --gold: #c9a84c;
+      --gold-dark: #8a6b28;
+      --ink: #0d0b08;
+      --parchment-dark: #1a1510;
+      --parchment-mid: #241e16;
+      --stone: #2e2720;
+      --text-primary: #e8dcc8;
+      --text-muted: #b8a888;
+      --border: rgba(201, 168, 76, 0.25);
+      --border-strong: rgba(201, 168, 76, 0.6);
+    }
 
-  h1 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(2.4rem, 6vw, 4.5rem);
-    font-weight: 700;
-    color: var(--gold);
-    letter-spacing: 0.05em;
-    line-height: 1;
-    text-shadow: 0 0 60px rgba(201,168,76,0.15);
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.4s forwards;
-  }
+    html,
+    body {
+      height: 100%;
+      background: var(--ink);
+      color: var(--text-primary);
+      font-family: 'Almendra', Georgia, serif;
+      overflow-x: hidden;
+    }
 
-  .subtitle {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-    letter-spacing: 0.35em;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    margin-top: 0.8rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.6s forwards;
-  }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-  /* Ornamental divider */
-  .ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1.5rem auto 0;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.8s forwards;
-  }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-  .ornament-line {
-    width: 80px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-dark));
-  }
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(13, 11, 8, 1) 0%, rgba(26, 21, 16, 0.6) 100%);
+    }
 
-  .ornament-line.right {
-    background: linear-gradient(90deg, var(--gold-dark), transparent);
-  }
+    .header-title-img {
+      max-width: min(560px, 90vw);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.3s forwards;
+    }
 
-  .ornament-diamond {
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    transform: rotate(45deg);
-  }
+    /* ── MAP SECTION ── */
+    .map-section {
+      position: relative;
+      z-index: 5;
+      flex: 1;
+      padding: 2.5rem 1.5rem;
+    }
 
-  /* ── MAP SECTION ── */
-  .map-section {
-    position: relative;
-    z-index: 5;
-    flex: 1;
-    padding: 2.5rem 1.5rem;
-  }
+    .map-frame {
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid var(--border-strong);
+      background: var(--parchment-mid);
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 1.2s ease 1s forwards;
+    }
 
-  .map-frame {
-    max-width: 1100px;
-    margin: 0 auto;
-    border: 1px solid var(--border-strong);
-    background: var(--parchment-mid);
-    position: relative;
-    opacity: 0;
-    animation: fadeIn 1.2s ease 1s forwards;
-  }
+    .map-frame::before,
+    .map-frame::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-color: var(--gold);
+      border-style: solid;
+      z-index: 2;
+    }
 
-  /* Corner decorations */
-  .map-frame::before,
-  .map-frame::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    border-color: var(--gold);
-    border-style: solid;
-    z-index: 2;
-  }
+    .map-frame::before {
+      top: -1px;
+      left: -1px;
+      border-width: 2px 0 0 2px;
+    }
 
-  .map-frame::before {
-    top: -1px; left: -1px;
-    border-width: 2px 0 0 2px;
-  }
+    .map-frame::after {
+      bottom: -1px;
+      right: -1px;
+      border-width: 0 2px 2px 0;
+    }
 
-  .map-frame::after {
-    bottom: -1px; right: -1px;
-    border-width: 0 2px 2px 0;
-  }
+    .map-frame-inner {
+      position: relative;
+    }
 
-  .map-frame-inner {
-    position: relative;
-  }
+    .map-frame-inner::before,
+    .map-frame-inner::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-color: var(--gold);
+      border-style: solid;
+      z-index: 2;
+    }
 
-  .map-frame-inner::before,
-  .map-frame-inner::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    border-color: var(--gold);
-    border-style: solid;
-    z-index: 2;
-  }
+    .map-frame-inner::before {
+      top: -1px;
+      right: -1px;
+      border-width: 2px 2px 0 0;
+    }
 
-  .map-frame-inner::before {
-    top: -1px; right: -1px;
-    border-width: 2px 2px 0 0;
-  }
+    .map-frame-inner::after {
+      bottom: -1px;
+      left: -1px;
+      border-width: 0 0 2px 2px;
+    }
 
-  .map-frame-inner::after {
-    bottom: -1px; left: -1px;
-    border-width: 0 0 2px 2px;
-  }
+    #map {
+      width: 100%;
+      height: clamp(380px, 60vh, 680px);
+      display: block;
+    }
 
-  #map {
-    width: 100%;
-    height: clamp(380px, 60vh, 680px);
-    display: block;
-  }
+    .map-placeholder {
+      width: 100%;
+      height: clamp(380px, 60vh, 680px);
+      background: var(--parchment-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      color: var(--text-muted);
+    }
 
-  .map-placeholder {
-    width: 100%;
-    height: clamp(380px, 60vh, 680px);
-    background: var(--parchment-dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.2rem;
-    color: var(--text-muted);
-  }
+    .map-placeholder svg {
+      opacity: 0.3;
+    }
 
-  .map-placeholder svg {
-    opacity: 0.3;
-  }
+    .map-placeholder p {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
 
-  .map-placeholder p {
-    font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
+    .map-placeholder small {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      opacity: 0.6;
+      max-width: 280px;
+      text-align: center;
+      line-height: 1.6;
+    }
 
-  .map-placeholder small {
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    font-style: italic;
-    opacity: 0.6;
-    max-width: 280px;
-    text-align: center;
-    line-height: 1.6;
-  }
+    .map-caption {
+      padding: 0.8rem 1.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
 
-  /* Map caption */
-  .map-caption {
-    padding: 0.8rem 1.2rem;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Cinzel', serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--text-muted);
-    text-transform: uppercase;
-  }
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid var(--border);
+    }
 
-  /* ── NAV LINKS ── */
-  /* ── FOOTER ── */
-  footer {
-    position: relative;
-    z-index: 10;
-    border-top: 1px solid var(--border);
-  }
-
-  .footer-bar {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-    min-height: 100px;
-  }
-
-  .footer-bar__item {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--text-muted);
-    transition: flex 0.45s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
-    padding: 1.5rem 1rem;
-    z-index: 0;
-  }
-
-  .footer-bar__item::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; bottom: 0;
-    right: -18px;
-    background: transparent;
-    transform: skewX(-5deg);
-    transform-origin: bottom left;
-    transition: background 0.35s ease;
-    z-index: -1;
-  }
-
-  .footer-bar__item:hover,
-  .footer-bar__item:focus {
-    flex: 2.4;
-    color: var(--ink);
-    outline: none;
-  }
-
-  .footer-bar__item:hover::before,
-  .footer-bar__item:focus::before {
-    background: var(--gold);
-  }
-
-  .footer-bar__icon,
-  .footer-bar__name,
-  .footer-bar__cta,
-  .footer-bar__arrow {
-    position: relative;
-    z-index: 1;
-  }
-
-  .footer-bar__icon {
-    width: 22px;
-    height: 22px;
-    flex-shrink: 0;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .footer-bar__item:hover .footer-bar__icon { transform: scale(1.15); }
-
-  .footer-bar__name {
-    font-family: 'Cinzel', serif;
-    font-size: 0.58rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
-  }
-
-  .footer-bar__item:hover .footer-bar__name { opacity: 0.65; }
-
-  .footer-bar__cta {
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 0;
-    opacity: 0;
-    transition: max-width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.3s ease 0.1s;
-  }
-
-  .footer-bar__item:hover .footer-bar__cta {
-    max-width: 260px;
-    opacity: 1;
-  }
-
-  .footer-bar__arrow {
-    position: absolute;
-    bottom: 1.4rem;
-    right: 1.2rem;
-    width: 18px;
-    height: 18px;
-    opacity: 0;
-    transform: translateX(-6px);
-    transition: opacity 0.3s ease 0.15s, transform 0.35s ease 0.15s;
-  }
-
-  .footer-bar__item:hover .footer-bar__arrow {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .footer-copy {
-    text-align: center;
-    padding: 0.9rem;
-    font-family: 'Cinzel', serif;
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    border-top: 1px solid var(--border);
-  }
-
-  .footer-copy a {
-    color: var(--gold-dark);
-    text-decoration: none;
-  }
-
-  .footer-copy a:hover { color: var(--gold); }
-
-  @media (max-width: 600px) {
-    .footer-bar { flex-direction: column; }
+    .footer-bar {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      min-height: 100px;
+    }
 
     .footer-bar__item {
-      flex-direction: row;
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 1rem;
-      min-height: 64px;
-      padding: 1rem 1.25rem;
+      justify-content: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: flex 0.45s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+      padding: 1.5rem 1rem;
+      z-index: 0;
     }
 
-    .footer-bar__item::before { right: 0; transform: none; }
+    .footer-bar__item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: -18px;
+      background: transparent;
+      transform: skewX(-5deg);
+      transform-origin: bottom left;
+      transition: background 0.35s ease;
+      z-index: -1;
+    }
 
     .footer-bar__item:hover,
-    .footer-bar__item:focus { flex: unset; }
+    .footer-bar__item:focus {
+      flex: 2.4;
+      color: var(--ink);
+      outline: none;
+    }
 
-    .footer-bar__cta { max-width: 200px; opacity: 1; }
-    .footer-bar__item:hover .footer-bar__cta { max-width: 200px; }
-    .footer-bar__name { display: none; }
+    .footer-bar__item:hover::before,
+    .footer-bar__item:focus::before {
+      background: var(--gold);
+    }
+
+    .footer-bar__icon,
+    .footer-bar__name,
+    .footer-bar__cta,
+    .footer-bar__arrow {
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-bar__icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .footer-bar__item:hover .footer-bar__icon {
+      transform: scale(1.15);
+    }
+
+    .footer-bar__name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .footer-bar__item:hover .footer-bar__name {
+      opacity: 0.9;
+    }
+
+    .footer-bar__cta {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 0;
+      opacity: 0;
+      transition: max-width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease 0.1s;
+    }
+
+    .footer-bar__item:hover .footer-bar__cta {
+      max-width: 260px;
+      opacity: 1;
+    }
 
     .footer-bar__arrow {
-      position: static;
-      opacity: 1;
-      transform: none;
-      margin-left: auto;
+      position: absolute;
+      bottom: 1.4rem;
+      right: 1.2rem;
+      width: 18px;
+      height: 18px;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.3s ease 0.15s, transform 0.35s ease 0.15s;
     }
-  }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+    .footer-bar__item:hover .footer-bar__arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
+    .footer-copy {
+      text-align: center;
+      padding: 0.9rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+    }
 
-  /* Leaflet overrides */
-  .leaflet-container {
-    background: #C3B7AE !important;
-    font-family: 'Cinzel', serif !important;
-  }
+    .footer-copy a {
+      color: var(--gold-dark);
+      text-decoration: none;
+    }
 
-  .leaflet-popup-content-wrapper {
-    background: var(--parchment-mid);
-    border: 1px solid var(--border-strong);
-    border-radius: 0;
-    color: var(--text-primary);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.6);
-  }
+    .footer-copy a:hover {
+      color: var(--gold);
+    }
 
-  .leaflet-popup-tip { background: var(--parchment-mid); }
+    @media (max-width: 600px) {
+      .footer-bar {
+        flex-direction: column;
+      }
 
-  .leaflet-popup-content h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    margin-bottom: 0.3rem;
-  }
+      .footer-bar__item {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        min-height: 64px;
+        padding: 1rem 1.25rem;
+      }
 
-  .leaflet-popup-content p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    font-style: italic;
-    line-height: 1.5;
-  }
+      .footer-bar__item::before {
+        right: 0;
+        transform: none;
+      }
 
-  .leaflet-bar a {
-    background: var(--parchment-mid) !important;
-    color: var(--gold) !important;
-    border-color: var(--border-strong) !important;
-  }
+      .footer-bar__item:hover,
+      .footer-bar__item:focus {
+        flex: unset;
+      }
 
-  .leaflet-bar a:hover {
-    background: var(--stone) !important;
-  }
+      .footer-bar__cta {
+        max-width: 200px;
+        opacity: 1;
+      }
 
-  .leaflet-attribution-flag { display: none !important; }
-  .leaflet-control-attribution {
-    background: rgba(13,11,8,0.8) !important;
-    color: var(--text-muted) !important;
-    font-size: 0.6rem;
-    letter-spacing: 0.05em;
-  }
-</style>
+      .footer-bar__item:hover .footer-bar__cta {
+        max-width: 200px;
+      }
+
+      .footer-bar__name {
+        display: none;
+      }
+
+      .footer-bar__arrow {
+        position: static;
+        opacity: 1;
+        transform: none;
+        margin-left: auto;
+      }
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-bar {
+      position: relative;
+      z-index: 10;
+      overflow: hidden;
+      background: var(--gold);
+      border-bottom: 1px solid var(--border-strong);
+      padding: 0.45rem 0;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+    }
+
+    .marquee-bar:hover {
+      filter: brightness(1.12);
+    }
+
+    .marquee-bar::before,
+    .marquee-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .marquee-bar::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .marquee-bar::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--gold), transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee-content {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
+      padding-right: 2rem;
+    }
+
+    .marquee-diamond {
+      color: var(--ink);
+      opacity: 0.6;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── LEAFLET OVERRIDES ── */
+    .leaflet-container {
+      background: #C3B7AE !important;
+    }
+
+    .leaflet-popup-content-wrapper {
+      background: var(--parchment-mid);
+      border: 1px solid var(--border-strong);
+      border-radius: 0;
+      color: var(--text-primary);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .leaflet-popup-tip {
+      background: var(--parchment-mid);
+    }
+
+    .leaflet-popup-content {
+      margin: 5px 10px;
+      line-height: 1.3;
+    }
+
+    .leaflet-popup-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .leaflet-popup-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .leaflet-bar a {
+      background: var(--parchment-mid) !important;
+      color: var(--gold) !important;
+      border-color: var(--border-strong) !important;
+    }
+
+    .leaflet-bar a:hover {
+      background: var(--stone) !important;
+    }
+
+    .leaflet-attribution-flag {
+      display: none !important;
+    }
+
+    .leaflet-control-attribution {
+      background: rgba(13, 11, 8, 0.8) !important;
+      color: var(--text-muted) !important;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── MAP LABELS ── */
+    .map-label {
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    .map-label-inner {
+      font-family: 'Almendra', Georgia, serif;
+      font-weight: 700;
+      color: #0d0b08;
+      text-align: center;
+      padding: 2px 6px;
+      line-height: 1.3;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .map-label-inner.visible {
+      opacity: 1;
+    }
+
+    .label-region .map-label-inner {
+      font-size: 14px;
+      letter-spacing: -.05em;
+      background: none;
+      text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    }
+
+    .label-city .map-label-inner  { font-size: 12px; letter-spacing: 0.06em; background: white; border-bottom: 3px solid #01FFB3; }
+    .label-town .map-label-inner  { font-size: 12px; letter-spacing: 0.04em; background: white; border-bottom: 3px solid #01FFB3; }
+    .label-poi .map-label-inner   { font-size: 12px; letter-spacing: 0.03em; background: white; border-radius: 6px; }
+
+    /* ── MAP POPUPS ── */
+    .gall-popup {
+      min-width: 180px;
+      max-width: 240px;
+    }
+
+    .gall-popup-type {
+      display: none;
+    }
+
+    .gall-popup-name {
+      font-family: 'Cinzel', serif;
+      font-weight: bold;
+      color: #c9a84c;
+    }
+
+    .gall-popup-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: #8a6b28;
+      margin-right: 4px;
+      margin-top: 4px;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <p class="eyebrow">The World of</p>
-  <h1>Galluvinchia</h1>
-  <p class="subtitle">Interactive Map</p>
-  <div class="ornament">
-    <div class="ornament-line"></div>
-    <div class="ornament-diamond"></div>
-    <div class="ornament-line right"></div>
-  </div>
-</header>
+  <header>
+    <img class="header-title-img" src="title.png" alt="Galluvinchia — Interactive Map">
+  </header>
 
-<main class="map-section">
-  <div class="map-frame">
-    <div class="map-frame-inner">
-      <div id="map">
-        <!-- Leaflet renders here. If no map image is set, shows placeholder -->
-        <div class="map-placeholder" id="placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
-            <line x1="9" y1="3" x2="9" y2="18"/>
-            <line x1="15" y1="6" x2="15" y2="21"/>
-          </svg>
-          <p>Map of Galluvinchia</p>
-          <small>Replace MAP_IMAGE_URL in the script below with the path to your map image</small>
+  <a class="marquee-bar" href="https://thebuncult.com" target="_blank" rel="noopener noreferrer" aria-label="Visit The Bun Cult — become a legend, get the book and join its adventures">
+    <div class="marquee-track">
+      <span class="marquee-content">
+        Become a legend &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Get the book &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Join its adventures &nbsp;<span class="marquee-diamond">◆</span>&nbsp;
+        Become a legend &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Get the book &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Join its adventures &nbsp;<span class="marquee-diamond">◆</span>&nbsp;
+        Become a legend &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Get the book &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Join its adventures &nbsp;<span class="marquee-diamond">◆</span>&nbsp;
+        Become a legend &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Get the book &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Join its adventures &nbsp;<span class="marquee-diamond">◆</span>&nbsp;
+      </span>
+    </div>
+  </a>
+
+  <main class="map-section" aria-label="Interactive map of Galluvinchia">
+    <div class="map-frame">
+      <div class="map-frame-inner">
+        <div id="map" role="application" aria-label="Map of Galluvinchia — scroll to zoom, click markers to explore">
+          <div class="map-placeholder" id="placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+              <line x1="9" y1="3" x2="9" y2="18" />
+              <line x1="15" y1="6" x2="15" y2="21" />
+            </svg>
+            <p>Map of Galluvinchia</p>
+            <small>Replace MAP_IMAGE_URL in the script below with the path to your map image</small>
+          </div>
         </div>
       </div>
+      <div class="map-caption">
+        <span>Galluvinchia &mdash; Known Lands</span>
+        <span>Scroll to zoom &bull; Click to explore</span>
+      </div>
     </div>
-    <div class="map-caption">
-      <span>Galluvinchia &mdash; Known Lands</span>
-      <span>Scroll to zoom &bull; Click to explore</span>
+  </main>
+
+  <footer aria-label="Site links">
+    <nav class="footer-bar" aria-label="External links">
+
+      <!-- The Roleplay -->
+      <a class="footer-bar__item"
+        href="https://www.drivethrurpg.com/en/product/561689/fables-of-galluvinchia-the-jewel-of-evergrowth?affiliate_id=5084369"
+        target="_blank" rel="noopener noreferrer" aria-label="The Roleplay">
+        <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+          <path d="M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z" />
+        </svg>
+        <span class="footer-bar__name">The Roleplay</span>
+        <span class="footer-bar__cta">Become part of the story</span>
+        <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <!-- Shop -->
+      <a class="footer-bar__item" href="https://thebuncult.com" target="_blank" rel="noopener noreferrer"
+        aria-label="Shop">
+        <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+          <circle cx="8" cy="21" r="1" />
+          <circle cx="19" cy="21" r="1" />
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+        </svg>
+        <span class="footer-bar__name">Shop</span>
+        <span class="footer-bar__cta">Books &amp; merch</span>
+        <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <!-- Patreon -->
+      <a class="footer-bar__item" href="https://www.patreon.com/c/thebuncult" target="_blank" rel="noopener noreferrer"
+        aria-label="Support on Patreon">
+        <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+          <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
+          <path d="m7 21l1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9M2 16l6 6" />
+          <circle cx="16" cy="9" r="2.9" />
+          <circle cx="6" cy="5" r="3" />
+        </svg>
+        <span class="footer-bar__name">Patreon</span>
+        <span class="footer-bar__cta">Support Galluvinchia</span>
+        <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <!-- Discord -->
+      <a class="footer-bar__item" href="https://discord.gg/94khqNMdzT" target="_blank" rel="noopener noreferrer"
+        aria-label="Join on Discord">
+        <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+          <path d="M18 21a8 8 0 0 0-16 0" />
+          <circle cx="10" cy="8" r="5" />
+          <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
+        </svg>
+        <span class="footer-bar__name">Discord</span>
+        <span class="footer-bar__cta">Join the guild</span>
+        <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+
+    </nav>
+    <div class="footer-copy">
+      &copy; <span id="year"></span> Galluvinchia &mdash;
+      <a href="https://thebuncult.com" target="_blank" rel="noopener">thebuncult.com</a>
     </div>
-  </div>
-</main>
+  </footer>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<footer>
-  <div class="footer-bar">
+    const MAP_IMAGE_URL = "map-discovered.png";
+    const MAP_WIDTH  = 5518;
+    const MAP_HEIGHT = 3897;
 
-    <!-- The Comic -->
-    <!-- <a class="footer-bar__item" href="COMIC_URL_HERE" target="_blank" rel="noopener noreferrer" aria-label="Read the Comic">
-      <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-      </svg>
-      <span class="footer-bar__name">The Comic</span>
-      <span class="footer-bar__cta">Read the story</span>
-      <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a> -->
+    const PLACES = [
+      // ── REGIONS (showAtZoom: -2) ──────────────────────────────────
+      {
+        name: "East of Galluvinchia", nameES: "Este de Galluvinchia", type: "region",
+        lore: "Mostly unknown lands. The arid Breath of Sand desert stretches endlessly, hiding ancient ruins and the last oasis kept alive by the Horangi family.",
+        loreES: "Tierras en su mayoría desconocidas. El árido desierto del Aliento de Arena se extiende sin fin, ocultando ruinas antiguas y el último oasis mantenido vivo por la familia Horangi.",
+        tags: ["region"], x: 3500, y: 2000, showAtZoom: -2,
+      },
+      {
+        name: "West of Galluvinchia", nameES: "Oeste de Galluvinchia", type: "region",
+        lore: "Dense forests and coastlines. Home of most of the population, living under Pax Aremedia.",
+        loreES: "Densas selvas y costas. Hogar de casi toda la civilziación, viviendo bajo Pax Aremedia.",
+        tags: ["region"], x: 1000, y: 2000, showAtZoom: -2,
+      },
+      {
+        name: "North of Galluvinchia", nameES: "Norte de Galluvinchia", type: "region",
+        lore: "Cold mountains and giant territories. Ice Peak looms over the lands.",
+        loreES: "Montañas frías y territorios de gigantes. El Pico de Hielo se cierne sobre las tierras donde Salgu gobernó antes de que el Eczema Blanco alejara a su pueblo.",
+        tags: ["region", "giants", "salgu"], x: 1400, y: 750, showAtZoom: -2,
+      },
 
-    <!-- The Roleplay -->
-    <a class="footer-bar__item" href="https://www.drivethrurpg.com/en/product/561689/fables-of-galluvinchia-the-jewel-of-evergrowth?affiliate_id=5084369" target="_blank" rel="noopener noreferrer" aria-label="The Roleplay">
-      <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-        <path d="M2 17l10 5 10-5"/>
-        <path d="M2 12l10 5 10-5"/>
-      </svg>
-      <span class="footer-bar__name">The Roleplay</span>
-      <span class="footer-bar__cta">Become part of the story</span>
-      <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+      // ── CITIES (showAtZoom: -1) ───────────────────────────────────
+      {
+        name: "The Lord of Carbohyrr", nameES: "El Señor de Carbohyrr", type: "city",
+        lore: "A mountain fortress famous for its blacksmiths and hot springs.",
+        loreES: "Una fortaleza montañosa famosa por sus herreros y aguas termales.",
+        tags: [], x: 1970, y: 2100, showAtZoom: -1,
+      },
+      {
+        name: "An'Ramoda", nameES: "An'Ramoda", type: "city",
+        lore: "Walled city of the north with the strongest army in Galluvinchia bajo el poder de Aremedia.",
+        loreES: "Ciudad amurallada del norte con el ejército más poderoso de Galluvinchia bajo el poder de Aremedia.",
+        tags: ["aremedia"], x: 1770, y: 1300, showAtZoom: -1,
+      },
+      {
+        name: "Lady of Marmaros", nameES: "La Dama de Mármaros", type: "city",
+        lore: "City of mages and arcane power, home to the Academy of Magic Wonders.",
+        loreES: "Ciudad de magos y poder arcano, hogar de la Academia de las Maravillas Mágicas.",
+        tags: ["academy"], x: 1670, y: 1720, showAtZoom: -1,
+      },
+      {
+        name: "Lorda Gorda", nameES: "Lorda Gorda", type: "city",
+        lore: "Island fortress mainly inhabited by felinfolk, famous for the pink crystals that light up the city.",
+        loreES: "Isla fortaleza habitada principalmente por felicios, popular por los interesantes cristales rosas que iluminan la ciudad.",
+        tags: [], x: 2270, y: 2700, showAtZoom: -1,
+      },
 
-    <!-- Shop -->
-    <a class="footer-bar__item" href="https://thebuncult.com" target="_blank" rel="noopener noreferrer" aria-label="Shop">
-      <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <path d="M16 10a4 4 0 0 1-8 0"/>
-      </svg>
-      <span class="footer-bar__name">Shop</span>
-      <span class="footer-bar__cta">Books &amp; merch</span>
-      <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+      // ── TOWNS (showAtZoom: 0) ─────────────────────────────────────
+      {
+        name: "Jewel of Evergrowth", nameES: "La Joya Siemprecreciente", type: "town",
+        lore: "A hamlet growing around the roots of the First Tree with the help of Leeve.",
+        loreES: "Un poblado que crece al rededor de las raíces del Primer Árbol con la ayuda de Leeve.",
+        tags: ["The Jewel of Evergrowth", "leeve"], x: 745, y: 1620, showAtZoom: 0,
+      },
+      {
+        name: "An'Zulejosh", nameES: "An'Zulejosh", type: "town",
+        lore: "Main coastal port at the north of Galluvinchia. A city of trade and mosaic tiles, connected to the Quick Maria's last voyage.",
+        loreES: "Principal puerto costero al norte de Galluvinchia. Ciudad de comercio y azulejos de mosaico, conectada al último viaje de la Furiosa María.",
+        tags: ["city", "port", "trade"], x: 1370, y: 1600, showAtZoom: 0,
+      },
+      {
+        name: "Doormi", nameES: "Doormi", type: "town",
+        lore: "City blessed by Morphia and home to the Academy of Magic Waves and Dreams.",
+        loreES: "Ciudad bendecida por Morphia y Hogar de la Academia de las Ondas Etéreas y los Sueños.",
+        tags: ["city", "morphia", "academy"], x: 1270, y: 1950, showAtZoom: 0,
+      },
+      {
+        name: "Lakobordo", nameES: "Lakobordo", type: "town",
+        lore: "City hub of commerce between the different cities at the West of Galluvinchia.",
+        loreES: "Eje del comercio entre las diferentes ciudades al oeste de Galluvinchia.",
+        tags: [], x: 1570, y: 2250, showAtZoom: 0,
+      },
+      {
+        name: "Montebordo", nameES: "Montebordo", type: "town",
+        lore: "Small hamlet full of pagans, quite remote nowadays.",
+        loreES: "Pequeño pueblo lleno de paganos, bastante remoto a dia de hoy.",
+        tags: [], x: 2250, y: 2030, showAtZoom: 0,
+      },
+      {
+        name: "Rivaborda", nameES: "Rivaborda", type: "town",
+        lore: "A town of woodworkers and cheese makers, the perfect place to hide for a while.",
+        loreES: "Una ciudad llena de leñadores y queseros, el lugar perfecto para pasar una temporada escondido.",
+        tags: [], x: 2650, y: 1530, showAtZoom: 0,
+      },
+      {
+        name: "Pharoes", nameES: "Pharoes", type: "town",
+        lore: "The port-city of the south, with as many fishermen as followers of Brenadette.",
+        loreES: "El puerto del sur, famoso por su gran faro, sus pescadores y la ferviente fe de los seguidores de Brenadette.",
+        tags: ["port"], x: 900, y: 2450, showAtZoom: 0,
+      },
 
-    <!-- Patreon -->
-    <a class="footer-bar__item" href="https://www.patreon.com/c/thebuncult" target="_blank" rel="noopener noreferrer" aria-label="Support on Patreon">
-      <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-        <path d="M20.33 7.22a6.25 6.25 0 1 1-8.83 8.83L3 21V3h18v4.22z"/>
-      </svg>
-      <span class="footer-bar__name">Patreon</span>
-      <span class="footer-bar__cta">Support Galluvinchia</span>
-      <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+      // ── POINTS OF INTEREST (showAtZoom: 1) ───────────────────────
+      {
+        name: "Hunter's Den", nameES: "Guarida del Cazador", type: "poi",
+        lore: "Base of Huntmaster Rachel Tempiras, one hour from the Jewel. She recently lost her brother to the spider caves nearby.",
+        loreES: "Base de la Maestra de Caza Rachel Tempiras, a una hora de la Joya. Recientemente perdió a su hermano en las cuevas de arañas cercanas.",
+        tags: ["The Jewel of Evergrowth"], x: 825, y: 1700, showAtZoom: 1,
+      },
+      {
+        name: "Feles Miles' House", nameES: "Casa de Feles Miles", type: "poi",
+        lore: "Hidden deep in the forest, a huge library smelling of incense. The retired adventurer who knows more than he tells — and who discovered the way to the silver mines.",
+        loreES: "Escondida en lo profundo del bosque, una enorme biblioteca con olor a incienso. El aventurero retirado que sabe más de lo que dice, y que descubrió el camino a las minas de plata.",
+        tags: ["The Jewel of Evergrowth"], x: 665, y: 1600, showAtZoom: 1,
+      },
+      {
+        name: "Silver Mines of Twin Peak", nameES: "Minas de Plata del Pico Gemelo", type: "poi",
+        lore: "Managed by Sara Flora. Miners are turning to stone. A basilisk lurks in the underground waters. And somewhere deeper, the Cathedral in the Stone waits to be found.",
+        loreES: "Gestionadas por Sara Flora. Los mineros se están convirtiendo en piedra. Un basilisco acecha en las aguas subterráneas. Y en algún lugar más profundo, la Catedral en la Piedra espera ser encontrada.",
+        tags: ["The Jewel of Evergrowth", "Hand of the Holy Virtue"], x: 690, y: 1475, showAtZoom: 1,
+      },
+      {
+        name: "Breath of Sand — Last Oasis", nameES: "Aliento de Arena — Último Oasis", type: "poi",
+        lore: "A small community living in the last remains of green in this sea of sand.",
+        loreES: "Una pequeña comunidad vive en los últimos resquicios de naturaleza en este oceano de arena.",
+        tags: [], x: 2750, y: 2100, showAtZoom: 1,
+      },
+      {
+        name: "Ice Peak", nameES: "Puntahelada", type: "poi",
+        lore: "Home of winter. House of giants.",
+        loreES: "El hogar del Invierno, la casa de los gigantes.",
+        tags: [], x: 1550, y: 1000, showAtZoom: 1,
+      },
+      {
+        name: "Aurora Densasilva", nameES: "Aurora Densasilva", type: "poi",
+        lore: "The impenetrable and twisted eternal forest.",
+        loreES: "El inexpugnable y retorcido bosque eterno.",
+        tags: ["forest"], x: 2250, y: 1500, showAtZoom: 1,
+      },
+      {
+        name: "Ourobolis", nameES: "Ourobolis", type: "poi",
+        lore: "The sea around it turned purple when the primordial snake was vanquished.",
+        loreES: "El mar a su alrededor se tiñó de púrpura con la caída de la serpiente primordial.",
+        tags: [], x: 3330, y: 1120, showAtZoom: 1,
+      },
+      {
+        name: "The Mist", nameES: "La Bruma", type: "poi",
+        lore: "The origin of the legend of the elves.",
+        loreES: "El origen de la leyenda de los elfos.",
+        tags: ["elves"], x: 4500, y: 1800, showAtZoom: 1,
+      },
+      {
+        name: "Ozan Tizuki", nameES: "Ozan Tizuki", type: "poi",
+        lore: "Once the seat of elven civilization. Now Panos sits here on his stolen throne, his memory shattered by elven magic, guarding the Pillar of Rebirth. The corpses of the Kagerisu family ride as his knights.",
+        loreES: "Antaño la sede de la civilización élfica. Ahora Panos se sienta aquí en su trono robado, su memoria destrozada por la magia élfica, guardando el Pilar del Renacimiento. Los cadáveres de la familia Kagerisu cabalgan como sus caballeros.",
+        tags: [], x: 4800, y: 1450, showAtZoom: 1,
+      },
+      {
+        name: "Ruins of Everaisle", nameES: "Ruinas de Siemprasadizo", type: "poi",
+        lore: "Ruins of what it seems it was a church, a cathedral, a townhall, or an academy",
+        loreES: "Ruinas de lo que parece ser que fue una iglesia, una catedral, un ayuntamiento o una academia.",
+        tags: [], x: 1470, y: 2620, showAtZoom: 1,
+      },
+      {
+        name: "Picarosh", nameES: "Picarosh", type: "poi",
+        lore: ".", loreES: ".",
+        tags: ["aremedia"], x: 1830, y: 1400, showAtZoom: 1,
+      },
+      {
+        name: "Craikov", nameES: "Craikov", type: "poi",
+        lore: ".", loreES: ".",
+        tags: ["aremedia"], x: 1920, y: 1300, showAtZoom: 1,
+      },
+      {
+        name: "Saint Erentsburgh", nameES: "San Erensburgo", type: "poi",
+        lore: ".", loreES: ".",
+        tags: ["aremedia"], x: 1720, y: 1200, showAtZoom: 1,
+      },
+      {
+        name: "Tanishia", nameES: "Tanishia", type: "poi",
+        lore: ".", loreES: ".",
+        tags: ["aremedia"], x: 1620, y: 1320, showAtZoom: 1,
+      },
+      {
+        name: "Gretscznievlycov", nameES: "Gretscznievlycov", type: "poi",
+        lore: ".", loreES: ".",
+        tags: ["aremedia"], x: 1640, y: 1385, showAtZoom: 1,
+      },
+    ];
 
-    <!-- Discord -->
-    <a class="footer-bar__item" href="https://discord.gg/94khqNMdzT" target="_blank" rel="noopener noreferrer" aria-label="Join on Discord">
-      <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.033.055a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" fill="currentColor"/>
-      </svg>
-      <span class="footer-bar__name">Discord</span>
-      <span class="footer-bar__cta">Join the guild</span>
-      <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+    if (MAP_IMAGE_URL) {
+      document.getElementById('placeholder').remove();
 
-  </div>
-  <div class="footer-copy">
-    &copy; <span id="year"></span> Galluvinchia &mdash;
-    <a href="https://thebuncult.com" target="_blank" rel="noopener">thebuncult.com</a>
-  </div>
-</footer>
+      const bounds = [[0, 0], [MAP_HEIGHT, MAP_WIDTH]];
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<style>
-  /* ── LABEL STYLES ── */
-  .map-label {
-    background: none;
-    border: none;
-    box-shadow: none;
-  }
-  .map-label-inner {
-    font-family: 'Almendra', Georgia, serif;
-    font-weight: 700;
-    color: #0d0b08;
-    text-align: center;
-    white-space: nowrap;
-    background: #01FFB3;
-    border-radius: 9px;
-    padding: 2px 6px;
-    text-shadow: none;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-  }
-  .map-label-inner.visible { opacity: 1; }
-
-  /* Size variants */
-  .label-region  .map-label-inner { font-size: 14px; letter-spacing: -.05em; background: none; text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; }
-  .label-city    .map-label-inner { font-size: 12px; letter-spacing: 0.06em; color: #0d0b08; }
-  .label-town    .map-label-inner { font-size: 12px;  letter-spacing: 0.04em; color: #0d0b08; }
-  .label-poi     .map-label-inner { font-size: 12px;  letter-spacing: 0.03em; color: #0d0b08; }
-
-  /* ── POPUP STYLES ── */
-  .gall-popup { min-width: 180px; max-width: 240px; }
-  .gall-popup-type {
-    font-family: 'Cinzel', serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: #8a6b28;
-    margin-bottom: 4px;
-  }
-  .gall-popup-name {
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    color: #c9a84c;
-    margin-bottom: 6px;
-    line-height: 1.2;
-  }
-  .gall-popup-lore {
-    font-family: 'Cinzel', serif;
-    font-size: 0.88rem;
-    color: #9a8a72;
-    font-style: italic;
-    line-height: 1.55;
-    margin-bottom: 8px;
-  }
-  .gall-popup-tag {
-    display: inline-block;
-    font-family: 'Cinzel', serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 2px 7px;
-    border: 1px solid rgba(201,168,76,0.3);
-    color: #8a6b28;
-    margin-right: 4px;
-    margin-top: 4px;
-  }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // ══════════════════════════════════════════════════════════════
-  //  MAP CONFIGURATION — edit everything below this line
-  // ══════════════════════════════════════════════════════════════
-
-  // Replace this URL with your actual map image path, e.g. './map.jpg'
-  const MAP_IMAGE_URL = "map-discovered.png";
-
-  // Image dimensions in pixels (your actual map file size)
-  const MAP_WIDTH  = 5518;
-  const MAP_HEIGHT = 3897;
-
-  // Zoom levels at which labels appear:
-  //   minZoom: -2  →  fully zoomed out (overview)
-  //   0            →  mid zoom
-  //   2 / 3        →  fully zoomed in
-  // Use showAtZoom to control when each label becomes visible.
-
-  const PLACES = [
-    // ── ZONES (visible at mid zoom) ─────────────────────────────
-    // ── ZONES (showAtZoom: -2) ─────────────────────────────
-
-{
-  name: "East of Galluvinchia",
-  nameES: "Este de Galluvinchia",
-  type: "region",
-  lore: "Mostly unknown lands. The arid Breath of Sand desert stretches endlessly, hiding ancient ruins and the last oasis kept alive by the Horangi family.",
-  loreES: "Tierras en su mayoría desconocidas. El árido desierto del Aliento de Arena se extiende sin fin, ocultando ruinas antiguas y el último oasis mantenido vivo por la familia Horangi.",
-  tags: ["region"],
-  x: 3500, y: 2000,
-  showAtZoom: -2,
-},
-{
-  name: "West of Galluvinchia",
-  nameES: "Oeste de Galluvinchia",
-  type: "region",
-  lore: "Dense forests and coastlines. Home of most of the population, living under Pax Aremedia.",
-  loreES: "Densas selvas y costas. Hogar de casi toda la civilziación, viviendo bajo Pax Aremedia.",
-  tags: ["region"],
-  x: 1000, y: 2000,
-  showAtZoom: -2,
-},
-{
-  name: "North of Galluvinchia",
-  nameES: "Norte de Galluvinchia",
-  type: "region",
-  lore: "Cold mountains and giant territories. Ice Peak looms over the lands.",
-  loreES: "Montañas frías y territorios de gigantes. El Pico de Hielo se cierne sobre las tierras donde Salgu gobernó antes de que el Eczema Blanco alejara a su pueblo.",
-  tags: ["region", "giants", "salgu"],
-  x: 1400, y: 750,
-  showAtZoom: -2,
-},
-
-// ── CITIES (showAtZoom: -1) ─────────────────────────────
-
-{
-  name: "The Lord of Carbohyrr",
-  nameES: "El Señor de Carbohyrr",
-  type: "city",
-  lore: "A mountain fortress famous for its blacksmiths and hot springs.",
-  loreES: "Una fortaleza montañosa famosa por sus herreros y aguas termales.",
-  tags: [],
-  x: 1970, y: 2100,
-  showAtZoom: -1,
-},
-{
-  name: "An'Ramoda",
-  nameES: "An'Ramoda",
-  type: "city",
-  lore: "Walled city of the north with the strongest army in Galluvinchia bajo el poder de Aremedia.",
-  loreES: "Ciudad amurallada del norte con el ejército más poderoso de Galluvinchia bajo el poder de Aremedia.",
-  tags: ["aremedia"],
-  x: 1770, y: 1300,
-  showAtZoom: -1,
-},
-{
-  name: "Lady of Marmaros",
-  nameES: "La Dama de Mármaros",
-  type: "city",
-  lore: "City of mages and arcane power, home to the Academy of Magic Wonders.",
-  loreES: "Ciudad de magos y poder arcano, hogar de la Academia de las Maravillas Mágicas.",
-  tags: ["academy"],
-  x: 1670, y: 1720,
-  showAtZoom: -1,
-},
-{
-  name: "Lorda Gorda",
-  nameES: "Lorda Gorda",
-  type: "city",
-  lore: "Island fortress mainly inhabited by felinfolk, famous for the pink crystals that light up the city.",
-  loreES: "Isla fortaleza habitada principalmente por felicios, popular por los interesantes cristales rosas que iluminan la ciudad.",
-  tags: [],
-  x: 2270, y: 2700,
-  showAtZoom: -1,
-},
-
-// ── TOWNS (showAtZoom: 0) ─────────────────────────────
-
-{
-  name: "Jewel of Evergrowth",
-  nameES: "La Joya Siemprecreciente",
-  type: "town",
-  lore: "A hamlet growing around the roots of the First Tree with the help of Leeve.",
-  loreES: "Un poblado que crece al rededor de las raíces del Primer Árbol con la ayuda de Leeve.",
-  tags: ["The Jewel of Evergrowth", "leeve"],
-  x: 745, y: 1620,
-  showAtZoom: 0,
-},
-{
-  name: "An'Zulejosh",
-  nameES: "An'Zulejosh",
-  type: "town",
-  lore: "Main coastal port at the north of Galluvinchia. A city of trade and mosaic tiles, connected to the Quick Maria's last voyage.",
-  loreES: "Principal puerto costero al norte de Galluvinchia. Ciudad de comercio y azulejos de mosaico, conectada al último viaje de la Furiosa María.",
-  tags: ["city", "port", "trade"],
-  x: 1370, y: 1600,
-  showAtZoom: 0,
-},
-{
-  name: "Doormi",
-  nameES: "Doormi",
-  type: "town",
-  lore: "City blessed by Morphia and home to the Academy of Magic Waves and Dreams. ",
-  loreES: "Ciudad bendecida por Morphia y Hogar de la Academia de las Ondas Etéreas y los Sueños.",
-  tags: ["city", "morphia", "academy"],
-  x: 1270, y: 1950,
-  showAtZoom: 0,
-},
-{
-  name: "Lakobordo",
-  nameES: "Lakobordo",
-  type: "town",
-  lore: "City hub of commerce between the different cities at the West of Galluvinchia. ",
-  loreES: "Eje del comercio entre las diferentes ciudades al oeste de Galluvinchia.",
-  tags: [],
-  x: 1570, y: 2250,
-  showAtZoom: 0,
-},
-{
-  name: "Montebordo",
-  nameES: "Montebordo",
-  type: "town",
-  lore: "Small hamlet full of pagans, quite remote nowadays. ",
-  loreES: "Pequeño pueblo lleno de paganos, bastante remoto a dia de hoy.",
-  tags: [],
-  x: 2250, y: 2030,
-  showAtZoom: 0,
-},
-{
-  name: "Rivaborda",
-  nameES: "Rivaborda",
-  type: "town",
-  lore: "A town of woodworkers and cheese makers, the perfect place to hide for a while.",
-  loreES: "Una ciudad llena de leñadores y queseros, el lugar perfecto para pasar una temporada escondido.",
-  tags: [],
-  x: 2650, y: 1530,
-  showAtZoom: 0,
-},
-{
-  name: "Pharoes",
-  nameES: "Pharoes",
-  type: "town",
-  lore: "The port-city of the south, with as many fishermen as followers of Brenadette.",
-  loreES: "El puerto del sur, famoso por su gran faro, sus pescadores y la ferviente fe de los seguidores de Brenadette.",
-  tags: ["port"],
-  x: 900, y: 2450,
-  showAtZoom: 0,
-},
-
-// ── POINTS OF INTEREST (showAtZoom: 1) ─────────────────
-
-{
-  name: "Hunter's Den",
-  nameES: "Guarida del Cazador",
-  type: "poi",
-  lore: "Base of Huntmaster Rachel Tempiras, one hour from the Jewel. She recently lost her brother to the spider caves nearby.",
-  loreES: "Base de la Maestra de Caza Rachel Tempiras, a una hora de la Joya. Recientemente perdió a su hermano en las cuevas de arañas cercanas.",
-  tags: ["The Jewel of Evergrowth"],
-  x: 825, y: 1700,
-  showAtZoom: 1,
-},
-{
-  name: "Feles Miles' House",
-  nameES: "Casa de Feles Miles",
-  type: "poi",
-  lore: "Hidden deep in the forest, a huge library smelling of incense. The retired adventurer who knows more than he tells — and who discovered the way to the silver mines.",
-  loreES: "Escondida en lo profundo del bosque, una enorme biblioteca con olor a incienso. El aventurero retirado que sabe más de lo que dice, y que descubrió el camino a las minas de plata.",
-  tags: ["The Jewel of Evergrowth"],
-  x: 665, y: 1600,
-  showAtZoom: 1,
-},
-{
-  name: "Silver Mines of Twin Peak",
-  nameES: "Minas de Plata del Pico Gemelo",
-  type: "poi",
-  lore: "Managed by Sara Flora. Miners are turning to stone. A basilisk lurks in the underground waters. And somewhere deeper, the Cathedral in the Stone waits to be found.",
-  loreES: "Gestionadas por Sara Flora. Los mineros se están convirtiendo en piedra. Un basilisco acecha en las aguas subterráneas. Y en algún lugar más profundo, la Catedral en la Piedra espera ser encontrada.",
-  tags: ["The Jewel of Evergrowth", "Hand of the Holy Virtue"],
-  x: 690, y: 1475,
-  showAtZoom: 1,
-},
-{
-  name: "Breath of Sand — Last Oasis",
-  nameES: "Aliento de Arena — Último Oasis",
-  type: "poi",
-  lore: "A small community living in the last remains of green in this sea of sand.",
-  loreES: "Una pequeña comunidad vive en los últimos resquicios de naturaleza en este oceano de arena.",
-  tags: [],
-  x: 2750, y: 2100,
-  showAtZoom: 1,
-},
-{
-  name: "Ice Peak",
-  nameES: "Puntahelada",
-  type: "poi",
-  lore: "Home of winter. House of giants.",
-  loreES: "El hogar del Invierno, la casa de los gigantes.",
-  tags: [],
-  x: 1550, y: 1000,
-  showAtZoom: 1,
-},
-{
-  name: "Aurora Densasilva",
-  nameES: "Aurora Densasilva",
-  type: "poi",
-  lore: "The impenetrable and twisted eternal forest.",
-  loreES: "El inexpugnable y retorcido bosque eterno.",
-  tags: ["forest"],
-  x: 2250, y: 1500,
-  showAtZoom: 1,
-},
-{
-  name: "Ourobolis",
-  nameES: "Ourobolis",
-  type: "poi",
-  lore: "The sea around it turned purple when the primordial snake was vanquished.",
-  loreES: "El mar a su alrededor se tiñó de púrpura con la caída de la serpiente primordial.",
-  tags: [],
-  x: 3330, y: 1120,
-  showAtZoom: 1,
-},
-{
-  name: "The Mist",
-  nameES: "La Bruma",
-  type: "poi",
-  lore: "The origin of the legend of the elves.",
-  loreES: "El origen de la leyenda de los elfos.",
-  tags: ["elves"],
-  x: 4500, y: 1800,
-  showAtZoom: 1,
-},
-{
-  name: "Ozan Tizuki",
-  nameES: "Ozan Tizuki",
-  type: "poi",
-  lore: "Once the seat of elven civilization. Now Panos sits here on his stolen throne, his memory shattered by elven magic, guarding the Pillar of Rebirth. The corpses of the Kagerisu family ride as his knights.",
-  loreES: "Antaño la sede de la civilización élfica. Ahora Panos se sienta aquí en su trono robado, su memoria destrozada por la magia élfica, guardando el Pilar del Renacimiento. Los cadáveres de la familia Kagerisu cabalgan como sus caballeros.",
-  tags: [],
-  x: 4800, y: 1450,
-  showAtZoom: 1,
-},
-{
-  name: "Ruins of Everaisle",
-  nameES: "Ruinas de Siemprasadizo",
-  type: "poi",
-  lore: "Ruins of what it seems it was a church, a cathedral, a townhall, or an academy",
-  loreES: "Ruinas de lo que parece ser que fue una iglesia, una catedral, un ayuntamiento o una academia.",
-  tags: [],
-  x: 1470, y: 2620,
-  showAtZoom: 1,
-},
-{
-  name: "Picarosh",
-  nameES: "Picarosh",
-  type: "poi",
-  lore: ".",
-  loreES: ".",
-  tags: ["aremedia"],
-  x: 1830, y: 1400,
-  showAtZoom: 1,
-},
-{
-  name: "Craikov",
-  nameES: "Craikov",
-  type: "poi",
-  lore: ".",
-  loreES: ".",
-  tags: ["aremedia"],
-  x: 1920, y: 1300,
-  showAtZoom: 1,
-},
-{
-  name: "Saint Erentsburgh",
-  nameES: "San Erensburgo",
-  type: "poi",
-  lore: ".",
-  loreES: ".",
-  tags: ["aremedia"],
-  x: 1720, y: 1200,
-  showAtZoom: 1,
-},
-{
-  name: "Tanishia",
-  nameES: "Tanishia",
-  type: "poi",
-  lore: ".",
-  loreES: ".",
-  tags: ["aremedia"],
-  x: 1620, y: 1320,
-  showAtZoom: 1,
-},
-{
-  name: "Gretscznievlycov",
-  nameES: "Gretscznievlycov",
-  type: "poi",
-  lore: ".",
-  loreES: ".",
-  tags: ["aremedia"],
-  x: 1640, y: 1385,
-  showAtZoom: 1,
-},
-  ];
-
-  // ══════════════════════════════════════════════════════════════
-
-  if (MAP_IMAGE_URL) {
-    document.getElementById('placeholder').remove();
-
-    const bounds = [[0, 0], [MAP_HEIGHT, MAP_WIDTH]];
-
-    const map = L.map('map', {
-      crs: L.CRS.Simple,
-      minZoom: -2,
-      maxZoom: 3,
-      zoomSnap: 0.5,
-      maxBounds: bounds,
-      maxBoundsViscosity: 1.0,
-    });
-
-    L.imageOverlay(MAP_IMAGE_URL, bounds).addTo(map);
-    map.setView([MAP_HEIGHT / 2, 0], -2);
-
-    // Icon: diamond dot, size varies by type
-    function makeIcon(type) {
-      const sizes = { region: 0, city: 10, town: 7, poi: 6 };
-      const colors = { region: 'transparent', city: '#01FFB3', town: '#01FFB3', poi: '#01FFB3' };
-      const s = sizes[type] || 8;
-      const c = colors[type] || '#01FFB3';
-      if (type === 'region') {
-        return L.divIcon({ className: '', html: '', iconSize: [0, 0], iconAnchor: [0, 0] });
-      }
-      return L.divIcon({
-        className: '',
-        html: `<div style="width:${s}px;height:${s}px;background:${c};border:1px solid #01FFB3;transform:rotate(45deg);"></div>`,
-        iconSize: [s, s],
-        iconAnchor: [s/2, s/2],
-      });
-    }
-
-    // Build popup HTML
-    function makePopup(p) {
-      const tags = (p.tags || []).map(t => `<span class="gall-popup-tag">${t}</span>`).join('');
-      return `<div class="gall-popup">
-        <div class="gall-popup-type">${p.type}</div>
-        <div class="gall-popup-name">${p.name}</div>
-        <div class="gall-popup-lore">${p.lore}</div>
-        ${tags ? `<div>${tags}</div>` : ''}
-      </div>`;
-    }
-
-    // Track all label elements for zoom toggling
-    const labelData = [];
-
-    PLACES.forEach(p => {
-      const latlng = [MAP_HEIGHT - p.y, p.x];
-
-      // Marker (invisible for regions)
-      const marker = L.marker(latlng, { icon: makeIcon(p.type) })
-        .bindPopup(makePopup(p), { maxWidth: 260, className: 'gall-popup-wrapper' });
-
-      if (p.type !== 'region') marker.addTo(map);
-
-      // Label as a divIcon placed slightly above the marker
-      const labelOffset = { region: 0, city: -30, town: -22, poi: -19 };
-      const offset = labelOffset[p.type] || -12;
-
-      const labelIcon = L.divIcon({
-        className: `map-label label-${p.type}`,
-        html: `<div class="map-label-inner">${p.name}</div>`,
-        iconSize: [200, 20],
-        iconAnchor: [100, offset * -1],
+      const map = L.map('map', {
+        crs: L.CRS.Simple,
+        minZoom: -2,
+        maxZoom: 3,
+        zoomSnap: 0.5,
+        maxBounds: bounds,
+        maxBoundsViscosity: 1.0,
       });
 
-      const labelMarker = L.marker(latlng, {
-        icon: labelIcon,
-        interactive: p.type === 'region',
-        zIndexOffset: -100,
-      }).addTo(map);
+      L.imageOverlay(MAP_IMAGE_URL, bounds).addTo(map);
+      map.setView([MAP_HEIGHT / 2, 0], -2);
 
-      if (p.type === 'region') {
-        labelMarker.bindPopup(makePopup(p), { maxWidth: 260 });
-      }
-
-      labelData.push({ marker, labelMarker, showAtZoom: p.showAtZoom ?? -2 });
-    });
-
-    // Show/hide labels based on current zoom
-    function updateLabels() {
-      const z = map.getZoom();
-      labelData.forEach(({ labelMarker, showAtZoom }) => {
-        const el = labelMarker.getElement();
-        if (!el) return;
-        const inner = el.querySelector('.map-label-inner');
-        if (!inner) return;
-        if (z >= showAtZoom) {
-          inner.classList.add('visible');
-        } else {
-          inner.classList.remove('visible');
+      function makeIcon(type) {
+        const sizes = { region: 0, city: 12, town: 9, poi: 6 };
+        const s = sizes[type] || 8;
+        if (type === 'region') {
+          return L.divIcon({ className: '', html: '', iconSize: [0, 0], iconAnchor: [0, 0] });
         }
-      });
-    }
+        const styles = {
+          city: `background:#01FFB3;border:2px solid #c9a84c;transform:rotate(45deg);`,
+          town: `background:#01FFB3;border:2px solid #fff;border-radius:50%;`,
+          poi:  `background:#fff;border-radius:50%;`,
+        };
+        const style = styles[type] || styles.poi;
+        return L.divIcon({
+          className: '',
+          html: `<div style="width:${s}px;height:${s}px;${style}box-shadow:0 0 3px 1px rgba(255,255,255,0.5);"></div>`,
+          iconSize: [s, s],
+          iconAnchor: [s / 2, s / 2],
+        });
+      }
 
-    map.on('zoomend', updateLabels);
-    map.on('load', updateLabels);
-    setTimeout(updateLabels, 100);
-  }
-</script>
+      function makePopup(p) {
+        const tags = (p.tags || []).map(t => `<span class="gall-popup-tag">${t}</span>`).join('');
+        return `<div class="gall-popup">
+          <div class="gall-popup-type">${p.type}</div>
+          <div class="gall-popup-name">${p.name}</div>
+          <div class="gall-popup-lore">${p.lore}</div>
+          ${tags ? `<div>${tags}</div>` : ''}
+        </div>`;
+      }
+
+      const labelData = [];
+
+      PLACES.forEach(p => {
+        const latlng = [MAP_HEIGHT - p.y, p.x];
+
+        const marker = L.marker(latlng, { icon: makeIcon(p.type) })
+          .bindPopup(makePopup(p), { maxWidth: 260, className: 'gall-popup-wrapper' });
+
+        if (p.type !== 'region') marker.addTo(map);
+
+        const labelOffset = { region: 0, city: -25, town: -22, poi: -19 };
+        const offset = labelOffset[p.type] || -12;
+
+        const labelMarker = L.marker(latlng, {
+          icon: L.divIcon({
+            className: `map-label label-${p.type}`,
+            html: `<div class="map-label-inner">${p.name}</div>`,
+            iconSize: [140, 40],
+            iconAnchor: [70, offset * -1],
+          }),
+          interactive: true,
+          zIndexOffset: 1000,
+        }).addTo(map);
+
+        labelMarker.bindPopup(makePopup(p), { maxWidth: 260 });
+
+        labelData.push({ labelMarker, showAtZoom: p.showAtZoom ?? -2 });
+      });
+
+      function updateLabels() {
+        const z = map.getZoom();
+        labelData.forEach(({ labelMarker, showAtZoom }) => {
+          const el = labelMarker.getElement();
+          if (!el) return;
+          const inner = el.querySelector('.map-label-inner');
+          if (!inner) return;
+          inner.classList.toggle('visible', z >= showAtZoom);
+        });
+      }
+
+      map.on('zoomend', updateLabels);
+      setTimeout(updateLabels, 100);
+    }
+  </script>
 </body>
+
 </html>
