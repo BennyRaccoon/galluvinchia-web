@@ -35,21 +35,29 @@
   <meta name="twitter:image" content="https://galluvinchia.com/share2.webp">
   <meta name="twitter:image:alt" content="Explore the map of the fantasy world of Galluvinchia">
 
-  <!-- LD-JSON: WebSite + WebApplication -->
+  <!-- LD-JSON: Organization + WebSite + WebApplication + Game -->
   <script type="application/ld+json">
   [
     {
       "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://thebuncult.com/#organization",
+      "name": "The Bun Cult",
+      "url": "https://thebuncult.com",
+      "sameAs": [
+        "https://www.patreon.com/c/thebuncult",
+        "https://discord.gg/94khqNMdzT"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://galluvinchia.com/#website",
       "name": "Galluvinchia",
       "url": "https://galluvinchia.com",
       "description": "Official website for the fantasy world of Galluvinchia and the Fables of Galluvinchia tabletop RPG.",
-      "inLanguage": "en",
-      "publisher": {
-        "@type": "Organization",
-        "name": "The Bun Cult",
-        "url": "https://thebuncult.com"
-      }
+      "inLanguage": ["en", "es"],
+      "publisher": { "@id": "https://thebuncult.com/#organization" }
     },
     {
       "@context": "https://schema.org",
@@ -59,24 +67,28 @@
       "description": "An interactive map of the known lands of Galluvinchia. Explore cities, towns, ruins, and points of interest from the Fables of Galluvinchia tabletop RPG.",
       "applicationCategory": "EntertainmentApplication",
       "operatingSystem": "Web",
-      "inLanguage": "en",
+      "inLanguage": ["en", "es"],
       "isAccessibleForFree": true,
       "image": "https://galluvinchia.com/share1.webp",
-      "about": {
-        "@type": "CreativeWork",
-        "name": "Fables of Galluvinchia",
-        "description": "A fantasy tabletop roleplaying game set in the world of Galluvinchia, featuring rich lore, original art, and interconnected stories.",
+      "publisher": { "@id": "https://thebuncult.com/#organization" },
+      "about": { "@id": "https://galluvinchia.com/#game" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "@id": "https://galluvinchia.com/#game",
+      "name": "Fables of Galluvinchia: The Jewel of Evergrowth",
+      "description": "A fantasy tabletop roleplaying game set in the world of Galluvinchia. Face ancient threats, uncover the truth behind the legends, and become part of a land where gods walk among mortals.",
+      "url": "https://www.drivethrurpg.com/en/product/561689/fables-of-galluvinchia-the-jewel-of-evergrowth",
+      "genre": "Tabletop Role-Playing Game",
+      "image": "https://galluvinchia.com/share1.webp",
+      "inLanguage": ["en", "es"],
+      "publisher": { "@id": "https://thebuncult.com/#organization" },
+      "offers": {
+        "@type": "Offer",
         "url": "https://www.drivethrurpg.com/en/product/561689/fables-of-galluvinchia-the-jewel-of-evergrowth",
-        "genre": "Tabletop Role-Playing Game",
-        "publisher": {
-          "@type": "Organization",
-          "name": "The Bun Cult",
-          "url": "https://thebuncult.com",
-          "sameAs": [
-            "https://www.patreon.com/c/thebuncult",
-            "https://discord.gg/94khqNMdzT"
-          ]
-        }
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD"
       }
     }
   ]
@@ -806,12 +818,13 @@
     </div>
   </main>
 
-  <section>
+  <section aria-label="About Fables of Galluvinchia">
     <div class="kickstarterContainer">
       <div class="kickstarterCard">
         <img class="kickstarterImage"
           src="https://i.kickstarter.com/assets/051/949/180/175a80e4f27ff3a698d6d8c0a812acfd_original.png?fit=scale-down&origin=ugc&q=100&v=1765671243&width=680&sig=dh6zaDLoY9J1e56CLR3aR73KxGFh418Csl6FSJmA6z8%3D"
-          alt="Feature image 1" />
+          alt="Fantasy artwork from Fables of Galluvinchia — a world where gods walk among mortals"
+          loading="lazy" />
         <h3 class="kickstarterTitle">The setting where gods walk among mortals</h3>
         <div class="kickstarterText">
           A new land for you to discover, with big cities, custom races and backgrounds. Even additional heroic
@@ -825,7 +838,8 @@
       <div class="kickstarterCard">
         <img class="kickstarterImage"
           src="https://i.kickstarter.com/assets/051/949/181/0dd8826052e19d4c2e78531f30210259_original.png?fit=scale-down&origin=ugc&q=100&v=1765671279&width=680&sig=uH4T%2BfPtNFexvlq3dX0GuLqwaVI3DsGdxuRMcEA2P0c%3D"
-          alt="Feature image 2" />
+          alt="The Jewel of Evergrowth, a hamlet growing beneath the First Tree — starter adventure in Fables of Galluvinchia"
+          loading="lazy" />
         <h3 class="kickstarterTitle">A complete starter adventure</h3>
         <div class="kickstarterText">
           The Jewel of Evergrowth, sitting on the island with the same name, is a hamlet where people can live free
@@ -842,7 +856,8 @@
       <div class="kickstarterCard">
         <img class="kickstarterImage"
           src="https://i.kickstarter.com/assets/051/949/198/f911c35e0f1fbd6a988facadea2833bb_original.png?fit=scale-down&origin=ugc&q=100&v=1765671410&width=680&sig=TDJBPuf3k7P83IFhXF%2FC48iOa8eQ4qw%2BzFJ74MFeCqM%3D"
-          alt="Feature image 3" />
+          alt="Alejandro and Jacqueline, the creators of The Bun Cult and the world of Galluvinchia"
+          loading="lazy" />
         <h3 class="kickstarterTitle">Who is behind Galluvinchia?</h3>
         <div class="kickstarterText">
           The Bun Cult is a small independent creative studio founded to develop the world of Galluvinchia.
