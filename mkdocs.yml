@@ -1,0 +1,75 @@
+site_name: Galluvinchia Wiki
+site_url: https://galluvinchia.com/wiki/
+site_description: The living compendium of the world of Galluvinchia — gods, lands, characters, and tales.
+site_author: The Bun Cult
+docs_dir: wiki-docs
+site_dir: wiki-site
+copyright: Copyright &copy; The Bun Cult
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.tooltips
+  icon:
+    logo: material/book-open-page-variant
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: es
+          name: Español
+          build: true
+          nav_translations:
+            Home: Inicio
+            Gods: Dioses
+            World: Mundo
+            Overview: Vista general
+            Cities: Ciudades
+            Villages: Aldeas
+            Points of Interest: Puntos de Interés
+            Characters: Personajes
+            Tales: Relatos
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Gods: gods/index.md
+  - World:
+      - Overview: regions/index.md
+      - Cities: regions/cities/index.md
+      - Villages: regions/villages/index.md
+      - Points of Interest: regions/points-of-interest/index.md
+  - Characters: characters/index.md
+  - Tales: tales/index.md

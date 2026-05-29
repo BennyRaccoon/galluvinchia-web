@@ -1,0 +1,52 @@
+name: Deploy Wiki
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: pip
+          cache-dependency-path: requirements-wiki.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-wiki.txt
+
+      - name: Build wiki
+        run: mkdocs build
+
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p _deploy
+          # Copy all root-level site assets (HTML, images, SVGs, etc.)
+          find . -maxdepth 1 -type f \
+            ! -name 'mkdocs.yml' \
+            ! -name 'requirements-wiki.txt' \
+            ! -name '.gitignore' \
+            ! -name 'CNAME' \
+            ! -name '*.md' \
+            -exec cp {} _deploy/ \;
+          # Place the built wiki at /wiki/
+          cp -r wiki-site _deploy/wiki
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _deploy
+          publish_branch: gh-pages
+          cname: galluvinchia.com
