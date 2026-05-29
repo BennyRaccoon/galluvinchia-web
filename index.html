@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galluvinchia: Interactive Map</title>
+  <meta name="description"
+    content="Explore the known lands of Galluvinchia: an interactive map of the fantasy world behind the Fables of Galluvinchia tabletop RPG. Become a legend!">
+  <meta name="keywords"
+    content="Galluvinchia, interactive map, fantasy world, tabletop RPG, TTRPG, Fables of Galluvinchia, The Bun Cult, fantasy map, worldbuilding">
+  <meta name="author" content="The Bun Cult">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#c9a84c">
+  <link rel="canonical" href="https://galluvinchia.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Galluvinchia">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Galluvinchia: Map of the legend">
+  <meta property="og:description"
+    content="Explore the known lands of Galluvinchia: the land where the gods walk among mortals.">
+  <meta property="og:url" content="https://galluvinchia.com">
+  <meta property="og:image" content="https://galluvinchia.com/share1.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Explore the map of the fantasy world of Galluvinchia">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Galluvinchia: Map of the legend">
+  <meta name="twitter:description"
+    content="Explore the known lands of Galluvinchia: the land where the gods walk among mortals.">
+  <meta name="twitter:image" content="https://galluvinchia.com/share2.webp">
+  <meta name="twitter:image:alt" content="Explore the map of the fantasy world of Galluvinchia">
+
+  <!-- LD-JSON: Organization + WebSite + WebApplication + Game -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://thebuncult.com/#organization",
+      "name": "The Bun Cult",
+      "url": "https://thebuncult.com",
+      "sameAs": [
+        "https://www.patreon.com/c/thebuncult",
+        "https://discord.gg/94khqNMdzT"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://galluvinchia.com/#website",
+      "name": "Galluvinchia",
+      "url": "https://galluvinchia.com",
+      "description": "Official website for the fantasy world of Galluvinchia and the Fables of Galluvinchia tabletop RPG.",
+      "inLanguage": ["en", "es"],
+      "publisher": { "@id": "https://thebuncult.com/#organization" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Galluvinchia — Interactive Map",
+      "url": "https://galluvinchia.com",
+      "description": "An interactive map of the known lands of Galluvinchia. Explore cities, towns, ruins, and points of interest from the Fables of Galluvinchia tabletop RPG.",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Web",
+      "inLanguage": ["en", "es"],
+      "isAccessibleForFree": true,
+      "image": "https://galluvinchia.com/share1.webp",
+      "publisher": { "@id": "https://thebuncult.com/#organization" },
+      "about": { "@id": "https://galluvinchia.com/#game" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "@id": "https://galluvinchia.com/#game",
+      "name": "Fables of Galluvinchia: The Jewel of Evergrowth",
+      "description": "A fantasy tabletop roleplaying game set in the world of Galluvinchia. Face ancient threats, uncover the truth behind the legends, and become part of a land where gods walk among mortals.",
+      "url": "https://www.drivethrurpg.com/en/product/561689/fables-of-galluvinchia-the-jewel-of-evergrowth",
+      "genre": "Tabletop Role-Playing Game",
+      "image": "https://galluvinchia.com/share1.webp",
+      "inLanguage": ["en", "es"],
+      "publisher": { "@id": "https://thebuncult.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.drivethrurpg.com/en/product/561689/fables-of-galluvinchia-the-jewel-of-evergrowth",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+  </script>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold: #F3D36F;
+      --gold-dark: #8a6b28;
+      --ink: #0d0b08;
+      --parchment-dark: #1a1510;
+      --parchment-mid: #241e16;
+      --stone: #2e2720;
+      --text-primary: #e8dcc8;
+      --text-muted: #b8a888;
+      --border: rgba(201, 168, 76, 0.25);
+      --border-strong: rgba(201, 168, 76, 0.6);
+    }
+
+    html,
+    body {
+      height: 100%;
+      background: var(--ink);
+      color: var(--text-primary);
+      font-family: 'Almendra', Georgia, serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 2rem 2rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(13, 11, 8, 1) 0%, rgba(26, 21, 16, 0.6) 100%);
+    }
+
+    .header-title-img {
+      max-width: min(560px, 90vw);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 0.3s forwards;
+    }
+
+    /* ── MAP SECTION ── */
+    .map-section {
+      position: relative;
+      z-index: 5;
+      flex: 1;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .map-frame {
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid var(--border-strong);
+      background: var(--parchment-mid);
+      position: relative;
+      opacity: 0;
+      animation: fadeIn 1.2s ease 1s forwards;
+    }
+
+    .map-frame::before,
+    .map-frame::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-color: var(--gold);
+      border-style: solid;
+      z-index: 2;
+    }
+
+    .map-frame::before {
+      top: -1px;
+      left: -1px;
+      border-width: 2px 0 0 2px;
+    }
+
+    .map-frame::after {
+      bottom: -1px;
+      right: -1px;
+      border-width: 0 2px 2px 0;
+    }
+
+    .map-frame-inner {
+      position: relative;
+    }
+
+    .map-frame-inner::before,
+    .map-frame-inner::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-color: var(--gold);
+      border-style: solid;
+      z-index: 2;
+    }
+
+    .map-frame-inner::before {
+      top: -1px;
+      right: -1px;
+      border-width: 2px 2px 0 0;
+    }
+
+    .map-frame-inner::after {
+      bottom: -1px;
+      left: -1px;
+      border-width: 0 0 2px 2px;
+    }
+
+    #map {
+      width: 100%;
+      height: clamp(380px, 60vh, 680px);
+      display: block;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: clamp(380px, 60vh, 680px);
+      background: var(--parchment-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .map-placeholder svg {
+      opacity: 0.3;
+    }
+
+    .map-placeholder p {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .map-placeholder small {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      opacity: 0.6;
+      max-width: 280px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .map-caption {
+      padding: 0.8rem 1.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-bar {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      min-height: 100px;
+    }
+
+    .footer-bar__item {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: flex 0.45s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+      padding: 1.5rem 1rem;
+      z-index: 0;
+    }
+
+    .footer-bar__item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: -18px;
+      background: transparent;
+      transform: skewX(-5deg);
+      transform-origin: bottom left;
+      transition: background 0.35s ease;
+      z-index: -1;
+    }
+
+    .footer-bar__item:hover,
+    .footer-bar__item:focus {
+      flex: 2.4;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .footer-bar__item:hover::before,
+    .footer-bar__item:focus::before {
+      background: var(--gold);
+    }
+
+    .footer-bar__icon,
+    .footer-bar__name,
+    .footer-bar__cta,
+    .footer-bar__arrow {
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-bar__icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .footer-bar__item:hover .footer-bar__icon {
+      transform: scale(1.15);
+    }
+
+    .footer-bar__name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .footer-bar__item:hover .footer-bar__name {
+      opacity: 0.9;
+    }
+
+    .footer-bar__cta {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 0;
+      opacity: 0;
+      transition: max-width 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease 0.1s;
+    }
+
+    .footer-bar__item:hover .footer-bar__cta {
+      max-width: 260px;
+      opacity: 1;
+    }
+
+    .footer-bar__arrow {
+      position: absolute;
+      bottom: 1.4rem;
+      right: 1.2rem;
+      width: 18px;
+      height: 18px;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.3s ease 0.15s, transform 0.35s ease 0.15s;
+    }
+
+    .footer-bar__item:hover .footer-bar__arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .footer-copy {
+      text-align: center;
+      padding: 0.9rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-copy a {
+      color: var(--gold-dark);
+      text-decoration: none;
+    }
+
+    .footer-copy a:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 0;
+      }
+
+      .marquee-bar {
+        min-height: 1.8rem;
+      }
+
+      .map-section {
+        padding: 1rem;
+      }
+
+      .footer-bar {
+        flex-direction: column;
+      }
+
+      .footer-bar__item {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        min-height: 64px;
+        padding: 1rem 1.25rem;
+      }
+
+      .footer-bar__item::before {
+        right: 0;
+        transform: none;
+      }
+
+      .footer-bar__item:hover,
+      .footer-bar__item:focus {
+        flex: unset;
+      }
+
+      .footer-bar__cta {
+        max-width: 200px;
+        opacity: 1;
+      }
+
+      .footer-bar__item:hover .footer-bar__cta {
+        max-width: 200px;
+      }
+
+      .footer-bar__name {
+        display: none;
+      }
+
+      .footer-bar__arrow {
+        position: static;
+        opacity: 1;
+        transform: none;
+        margin-left: auto;
+      }
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-bar {
+      position: relative;
+      z-index: 10;
+      overflow: hidden;
+      background: var(--gold);
+      border-bottom: 1px solid var(--border-strong);
+      padding: 0.45rem 0;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+      min-height: 1.8rem;
+    }
+
+    .marquee-bar:hover {
+      filter: brightness(1.12);
+    }
+
+    .marquee-bar::before,
+    .marquee-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .marquee-bar::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    .marquee-bar::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--gold), transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    .marquee-content {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
+      padding-right: 2rem;
+    }
+
+    .marquee-diamond {
+      color: var(--ink);
+      opacity: 0.6;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* ── LEAFLET OVERRIDES ── */
+    .leaflet-container {
+      background: #C3B7AE !important;
+    }
+
+    .leaflet-popup-content-wrapper {
+      background: var(--parchment-mid);
+      border: 1px solid var(--border-strong);
+      border-radius: 0;
+      color: var(--text-primary);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .leaflet-popup-tip {
+      background: var(--parchment-mid);
+    }
+
+    .leaflet-popup-content {
+      margin: 5px 10px;
+      line-height: 1.3;
+    }
+
+    .leaflet-popup-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .leaflet-popup-content p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .leaflet-bar a {
+      background: var(--parchment-mid) !important;
+      color: var(--gold) !important;
+      border-color: var(--border-strong) !important;
+    }
+
+    .leaflet-bar a:hover {
+      background: var(--stone) !important;
+    }
+
+    .leaflet-attribution-flag {
+      display: none !important;
+    }
+
+    .lang-toggle {
+      background: var(--parchment-mid) !important;
+      border: 1px solid var(--border-strong) !important;
+      border-radius: 4px;
+      padding: 5px 8px;
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      transition: background 0.2s ease;
+      display: block;
+    }
+
+    .lang-toggle:hover {
+      background: var(--stone) !important;
+    }
+
+    .leaflet-control-attribution {
+      background: rgba(13, 11, 8, 0.8) !important;
+      color: var(--text-muted) !important;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── MAP LABELS ── */
+    .map-label {
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    .map-label-inner {
+      font-family: 'Almendra', Georgia, serif;
+      font-weight: 700;
+      color: #0d0b08;
+      text-align: center;
+      padding: 2px 6px;
+      line-height: 1.3;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .map-label-inner.visible {
+      opacity: 1;
+    }
+
+    .label-region .map-label-inner {
+      font-size: 14px;
+      letter-spacing: -.05em;
+      background: none;
+      text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    }
+
+    .label-city .map-label-inner {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      background: white;
+      border-bottom: 3px solid #01FFB3;
+    }
+
+    .label-town .map-label-inner {
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      background: white;
+      border-bottom: 3px solid #01FFB3;
+    }
+
+    .label-poi .map-label-inner {
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      background: white;
+      border-radius: 6px;
+    }
+
+    /* ── MAP POPUPS ── */
+    .gall-popup {
+      min-width: 180px;
+      max-width: 240px;
+    }
+
+    .gall-popup-type {
+      display: none;
+    }
+
+    .gall-popup-name {
+      font-family: 'Cinzel', serif;
+      font-weight: bold;
+      color: #c9a84c;
+    }
+
+    .gall-popup-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: #8a6b28;
+      margin-right: 4px;
+      margin-top: 4px;
+    }
+
+    .kickstarterContainer {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .kickstarterCard {
+      flex: 0 0 33.3%;
+      padding: 16px;
+    }
+
+    .kickstarterImage {
+      width: 100%;
+      height: auto;
+      display: block;
+      background-color: var(--gold);
+    }
+
+    .kickstarterTitle {
+      margin: 12px 0 8px;
+      font-size: 18px;
+    }
+
+    .kickstarterText {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .kickstarterCard {
+        flex: 0 0 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img class="header-title-img" src="title.png" alt="Galluvinchia: Interactive Map">
+  </header>
+
+  <a class="marquee-bar" href="https://thebuncult.com" target="_blank" rel="noopener noreferrer"
+    aria-label="Visit The Bun Cult: become a legend, get the book and join its adventures">
+    <div class="marquee-track">
+      <span class="marquee-content">
+        Become a legend &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Get the book &nbsp;<span
+          class="marquee-diamond">◆</span>&nbsp; Join our adventures &nbsp;<span class="marquee-diamond">◆</span>&nbsp;
+        Become a legend &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Get the book &nbsp;<span
+          class="marquee-diamond">◆</span>&nbsp; Join our adventures &nbsp;<span class="marquee-diamond">◆</span>&nbsp;
+        Become a legend &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Get the book &nbsp;<span
+          class="marquee-diamond">◆</span>&nbsp; Join our adventures &nbsp;<span class="marquee-diamond">◆</span>&nbsp;
+        Become a legend &nbsp;<span class="marquee-diamond">◆</span>&nbsp; Get the book &nbsp;<span
+          class="marquee-diamond">◆</span>&nbsp; Join our adventures &nbsp;<span class="marquee-diamond">◆</span>&nbsp;
+      </span>
+    </div>
+  </a>
+
+  <main class="map-section" aria-label="Interactive map of Galluvinchia">
+    <div class="map-frame">
+      <div class="map-frame-inner">
+        <div id="map" role="application" aria-label="Map of Galluvinchia — scroll to zoom, click markers to explore">
+          <div class="map-placeholder" id="placeholder">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+              <line x1="9" y1="3" x2="9" y2="18" />
+              <line x1="15" y1="6" x2="15" y2="21" />
+            </svg>
+            <p>Map of Galluvinchia</p>
+            <small>Replace MAP_IMAGE_URL in the script below with the path to your map image</small>
+          </div>
+        </div>
+      </div>
+      <div class="map-caption">
+        <span data-i18n="caption-title">Galluvinchia</span>
+        <span data-i18n="caption-hint">Scroll to zoom &bull; Click to explore</span>
+      </div>
+    </div>
+  </main>
+
+  <section aria-label="About Fables of Galluvinchia">
+    <div class="kickstarterContainer">
+      <div class="kickstarterCard">
+        <img class="kickstarterImage"
+          src="https://i.kickstarter.com/assets/051/949/180/175a80e4f27ff3a698d6d8c0a812acfd_original.png?fit=scale-down&origin=ugc&q=100&v=1765671243&width=680&sig=dh6zaDLoY9J1e56CLR3aR73KxGFh418Csl6FSJmA6z8%3D"
+          alt="Fantasy artwork from Fables of Galluvinchia — a world where gods walk among mortals" loading="lazy" />
+        <h3 class="kickstarterTitle">The setting where gods walk among mortals</h3>
+        <div class="kickstarterText">
+          A new land for you to discover, with big cities, custom races and backgrounds. Even additional heroic
+          backgrounds, which immerses your character in the adventure.
+          <br><br>
+          Deep and twisted story, where uncovering the past can support building a safe future for the people of
+          Galluvinchia.
+        </div>
+      </div>
+
+      <div class="kickstarterCard">
+        <img class="kickstarterImage"
+          src="https://i.kickstarter.com/assets/051/949/181/0dd8826052e19d4c2e78531f30210259_original.png?fit=scale-down&origin=ugc&q=100&v=1765671279&width=680&sig=uH4T%2BfPtNFexvlq3dX0GuLqwaVI3DsGdxuRMcEA2P0c%3D"
+          alt="The Jewel of Evergrowth, a hamlet growing beneath the First Tree — starter adventure in Fables of Galluvinchia"
+          loading="lazy" />
+        <h3 class="kickstarterTitle">A complete starter adventure</h3>
+        <div class="kickstarterText">
+          The Jewel of Evergrowth, sitting on the island with the same name, is a hamlet where people can live free
+          under the shadow of the First Tree, and recently the market is abundant as are the new families.
+          Home of the goddess of beauty and nature, Leeve, the recently opened silver mine is pulling many visitors
+          ashore.
+          <br>
+          <br>Unfortunately, there is another tale to tell. One where the tides of uncertainty cover the seas and the
+          drums of war echo across the forests.
+          Are you ready to uncover the truth behind the legends?
+        </div>
+      </div>
+
+      <div class="kickstarterCard">
+        <img class="kickstarterImage"
+          src="https://i.kickstarter.com/assets/051/949/198/f911c35e0f1fbd6a988facadea2833bb_original.png?fit=scale-down&origin=ugc&q=100&v=1765671410&width=680&sig=TDJBPuf3k7P83IFhXF%2FC48iOa8eQ4qw%2BzFJ74MFeCqM%3D"
+          alt="Alejandro and Jacqueline, the creators of The Bun Cult and the world of Galluvinchia" loading="lazy" />
+        <h3 class="kickstarterTitle">Who is behind Galluvinchia?</h3>
+        <div class="kickstarterText">
+          The Bun Cult is a small independent creative studio founded to develop the world of Galluvinchia.
+          <br><br>
+          The creative mind behind Galluvinchia is Alejandro, writer, worldbuilder and storyteller, while the
+          administrative part is handled by his wife, Jacqueline, his partner and muse.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer aria-label="Site links">
+    <nav class="footer-bar" aria-label="External links">
+
+      <!-- The Wiki -->
+      <a class="footer-bar__item" href="/wiki" target="_blank" rel="noopener noreferrer" aria-label="The Roleplay">
+        <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+          <path
+            d="M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z" />
+        </svg>
+        <span class="footer-bar__name" data-i18n="nav-roleplay-name">The Wiki</span>
+        <span class="footer-bar__cta" data-i18n="nav-roleplay-cta">Get to know the gods</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+          viewBox="0 0 24 24"><!-- Icon from Lucide by Lucide Contributors - https://github.com/lucide-icons/lucide/blob/main/LICENSE -->
+          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M2 6h4m-4 4h4m-4 4h4m-4 4h4" />
+            <rect width="16" height="20" x="4" y="2" rx="2" />
+            <path d="M15 2v20m0-15h5m-5 5h5m-5 5h5" />
+          </g>
+        </svg>
+      </a>
+
+      <!-- The Roleplay -->
+      <a class="footer-bar__item"
+        href="https://www.drivethrurpg.com/en/product/561689/fables-of-galluvinchia-the-jewel-of-evergrowth?affiliate_id=5084369"
+        target="_blank" rel="noopener noreferrer" aria-label="The Roleplay">
+        <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+          <path
+            d="M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z" />
+        </svg>
+        <span class="footer-bar__name" data-i18n="nav-roleplay-name">The Digital book</span>
+        <span class="footer-bar__cta" data-i18n="nav-roleplay-cta">Become part of the story</span>
+        <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <!-- Shop -->
+      <a class="footer-bar__item" href="https://thebuncult.com" target="_blank" rel="noopener noreferrer"
+        aria-label="Shop">
+        <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+          <circle cx="8" cy="21" r="1" />
+          <circle cx="19" cy="21" r="1" />
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+        </svg>
+        <span class="footer-bar__name" data-i18n="nav-shop-name">Shop</span>
+        <span class="footer-bar__cta" data-i18n="nav-shop-cta">Hardcover books &amp; merch</span>
+        <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+
+      <!-- Discord -->
+      <a class="footer-bar__item" href="https://discord.gg/94khqNMdzT" target="_blank" rel="noopener noreferrer"
+        aria-label="Join on Discord">
+        <svg class="footer-bar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+          stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+          <path d="M18 21a8 8 0 0 0-16 0" />
+          <circle cx="10" cy="8" r="5" />
+          <path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3" />
+        </svg>
+        <span class="footer-bar__name" data-i18n="nav-discord-name">Discord</span>
+        <span class="footer-bar__cta" data-i18n="nav-discord-cta">Join the guild</span>
+        <svg class="footer-bar__arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </a>
+
+    </nav>
+    <div class="footer-copy">
+      &copy; <span id="year"></span> Galluvinchia &mdash;
+      <a href="https://thebuncult.com" target="_blank" rel="noopener">thebuncult.com</a>
+    </div>
+  </footer>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const MAP_IMAGE_URL = "map-discovered.png";
+    const MAP_WIDTH = 5518;
+    const MAP_HEIGHT = 3897;
+
+    const PLACES = [
+      // ── REGIONS (showAtZoom: -2) ──────────────────────────────────
+      {
+        name: "East of Galluvinchia", nameES: "Este de Galluvinchia", type: "region",
+        lore: "Mostly unknown lands. The arid Breath of Sand desert stretches endlessly, hiding ancient ruins and the last oasis kept alive by the Horangi family.",
+        loreES: "Tierras en su mayoría desconocidas. El árido desierto del Suspiro de Arena se extiende sin fin, ocultando ruinas antiguas y el último oasis mantenido vivo por la familia Horangi.",
+        tags: ["region"], x: 3500, y: 2000, showAtZoom: -2,
+      },
+      {
+        name: "West of Galluvinchia", nameES: "Oeste de Galluvinchia", type: "region",
+        lore: "Dense forests and coastlines. Home of most of the population, living under the safety of Pax Aremedia.",
+        loreES: "Densas selvas y costas. Hogar de casi toda la civilización, viviendo bajo la seguridad de Pax Aremedia.",
+        tags: ["region"], x: 1000, y: 2000, showAtZoom: -2,
+      },
+      {
+        name: "North of Galluvinchia", nameES: "Norte de Galluvinchia", type: "region",
+        lore: "Cold mountains and giant territories. Ice Peak looms over the lands.",
+        loreES: "Montañas frías y territorios de gigantes. Puntahelada se cierne sobre estas tierras.",
+        tags: ["region"], x: 1400, y: 750, showAtZoom: -2,
+      },
+
+      // ── CITIES (showAtZoom: -1) ───────────────────────────────────
+      {
+        name: "The Lord of Carbohyrr", nameES: "El Señor de Carbohyrr", type: "city",
+        lore: "A mountain fortress famous for its blacksmiths and hot springs.",
+        loreES: "Una fortaleza montañosa famosa por sus herreros y aguas termales.",
+        tags: ["moroes"], x: 1970, y: 2100, showAtZoom: -1,
+      },
+      {
+        name: "An'Ramoda", nameES: "An'Ramoda", type: "city",
+        lore: "Walled city in the north, home of the mightiest army in Galluvinchia lead by the strong will of Aremedia.",
+        loreES: "Ciudad amurallada del norte con el ejército más poderoso de Galluvinchia bajo el poder de Aremedia.",
+        tags: ["aremedia"], x: 1770, y: 1300, showAtZoom: -1,
+      },
+      {
+        name: "Lady of Marmaros", nameES: "La Dama de Mármaros", type: "city",
+        lore: "City of mages and arcane power, home to the Academy of Magic Wonders.",
+        loreES: "Ciudad de magos y poder arcano, hogar de la Academia de las Magias Maravillosas.",
+        tags: ["academy"], x: 1670, y: 1720, showAtZoom: -1,
+      },
+      {
+        name: "Lorda Gorda", nameES: "Lorda Gorda", type: "city",
+        lore: "Island fortress mainly inhabited by felinfolk, famous for the pink crystals that light up the city.",
+        loreES: "Isla fortaleza habitada principalmente por felicios, popular por los interesantes cristales rosas que iluminan la ciudad.",
+        tags: [], x: 2270, y: 2700, showAtZoom: -1,
+      },
+
+      // ── TOWNS (showAtZoom: 0) ─────────────────────────────────────
+      {
+        name: "Jewel of Evergrowth", nameES: "La Joya Siemprecreciente", type: "town",
+        lore: "A hamlet growing under the shade of the First Tree with the help of Leeve.",
+        loreES: "Un poblado que crece al rededor de las raíces del Primer Árbol con la ayuda de Leeve.",
+        tags: ["tJoE", "leeve"], x: 745, y: 1620, showAtZoom: 0,
+      },
+      {
+        name: "An'Zulejosh", nameES: "An'Zulejosh", type: "town",
+        lore: "Main coastal port at the north of Galluvinchia. A city of trade and mosaic tiles, connected to the Quick Maria's last voyage.",
+        loreES: "Principal puerto costero al norte de Galluvinchia. Ciudad de negocios y azulejos para mosaicos, conectada al último viaje de la Furiosa María.",
+        tags: ["port"], x: 1370, y: 1600, showAtZoom: 0,
+      },
+      {
+        name: "Doormi", nameES: "Doormi", type: "town",
+        lore: "City blessed by Morphia and home to the Academy of Magic Waves and Dreams.",
+        loreES: "Ciudad bendecida por Morphia y Hogar de la Academia de las Ondas Etéreas y los Sueños.",
+        tags: ["morphia", "academy"], x: 1270, y: 1950, showAtZoom: 0,
+      },
+      {
+        name: "Lakobordo", nameES: "Lakobordo", type: "town",
+        lore: "City hub of commerce between the different cities a the center of Galluvinchia.",
+        loreES: "Eje del comercio terrestre entre las diferentes ciudades en el centro de Galluvinchia.",
+        tags: ["hub"], x: 1570, y: 2250, showAtZoom: 0,
+      },
+      {
+        name: "Montebordo", nameES: "Montebordo", type: "town",
+        lore: "Small hamlet full of pagans, quite remote nowadays.",
+        loreES: "Pequeño pueblo lleno de paganos, casi abandonado a dia de hoy.",
+        tags: [], x: 2250, y: 2030, showAtZoom: 0,
+      },
+      {
+        name: "Rivaborda", nameES: "Rivaborda", type: "town",
+        lore: "A town of woodworkers and cheese makers, the perfect place to hide for a while.",
+        loreES: "Una ciudad llena de leñadores y queseros, el lugar perfecto para pasar una temporada escondido.",
+        tags: [], x: 2650, y: 1530, showAtZoom: 0,
+      },
+      {
+        name: "Pharoes", nameES: "Pharoes", type: "town",
+        lore: "The port-city of the south, with as many fishermen as followers of Brenadette.",
+        loreES: "El puerto del sur, famoso por su gran faro, sus pescadores y la ferviente fe de los seguidores de Brenadette.",
+        tags: ["port"], x: 900, y: 2450, showAtZoom: 0,
+      },
+
+      // ── POINTS OF INTEREST (showAtZoom: 1) ───────────────────────
+      {
+        name: "Hunter's Den", nameES: "Guarida del Cazador", type: "poi",
+        lore: "Base of Huntmaster Rachel Tempiras, one hour from the Jewel. She recently lost her brother to the spider caves nearby.",
+        loreES: "Base de la Maestra de Caza Rachel Tempiras, a una hora de la Joya. Recientemente perdió a su hermano en las cuevas de arañas cercanas.",
+        tags: ["tJoE"], x: 825, y: 1700, showAtZoom: 1,
+      },
+      {
+        name: "Feles Miles' House", nameES: "Casa de Feles Miles", type: "poi",
+        lore: "Hidden deep in the forest, a huge library smelling of incense and a retired adventurer.",
+        loreES: "Escondida en lo profundo del bosque, una enorme biblioteca con olor a incienso y un aventurero retirado.",
+        tags: ["tJoE"], x: 665, y: 1600, showAtZoom: 1,
+      },
+      {
+        name: "Silver Mines", nameES: "Minas de Plata", type: "poi",
+        lore: "Recently opened and bringing growth to the island, there is something stirring in its walls.",
+        loreES: "Abiertas recientemente y haciendo crecer a la isla, algo mas habita sus paredes.",
+        tags: ["tJoE"], x: 690, y: 1475, showAtZoom: 1,
+      },
+      {
+        name: "Breath of Sand", nameES: "Suspiro de Arena", type: "poi",
+        lore: "A small community living in the last remains of green in this sea of sand.",
+        loreES: "Una pequeña comunidad vive en los últimos resquicios de naturaleza en este oceano de arena.",
+        tags: [], x: 2750, y: 2100, showAtZoom: 1,
+      },
+      {
+        name: "Ice Peak", nameES: "Puntahelada", type: "poi",
+        lore: "Home of winter. House of giants.",
+        loreES: "El hogar del Invierno, la casa de los gigantes.",
+        tags: [], x: 1550, y: 1000, showAtZoom: 1,
+      },
+      {
+        name: "Aurora Densasilva", nameES: "Aurora Densasilva", type: "poi",
+        lore: "The impenetrable and twisted eternal forest.",
+        loreES: "El inexpugnable y retorcido bosque eterno.",
+        tags: [], x: 2250, y: 1500, showAtZoom: 1,
+      },
+      {
+        name: "Ourobolis", nameES: "Ourobolis", type: "poi",
+        lore: "The sea around it turned purple when the primordial snake was vanquished.",
+        loreES: "El mar a su alrededor se tiñó de púrpura con la caída de la serpiente primordial.",
+        tags: [], x: 3330, y: 1120, showAtZoom: 1,
+      },
+      {
+        name: "The Mist", nameES: "La Bruma", type: "poi",
+        lore: "The origin of the legend of the elves.",
+        loreES: "El origen de la leyenda de los elfos.",
+        tags: ["elves"], x: 4500, y: 1800, showAtZoom: 1,
+      },
+      {
+        name: "Ozan Tizuki", nameES: "Ozan Tizuki", type: "poi",
+        lore: "Once the seat of elven civilization.",
+        loreES: "Antaño la sede de la civilización élfica.",
+        tags: [], x: 4800, y: 1450, showAtZoom: 1,
+      },
+      {
+        name: "Ruins of Everaisle", nameES: "Ruinas de Siemprasadizo", type: "poi",
+        lore: "Ruins of what it seems it was a church, a cathedral, a townhall, or an academy",
+        loreES: "Ruinas de lo que parece ser que fue una iglesia, una catedral, un ayuntamiento o una academia.",
+        tags: [], x: 1470, y: 2620, showAtZoom: 1,
+      },
+      {
+        name: "Picarosh", nameES: "Picarosh", type: "poi",
+        lore: "The town of gastronomy, with the tastiest monthly contests.",
+        loreES: "El pueblo de la gastronomía con los concursos de cocina mas sabrosos de Galluvinchia.",
+        tags: ["aremedia"], x: 1830, y: 1400, showAtZoom: 1,
+      },
+      {
+        name: "Craikov", nameES: "Craikov", type: "poi",
+        lore: "The port of An´Ramoda.",
+        loreES: "El puerto de An´Ramoda.",
+        tags: ["aremedia"], x: 1920, y: 1300, showAtZoom: 1,
+      },
+      {
+        name: "Saint Erensburgh", nameES: "San Erensburgo", type: "poi",
+        lore: "Popular town for its underground gardens.",
+        loreES: "Sus jardines subterráneos son un espectáculo único.",
+        tags: ["aremedia"], x: 1720, y: 1200, showAtZoom: 1,
+      },
+      {
+        name: "Tanishia", nameES: "Tanishia", type: "poi",
+        lore: "The best wine comes from Tanishia.",
+        loreES: "No hay mejor vino que el de Tanishia.",
+        tags: ["aremedia"], x: 1620, y: 1320, showAtZoom: 1,
+      },
+      {
+        name: "Gretscznievlycov", nameES: "Gretscznievlycov", type: "poi",
+        lore: "Windmills and golden hills.", loreES: "Molinos y una planicie dorada.",
+        tags: ["aremedia"], x: 1640, y: 1385, showAtZoom: 1,
+      },
+    ];
+
+    if (MAP_IMAGE_URL) {
+      document.getElementById('placeholder').remove();
+
+      const bounds = [[0, 0], [MAP_HEIGHT, MAP_WIDTH]];
+
+      const map = L.map('map', {
+        crs: L.CRS.Simple,
+        minZoom: -2,
+        maxZoom: 3,
+        zoomSnap: 0.5,
+        maxBounds: bounds,
+        maxBoundsViscosity: 1.0,
+      });
+
+      L.imageOverlay(MAP_IMAGE_URL, bounds).addTo(map);
+      map.setView([MAP_HEIGHT / 2, 0], -2);
+
+      function makeIcon(type) {
+        const sizes = { region: 0, city: 12, town: 9, poi: 6 };
+        const s = sizes[type] || 8;
+        if (type === 'region') {
+          return L.divIcon({ className: '', html: '', iconSize: [0, 0], iconAnchor: [0, 0] });
+        }
+        const styles = {
+          city: `background:#01FFB3;border:2px solid #c9a84c;transform:rotate(45deg);`,
+          town: `background:#01FFB3;border:2px solid #fff;border-radius:50%;`,
+          poi: `background:#fff;border-radius:50%;`,
+        };
+        const style = styles[type] || styles.poi;
+        return L.divIcon({
+          className: '',
+          html: `<div style="width:${s}px;height:${s}px;${style}box-shadow:0 0 3px 1px rgba(255,255,255,0.5);"></div>`,
+          iconSize: [s, s],
+          iconAnchor: [s / 2, s / 2],
+        });
+      }
+
+      const i18n = {
+        en: {
+          'caption-title': 'Galluvinchia',
+          'caption-hint': 'Scroll to zoom • Click to explore',
+          'nav-roleplay-name': 'The Roleplay',
+          'nav-roleplay-cta': 'Become part of the story',
+          'nav-shop-name': 'Shop',
+          'nav-shop-cta': 'Books & merch',
+          'nav-patreon-name': 'Patreon',
+          'nav-patreon-cta': 'Support Galluvinchia',
+          'nav-discord-name': 'Discord',
+          'nav-discord-cta': 'Join the guild',
+          'marquee': 'Become a legend ◆ Get the book ◆ Join its adventures ◆ ',
+        },
+        es: {
+          'caption-title': 'Galluvinchia',
+          'caption-hint': 'Scroll para zoom • Clic para explorar',
+          'nav-roleplay-name': 'El Juego de Rol',
+          'nav-roleplay-cta': 'Sé parte de la historia',
+          'nav-shop-name': 'Tienda',
+          'nav-shop-cta': 'Libros y merch',
+          'nav-patreon-name': 'Patreon',
+          'nav-patreon-cta': 'Apoya Galluvinchia',
+          'nav-discord-name': 'Discord',
+          'nav-discord-cta': 'Únete al gremio',
+          'marquee': 'Conviértete en leyenda ◆ Consigue el libro ◆ Únete a sus aventuras ◆ ',
+        },
+      };
+
+      function applyTranslations() {
+        const t = i18n[currentLang];
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.dataset.i18n;
+          if (t[key] !== undefined) el.textContent = t[key];
+        });
+        const seg = `<span class="marquee-content">${(t.marquee + ' ').repeat(4)}</span>`;
+        const track = document.querySelector('.marquee-track');
+        if (track) track.innerHTML = seg;
+        document.documentElement.lang = currentLang;
+      }
+
+      let currentLang = 'en';
+
+      function makePopup(p) {
+        const name = currentLang === 'es' ? (p.nameES || p.name) : p.name;
+        const lore = currentLang === 'es' ? (p.loreES || p.lore) : p.lore;
+        const tags = (p.tags || []).map(t => `<span class="gall-popup-tag">${t}</span>`).join('');
+        return `<div class="gall-popup">
+          <div class="gall-popup-type">${p.type}</div>
+          <div class="gall-popup-name">${name}</div>
+          <div class="gall-popup-lore">${lore}</div>
+          ${tags ? `<div>${tags}</div>` : ''}
+        </div>`;
+      }
+
+      const labelData = [];
+
+      PLACES.forEach(p => {
+        const latlng = [MAP_HEIGHT - p.y, p.x];
+
+        const marker = L.marker(latlng, { icon: makeIcon(p.type) })
+          .bindPopup(makePopup(p), { maxWidth: 260, className: 'gall-popup-wrapper' });
+
+        if (p.type !== 'region') marker.addTo(map);
+
+        const labelOffset = { region: 0, city: -25, town: -22, poi: -19 };
+        const offset = labelOffset[p.type] || -12;
+
+        const labelMarker = L.marker(latlng, {
+          icon: L.divIcon({
+            className: `map-label label-${p.type}`,
+            html: `<div class="map-label-inner">${p.name}</div>`,
+            iconSize: [140, 40],
+            iconAnchor: [70, offset * -1],
+          }),
+          interactive: true,
+          zIndexOffset: 1000,
+        }).addTo(map);
+
+        labelMarker.bindPopup(makePopup(p), { maxWidth: 260 });
+
+        labelData.push({ marker, labelMarker, showAtZoom: p.showAtZoom ?? -2, place: p });
+      });
+
+      function updateLabels() {
+        const z = map.getZoom();
+        labelData.forEach(({ labelMarker, showAtZoom }) => {
+          const el = labelMarker.getElement();
+          if (!el) return;
+          const inner = el.querySelector('.map-label-inner');
+          if (!inner) return;
+          inner.classList.toggle('visible', z >= showAtZoom);
+        });
+      }
+
+      map.on('zoomend', updateLabels);
+      setTimeout(updateLabels, 100);
+
+      const LangControl = L.Control.extend({
+        options: { position: 'topright' },
+        onAdd() {
+          const btn = L.DomUtil.create('button', 'lang-toggle');
+          btn.innerHTML = '<img src="es.svg" width="22" height="22" alt="Español">';
+          btn.title = 'Cambiar a español';
+          L.DomEvent.on(btn, 'click', toggleLang);
+          L.DomEvent.disableClickPropagation(btn);
+          return btn;
+        }
+      });
+      new LangControl().addTo(map);
+
+      function toggleLang() {
+        currentLang = currentLang === 'en' ? 'es' : 'en';
+        const btn = document.querySelector('.lang-toggle');
+        if (btn) {
+          btn.innerHTML = currentLang === 'es'
+            ? '<img src="gb.svg" width="22" height="22" alt="English">'
+            : '<img src="es.svg" width="22" height="22" alt="Español">';
+          btn.title = currentLang === 'es' ? 'Switch to English' : 'Cambiar a español';
+        }
+        applyTranslations();
+        labelData.forEach(({ marker, labelMarker, place }) => {
+          const labelName = currentLang === 'es' ? (place.nameES || place.name) : place.name;
+          const el = labelMarker.getElement();
+          if (el) {
+            const inner = el.querySelector('.map-label-inner');
+            if (inner) inner.textContent = labelName;
+          }
+          const content = makePopup(place);
+          marker.setPopupContent(content);
+          labelMarker.setPopupContent(content);
+        });
+      }
+    }
+  </script>
+</body>
+
+</html>
