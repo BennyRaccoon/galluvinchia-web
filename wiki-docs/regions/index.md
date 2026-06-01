@@ -1,6 +1,10 @@
+---
+description: An overview of the lands of Galluvinchia, the western forests and coasts, the arid eastern desert, and the frozen northern mountains of the giants.
+---
+
 # The World of Galluvinchia
 
-Galluvinchia is a land of impossible contrasts — ancient ruins beside thriving cities, deserts that were once jungles, forests where the trees remember the First Age.
+Galluvinchia is a land of impossible contrasts, ancient ruins beside thriving cities, deserts that were once jungles, forests where the trees remember the First Age.
 
 The geography of this world did not form by chance. Giants shaped it. Primordial beasts tore it. And the gods, once mortal heroes themselves, bled to make it livable.
 
@@ -8,35 +12,35 @@ The geography of this world did not form by chance. Giants shaped it. Primordial
 
 ## Geography at a Glance
 
-The known lands of Galluvinchia stretch from the cold mountains of the frozen North to the arid Breath of Sand in the East. Most of the population lives in the temperate West, enjoying a **Mediterranean climate** — rainy in autumn, windy in spring, long summers, and calm winters.
+The known lands of Galluvinchia stretch from the cold mountains of the frozen North to the arid Breath of Sand in the East. Most of the population lives in the temperate West, enjoying a **Mediterranean climate**, rainy in autumn, windy in spring, long summers, and calm winters.
 
 Travelling the roads between cities, one passes through forests and farmland in most of the West, with mountainous terrain rising in the East and a snowy expanse in the North.
 
 Three great cities anchor civilization:
 
-- **An'Ramoda** — the walled northern city, seat of the most powerful army in Galluvinchia
-- **The Lady of Marmaros** — the marble island city of mages and scholars
-- **The Lord of Carbohyrr** — the mountain fortress of smiths and miners
+- **An'Ramoda**, the walled northern city, seat of the most powerful army in Galluvinchia
+- **The Lady of Marmaros**, the marble island city of mages and scholars
+- **The Lord of Carbohyrr**, the mountain fortress of smiths and miners
 
 And to the East, largely independent:
 
-- **Lorda Gorda** — the felinfolk fortress island, lit by pink crystal light
+- **Lorda Gorda**, the felinfolk fortress island, lit by pink crystal light
 
 ---
 
 ## Current Affairs (Year 1802)
 
 ### The Pax Aremedia
-The land broadly enjoys a period of peace enforced by Aremedia's armies and the **Keepers of Galluvinchia** — a dedicated force that patrols trade routes and protects merchant caravans across the continent.
+The land broadly enjoys a period of peace enforced by Aremedia's armies and the **Keepers of Galluvinchia**, a dedicated force that patrols trade routes and protects merchant caravans across the continent.
 
 ### The Third Wars of the Skeleton
-Three years ago, the Third Wars of the Skeleton ended with a successful incursion by An'Ramoda's forces into Kogarashi's territory at **Ancho Groncho**. But the necromancer's body was never found — and the undead continue to stir.
+Three years ago, the Third Wars of the Skeleton ended with a successful incursion by An'Ramoda's forces into Kogarashi's territory at **Ancho Groncho**. But the necromancer's body was never found, and the undead continue to stir.
 
 ### The Giants' Skirmishes
 To the north at **Ice Peak**, the house of the giants lies hidden behind hungry winters and sharp mountains. Legions of warriors have been lost in recent years trying to set limits to the giants' violent raids on settlements to the south.
 
 ### The Furnace's Song
-At the Lord of Carbohyrr, the furnaces burn warmer than ever, pushing the economy into survival mode. Almost every commerce now revolves around sustaining the forge — the main export of weapons and armor, shipped primarily to An'Ramoda.
+At the Lord of Carbohyrr, the furnaces burn warmer than ever, pushing the economy into survival mode. Almost every commerce now revolves around sustaining the forge, the main export of weapons and armor, shipped primarily to An'Ramoda.
 
 ### Woodkeeping Ambitions
 An'Ramoda continues to expand eastward into the forest. The forest, burning with resentment, seeks allies against the lumberjack forces pressing from both sides.
@@ -50,14 +54,14 @@ The undead armies have been raging since the Arcane War ended. An'Ramoda has bee
 
 ![Occupations in Galluvinchia](../img/chart-occupation.png){ .wiki-chart }
 
-The people of Galluvinchia are pragmatic and diverse. Society is not divided by gender — anyone can become whatever they will, and men and women are equally capable. However:
+The people of Galluvinchia are pragmatic and diverse. Society is not divided by gender, anyone can become whatever they will, and men and women are equally capable. However:
 
 - Public healthcare is not universal
 - Justice is inconsistent and often unfair
 - Democracy is not the standard form of government
 - Slavery is seen as deeply wrong
 
-Most citizens are farmers. Education is offered in some temples — primarily those of Brenadette and Panos — covering reading, basic mathematics, and some arts. Crafts and higher education require apprenticeships or significant wealth.
+Most citizens are farmers. Education is offered in some temples, primarily those of Brenadette and Panos, covering reading, basic mathematics, and some arts. Crafts and higher education require apprenticeships or significant wealth.
 
 ### Natural Rights
 All Galluvinchians share a belief in three universal natural rights, considered to predate even the gods:
@@ -69,13 +73,13 @@ All Galluvinchians share a belief in three universal natural rights, considered 
 | **Property** | The right to own and enjoy possessions |
 
 ### The Cycle of Life and Death
-When Galluvinchians die, their free soul lingers briefly near their body to resolve last wishes. After a proper burial — or when all resentment fades — the soul travels to the **Neverender** to become part of the **Renewal**, eventually returning to the living in a new body.
+When Galluvinchians die, their free soul lingers briefly near their body to resolve last wishes. After a proper burial, or when all resentment fades, the soul travels to the **Neverender** to become part of the **Renewal**, eventually returning to the living in a new body.
 
 ---
 
 ## The Ripple
 
-All magic in Galluvinchia originates from a single fundamental force: **the Ripple** — a current that washes all living beings with magic.
+All magic in Galluvinchia originates from a single fundamental force: **the Ripple**, a current that washes all living beings with magic.
 
 - **Wizards** learn to sense and harness its flow
 - **Sorcerers** feel its rhythm innately, by heritage or event
@@ -86,13 +90,13 @@ All magic in Galluvinchia originates from a single fundamental force: **the Ripp
 - **Paladins** are drawn to the Ripple by the strength of their oath
 
 !!! info "The Source of the Ripple"
-    The source of the Ripple remains a mystery. Yet those highly attuned to its presence sometimes perceive a distant sound — the voice of an anvil, and the clink of a hammer, forging this stream of magic.
+ The source of the Ripple remains a mystery. Yet those highly attuned to its presence sometimes perceive a distant sound, the voice of an anvil, and the clink of a hammer, forging this stream of magic.
 
 ---
 
 ## Calendar
 
-The Galluvinchia calendar runs on **7-day weeks**, with 4 weeks per month and 12 months per year — 336 days in total. The seventh day is the **Light Day**, celebrated with family.
+The Galluvinchia calendar runs on **7-day weeks**, with 4 weeks per month and 12 months per year, 336 days in total. The seventh day is the **Light Day**, celebrated with family.
 
 Months are numbered from the First to the Eleventh, with the last month called simply **the Last**.
 
@@ -117,10 +121,10 @@ The standard currency of Galluvinchia is the **dinarii** (singular: dinar), prod
 | Tavern stay | 10–50 dinarii |
 | Riding horse | 75 aureos |
 | Longsword | 10 aureos |
-| Plate armor | 1,000 aureos |
+| Plate armor | 1, 000 aureos |
 | Healing potion | 50 aureos |
 
-The Keepers of Galluvinchia protect not only merchant caravans but also operate a banking system — merchants can deposit gold in one stronghold and withdraw from another, much as the Templars did in the old world.
+The Keepers of Galluvinchia protect not only merchant caravans but also operate a banking system, merchants can deposit gold in one stronghold and withdraw from another, much as the Templars did in the old world.
 
 ---
 

@@ -1,6 +1,6 @@
 site_name: Galluvinchia Wiki
 site_url: https://galluvinchia.com/wiki/
-site_description: The living compendium of the world of Galluvinchia — gods, lands, characters, and tales.
+site_description: "The living compendium of the world of Galluvinchia: gods, lands, characters, and tales."
 site_author: The Bun Cult
 docs_dir: wiki-docs
 site_dir: wiki-site
@@ -8,6 +8,9 @@ copyright: Copyright &copy; The Bun Cult
 
 theme:
   name: material
+  custom_dir: overrides
+  logo: img/title.png
+  favicon: img/favicon.png
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -31,8 +34,9 @@ theme:
     - search.suggest
     - search.highlight
     - content.tooltips
-  icon:
-    logo: material/book-open-page-variant
+    - navigation.tracking
+    - navigation.indexes
+    - search.share
 
 plugins:
   - search
@@ -63,9 +67,29 @@ plugins:
 markdown_extensions:
   - attr_list
   - md_in_html
+  - meta
+  - toc:
+      permalink: true
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.smartsymbols
 
 extra_css:
   - stylesheets/extra.css
+
+extra:
+  homepage: https://galluvinchia.com
+  social:
+    - icon: simple/discord
+      link: https://discord.gg/94khqNMdzT
+      name: Join the guild on Discord
+    - icon: simple/patreon
+      link: https://www.patreon.com/c/thebuncult
+      name: Support us on Patreon
+    - icon: fontawesome/solid/cart-shopping
+      link: https://thebuncult.com
+      name: The Bun Cult store
 
 nav:
   - Home: index.md

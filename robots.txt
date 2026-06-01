@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://galluvinchia.com/sitemap.xml
+Sitemap: https://galluvinchia.com/wiki/sitemap.xml
