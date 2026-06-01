@@ -60,6 +60,10 @@ plugins:
             Characters: Personajes
             Tales: Relatos
 
+markdown_extensions:
+  - attr_list
+  - md_in_html
+
 extra_css:
   - stylesheets/extra.css
 
