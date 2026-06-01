@@ -1,16 +1,180 @@
-:root,
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color: #c9a84c;
-  --md-primary-fg-color--light: #d4b86a;
-  --md-primary-fg-color--dark: #a88835;
-  --md-accent-fg-color: #c9a84c;
-  --md-accent-fg-color--transparent: #c9a84c1a;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* ── Brand palette ── */
+:root {
+  --bun-white:  #FFFFFF;
+  --bun-pink:   #FF00CA;
+  --bun-green:  #01FFB3;
+  --bun-blue:   #3801FF;
+  --bun-gold:   #F0C84B;
+  --bun-dark:   #242833;
 }
 
+/* ── Light scheme ── */
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:              #FF00CA;
+  --md-primary-fg-color--light:       #ff40d8;
+  --md-primary-fg-color--dark:        #cc0099;
+  --md-accent-fg-color:               #01FFB3;
+  --md-accent-fg-color--transparent:  #01FFB31a;
+  --md-typeset-color:                 #242833;
+  --md-typeset-a-color:               #3801FF;
+  --md-default-bg-color:              #FFFFFF;
+}
+
+/* ── Dark scheme ── */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #c9a84c;
-  --md-primary-fg-color--light: #d4b86a;
-  --md-primary-fg-color--dark: #a88835;
-  --md-accent-fg-color: #c9a84c;
-  --md-accent-fg-color--transparent: #c9a84c1a;
+  --md-primary-fg-color:              #FF00CA;
+  --md-primary-fg-color--light:       #ff40d8;
+  --md-primary-fg-color--dark:        #cc0099;
+  --md-accent-fg-color:               #01FFB3;
+  --md-accent-fg-color--transparent:  #01FFB31a;
+  --md-default-fg-color:              #FFFFFF;
+  --md-default-bg-color:              #242833;
+  --md-typeset-a-color:               #01FFB3;
+  --md-typeset-color:                 #e8e8e8;
+  --md-code-bg-color:                 #1a1d24;
+}
+
+/* ── Typography ── */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.md-typeset h1 { color: var(--bun-pink); }
+.md-typeset h2 { border-bottom: 2px solid var(--bun-gold); padding-bottom: 0.25em; }
+
+.md-typeset,
+.md-typeset p,
+.md-typeset li,
+.md-typeset td {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.md-typeset em,
+.md-typeset blockquote {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-style: italic;
+}
+
+/* ── Navigation ── */
+.md-header__title,
+.md-nav__title,
+.md-tabs__link {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Buttons (md-button) ── */
+.md-typeset .md-button {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
+  border: none;
+  background: var(--bun-pink);
+  color: var(--bun-white);
+  padding: 0.5em 1.2em;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.md-typeset .md-button:hover {
+  background: var(--bun-green);
+  color: var(--bun-dark);
+}
+.md-typeset .md-button--secondary {
+  background: var(--bun-blue);
+  color: var(--bun-white);
+}
+.md-typeset .md-button--secondary:hover {
+  background: var(--bun-green);
+  color: var(--bun-dark);
+}
+
+/* ── Tables ── */
+.md-typeset table:not([class]) th {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--bun-dark);
+  color: var(--bun-gold);
+}
+
+[data-md-color-scheme="default"] .md-typeset table:not([class]) th {
+  background: var(--bun-dark);
+  color: var(--bun-gold);
+}
+
+/* ── Admonitions ── */
+.md-typeset .admonition-title,
+.md-typeset details summary {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Gold accent rule ── */
+.md-typeset hr {
+  border-color: var(--bun-gold);
+  opacity: 0.4;
+}
+
+/* ── Wiki image styles ── */
+.wiki-portrait {
+  float: right;
+  max-width: 220px;
+  margin: 0 0 1.2rem 1.5rem;
+  border: 2px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+}
+
+.wiki-portrait-left {
+  float: left;
+  max-width: 220px;
+  margin: 0 1.5rem 1.2rem 0;
+  border: 2px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+}
+
+.wiki-emblem {
+  float: right;
+  max-width: 140px;
+  margin: 0 0 0.8rem 1.2rem;
+  opacity: 0.9;
+}
+
+.wiki-full {
+  display: block;
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+}
+
+.wiki-chart {
+  display: block;
+  max-width: 380px;
+  margin: 1rem auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }
