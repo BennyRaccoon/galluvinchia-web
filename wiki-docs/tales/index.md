@@ -26,7 +26,7 @@ This is the archive of what has been told.
 ### The Arcane War
 *A Myth of Panos and Kogarashi*
 
-![Archlich Kogarashi](../img/character-kogarashi.png){ .wiki-portrait }
+![Archlich Kogarashi](../img/character-kogarashi.webp){ .wiki-portrait }
 
 When the cosmos echoed with the whispers of newly born deities, an archmage of unparalleled fury arose: Kogarashi. Having witnessed the gods' ascent, he denounced them with seething contempt, calling them usurpers of divine thrones, ignorant of the true arcane arts.
 
@@ -114,7 +114,7 @@ Since that agreement, a delicate peace has reigned between An'Ramoda and the wil
 ### Moroes the Lover
 *A Myth of Moroes and Morphia*
 
-![Moroes, God of the Forge](../img/artwork-moroes.png){ .wiki-portrait }
+![Moroes, God of the Forge](../img/artwork-moroes.webp){ .wiki-portrait }
 
 Deep in the Lord of Carbohyrr, long before anyone ascended to divinity, a craftsman named Moroes fell in love with Morphia. His love for her was on par with his craftsmanship, and both were second to none.
 
@@ -138,7 +138,7 @@ With it, she founded the **Academy of Magic Waves and Dreams**, where magically 
 ### The Beauty of Her Life
 *A Myth of Morphia and Leeve*
 
-![Leeve, Goddess of Beauty and Nature](../img/artwork-leeve.png){ .wiki-portrait }
+![Leeve, Goddess of Beauty and Nature](../img/artwork-leeve.webp){ .wiki-portrait }
 
 With her heart shattered by the end of her relationship with Moroes, Morphia withdrew into nature, lost in her thoughts, her divine duties abandoned, her presence dimmed by sorrow.
 
@@ -179,7 +179,7 @@ In the end, he received godhood and a broken heart.
 ### The Founding of Lorda Gorda
 *A Legend of Lumin Oldreekia*
 
-![The Maneless King of Lorda Gorda, heir of Lumin's legacy](../img/character-maneless-king.png){ .wiki-portrait }
+![The Maneless King of Lorda Gorda, heir of Lumin's legacy](../img/character-maneless-king.webp){ .wiki-portrait }
 
 Lumin Oldreekia, the legendary leokin felinfolk, was the greatest hero his people had ever known. Before becoming their first king, he created the first felinfolk city, now called the Whisk of Lumin, along the southern coast as a bastion against sandstorms, pirates, and ghouls.
 

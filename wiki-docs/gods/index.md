@@ -4,7 +4,7 @@ description: Meet the gods and powerful entities of Galluvinchia, Aremedia, Pano
 
 # The Gods of Galluvinchia
 
-![Anthos Meyer praying at the Fountain of the Renewal](../img/anthos-pray.png){ .wiki-portrait }
+![Anthos Meyer praying at the Fountain of the Renewal](../img/anthos-pray.webp){ .wiki-portrait }
 
 In Galluvinchia, the gods are not myths, they are neighbors.
 
@@ -21,7 +21,7 @@ The energy of the gods is fuelled by the actions of their believers, and by the 
 ### Panos
 *Guardian of Rhythm and Magic · God of Life and Order*
 
-![Emblem of Panos](../img/m-panos.png){ .wiki-emblem }
+![Emblem of Panos](../img/m-panos.webp){ .wiki-emblem }
 
 Panos is the eldest and perhaps the least publicly worshipped of the four major deities, yet his power underlies everything. He believes that rhythm and melody are the heartbeat of existence, that magic itself pulses to a cosmic song.
 
@@ -34,14 +34,14 @@ His most fervent zealots hide their faces with **masks resembling the sun**, bel
 !!! quote "Suggested classes"
  Bard, cleric, monk, wizard
 
-![Silvino, High Paladin of Panos](../img/artwork-panos-cleric.png){ .wiki-full }
+![Silvino, High Paladin of Panos](../img/artwork-panos-cleric.webp){ .wiki-full }
 
 ---
 
 ### Brenadette
 *Keeper of the Life Cycle · Goddess of the Neverender*
 
-![Emblem of Brenadette](../img/m-brenadette.png){ .wiki-emblem }
+![Emblem of Brenadette](../img/m-brenadette.webp){ .wiki-emblem }
 
 Brenadette is tetchy and temperamental, and perhaps she has earned that reputation, her eternal duty as preserver of the Cycle of Life keeps her always awake, forever bound to the realm of the dead. She sacrificed sleep, and perhaps peace, so that the souls of the living could pass on and be reborn.
 
@@ -55,14 +55,14 @@ The largest abbey dedicated to her stands in **Pharoes**, a city frequently batt
 !!! quote "Suggested classes"
  Warlock, cleric, rogue, wizard
 
-![Frigida, first acolyte of Brenadette](../img/artwork-brenadette-cleric.png){ .wiki-full }
+![Frigida, first acolyte of Brenadette](../img/artwork-brenadette-cleric.webp){ .wiki-full }
 
 ---
 
 ### Aremedia
 *The Edge · Goddess of Impetus*
 
-![Medal of Aremedia](../img/m-aremedia.png){ .wiki-emblem }
+![Medal of Aremedia](../img/m-aremedia.webp){ .wiki-emblem }
 
 Aremedia is the first daughter of Panos and Brenadette, and she inherited all the energy of the world. She is the most frequently *seen* of all the gods, those who have laid eyes upon her describe electricity running through her long golden-like hair, a lean and tall figure, always armored, an olive branch crowning her presence.
 
@@ -73,14 +73,14 @@ She rules over **An'Ramoda**, the most powerful military city in Galluvinchia, a
 !!! quote "Suggested classes"
  Paladin, warrior, rogue, monk, barbarian, sorcerer, ranger
 
-![Aremedia, Goddess of Impetus](../img/artwork-aremedia.png){ .wiki-full }
+![Aremedia, Goddess of Impetus](../img/artwork-aremedia.webp){ .wiki-full }
 
 ---
 
 ### Morphia
 *The Thoughtful · Guardian of Dreams · Goddess of Love and Secrets*
 
-![Sign of Morphia](../img/m-morphia.png){ .wiki-emblem }
+![Sign of Morphia](../img/m-morphia.webp){ .wiki-emblem }
 
 Morphia is shy, timid, and often lost in her own dreams, which leaves her followers without her grace for stretches of time known as **Morphia's Slumber**. Yet her shrine at Doormi, beside its waterfalls, draws artists, doctors, and seekers of inner growth from across the land.
 
@@ -93,14 +93,14 @@ Morphia also shared her divine power generously, elevating both **Leeve** and **
 !!! quote "Suggested classes"
  Paladin, wizard, sorcerer, druid, bard
 
-![Morphia, Goddess of Dreams](../img/artwork-morphia.png){ .wiki-full }
+![Morphia, Goddess of Dreams](../img/artwork-morphia.webp){ .wiki-full }
 
 ---
 
 ### Moroes
 *God of the Forge · Patron of the Lord of Carbohyrr*
 
-![Emblem of Moroes](../img/m-moroes.png){ .wiki-emblem }
+![Emblem of Moroes](../img/m-moroes.webp){ .wiki-emblem }
 
 Deep in the heart of the Lord of Carbohyrr, the clink of an anvil echoes through the caverns like the ominous bell of a cathedral. That sound is Moroes, and it has not stopped since the world was young.
 
@@ -114,14 +114,14 @@ His followers, blacksmiths, sculptors, leatherworkers, jewelers, seek to create 
 !!! quote "Suggested classes"
  Barbarian, wizard, warrior, cleric
 
-![Moroes, God of the Forge](../img/artwork-moroes.png){ .wiki-full }
+![Moroes, God of the Forge](../img/artwork-moroes.webp){ .wiki-full }
 
 ---
 
 ### Leeve
 *Goddess of Beauty and Nature*
 
-![Emblem of Leeve](../img/m-leeve.png){ .wiki-emblem }
+![Emblem of Leeve](../img/m-leeve.webp){ .wiki-emblem }
 
 Leeve is the youngest of the gods, elevated to divinity by Morphia herself. She is depicted in countless ways, those who do not know her might embrace her as the simple goddess of beauty, even indulging in their own vanity. But those who have been in her presence understand that beauty can be haunting, and that true beauty is found in nature and balance.
 
@@ -132,7 +132,7 @@ Although raised a paladin, Leeve is also deeply knowledgeable of the arcane, wit
 !!! quote "Suggested classes"
  Bard, wizard, cleric, druid
 
-![Leeve, Goddess of Beauty and Nature](../img/artwork-leeve.png){ .wiki-full }
+![Leeve, Goddess of Beauty and Nature](../img/artwork-leeve.webp){ .wiki-full }
 
 ---
 
@@ -157,22 +157,22 @@ Many Galluvinchians pray to the Light rather than any specific god. Followers of
 > *"The Light doesn't shine in darkness."*
 
 ### The Will of the Wild
-![The Will of the Wild](../img/artwork-will-of-wild.png){ .wiki-portrait }
+![The Will of the Wild](../img/artwork-will-of-wild.webp){ .wiki-portrait }
 
 From times untold, the power of nature has been held by the Will of the Wild. Its veins are the roots of all the trees of Galluvinchia, and it is the forever warden of **Aurora Densasilva**, the eternal forest. Its ways may be eerie or twisted, but it will forever protect nature, one way or another.
 
 ### The Long-Lost Paladins
-![The Order, echoes of ancient paladins](../img/artwork-order.png){ .wiki-portrait }
+![The Order, echoes of ancient paladins](../img/artwork-order.webp){ .wiki-portrait }
 
 Wandering the ruins of Galluvinchia, the echoes of ancient paladins drift like angels serving justice. They seek to raise a new champion, one who will make freedom their shield and justice their sword.
 
 ### The Tarnished Star
-![Abyss walker, herald of the Tarnished Star](../img/artwork-tarnished-star.png){ .wiki-portrait }
+![Abyss walker, herald of the Tarnished Star](../img/artwork-tarnished-star.webp){ .wiki-portrait }
 
 In a distant land, abyss walkers, half shark, half person, lure souls from afar and invade realms with mighty power. Their empress, the Tarnished Star, holds the power of many worlds. She watches, waits, and looks for heralds who will allow her to visit and rule.
 
 ### The Nameless One
-![The Nameless One](../img/artwork-nameless-one.png){ .wiki-portrait }
+![The Nameless One](../img/artwork-nameless-one.webp){ .wiki-portrait }
 
 Swimming through the universe, the Nameless One wants the collapse of all existence, to consume all life, perhaps out of hatred, perhaps seeking peace. The creator of the void and the wielder of sadness, he travels relentlessly through space and time.
 
@@ -180,11 +180,11 @@ Swimming through the universe, the Nameless One wants the collapse of all existe
 Deep below the Lord of Carbohyrr, a voice reaches upward. Of unknown origin and uncertain intentions, her whispers find the ears of Moroes, and those brave or foolish enough to bargain with her.
 
 ### The Long-Lost Dragons
-![Krusninglömda, Elder Dragon from the Marble Veins](../img/artwork-dragon.png){ .wiki-portrait }
+![Krusninglömda, Elder Dragon from the Marble Veins](../img/artwork-dragon.webp){ .wiki-portrait }
 
 Part of everyone's collective memory: there was a time when dragons inhabited Galluvinchia, or so they say. Slain by gods or fought by giants, do they still hold treasures in forgotten caves, or are they sleeping somewhere, waiting?
 
 ### Archlich Kogarashi
-![Archlich Kogarashi](../img/character-kogarashi.png){ .wiki-portrait }
+![Archlich Kogarashi](../img/character-kogarashi.webp){ .wiki-portrait }
 
 After the ancient Arcane War against Panos, the body of the master necromancer was never found. Other groups of necromancers have been surging ever since. Some search for his remains to end the undead threat; others seek the terrible knowledge he managed to grasp.

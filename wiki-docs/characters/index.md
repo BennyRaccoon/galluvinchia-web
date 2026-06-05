@@ -29,7 +29,7 @@ One of the three consuls chosen by Aremedia herself. Known for his vast collecti
 ### Zack "The Blade" Armada
 *Champion of the Colosseum · Brave Consul of An'Ramoda*
 
-![Armada "The Sword", Champion of Aremedia](../img/artwork-minotaur.png){ .wiki-portrait }
+![Armada "The Sword", Champion of Aremedia](../img/artwork-minotaur.webp){ .wiki-portrait }
 
 A towering black minotaur with sharp horns and a massive blade worn across his back, a blade no one has ever seen him draw. The reigning champion of the Colosseum for more than ten years, and one of the three consuls of An'Ramoda. Whether he wears his political authority with the same ease as his undefeated record is a matter of debate.
 
@@ -52,7 +52,7 @@ Royal by blood, the Oldreekia family has held power in the Lady of Marmaros sinc
 ### The Maneless King
 *Beloved Ruler of Lorda Gorda*
 
-![The Maneless King of Lorda Gorda](../img/character-maneless-king.png){ .wiki-portrait }
+![The Maneless King of Lorda Gorda](../img/character-maneless-king.webp){ .wiki-portrait }
 
 The Maneless King has always been a kind ruler who looks forward to his people's wellbeing. He holds four of the ten voting points in Lorda Gorda's assembly, a powerful but not unchecked position. The people of Lorda Gorda genuinely love him, which, in a world of ambitious rulers, is rarer than it sounds.
 
@@ -63,7 +63,7 @@ The Maneless King has always been a kind ruler who looks forward to his people's
 ### Magister Monica Mars
 *Head of the Academy of Magic Wonders · Lady of Marmaros*
 
-![Magistrate Monica Mars](../img/character-monica-mars.png){ .wiki-portrait }
+![Magistrate Monica Mars](../img/character-monica-mars.webp){ .wiki-portrait }
 
 One of the most skilled and intelligent mages in Galluvinchia. Under her leadership, the Academy of Magic Wonders has grown from an institution into a public brand, its products seen in every city. Whether this makes her a visionary or simply very good at commerce depends on who you ask. Either way, she is one of the most powerful people in Marmaros.
 
@@ -95,7 +95,7 @@ The greatest hero of the felinfolk, Lumin Oldreekia was the legendary leader who
 ### Raquel Crepusculiento
 *The Last Inventor · Lost Academy of Carbohyrr*
 
-![Raquel Crepusculiento](../img/character-raquel.png){ .wiki-portrait }
+![Raquel Crepusculiento](../img/character-raquel.webp){ .wiki-portrait }
 
 The last known inventor of a long-forgotten academy connected to the Lord of Carbohyrr. Her blueprints and notes survive in hidden places, detailing designs and knowledge that the current age has yet to match. Her most notable creation is spoken of in legends, but the truth of it remains buried.
 
@@ -104,7 +104,7 @@ The last known inventor of a long-forgotten academy connected to the Lord of Car
 ### Archlich Kogarashi
 *The Necromancer · Enemy of the Gods*
 
-![Archlich Kogarashi](../img/character-kogarashi.png){ .wiki-portrait }
+![Archlich Kogarashi](../img/character-kogarashi.webp){ .wiki-portrait }
 
 Once an archmage of unparalleled fury and ambition, Kogarashi rose after the gods' ascension and denounced them as usurpers, ignorant of the true arcane arts. He forged a pact with powerful mages and waged the **Arcane War** against the new divine order.
 
@@ -117,7 +117,7 @@ Panos triumphed, but Kogarashi's body was never found. Hidden somewhere in the d
 ### Agustin of Carzagus
 *Baker · Lakobordo*
 
-![The Last of the Virtuous, a silver pendant shaped like a fist](../img/artwork-virtuous.png){ .wiki-portrait }
+![The Last of the Virtuous, a silver pendant shaped like a fist](../img/artwork-virtuous.webp){ .wiki-portrait }
 
 Famous throughout Lakobordo for his extraordinary croissants. Also, for an old silver pendant shaped like a fist that he carries with him everywhere, a pendant he cannot explain, and whose origin even he does not know. He is a kind, unassuming man who seems entirely unlikely to be important.
 
@@ -137,6 +137,6 @@ And the construct kneeled.
 ### Silvino
 *High Paladin of Panos*
 
-![Silvino, High Paladin of Panos](../img/artwork-panos-cleric.png){ .wiki-portrait }
+![Silvino, High Paladin of Panos](../img/artwork-panos-cleric.webp){ .wiki-portrait }
 
 One of Panos's most devoted champions, Silvino serves the god of magic and order. His quest involves the recovery of relics lost by his absentminded deity, objects that Panos believes are important but can no longer remember exactly why.

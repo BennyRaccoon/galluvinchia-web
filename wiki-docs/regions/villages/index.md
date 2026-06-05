@@ -138,7 +138,7 @@ Recent tensions have arisen: Lorda Gorda is growing in power, and the ghoul atta
 
 *The Realm Below · Final Rest of Souls*
 
-![The Neverender, river of souls](../../img/artwork-neverender.png){ .wiki-portrait }
+![The Neverender, river of souls](../../img/artwork-neverender.webp){ .wiki-portrait }
 
 Deep below the entrails of Galluvinchia lies the Neverender, the last destination for the souls of the living. Here, the river of souls meets its fate, joining the **Renewal** to become new souls, born again into bodies on the surface.
 

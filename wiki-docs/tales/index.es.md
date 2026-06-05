@@ -26,7 +26,7 @@ Este es el archivo de lo que se ha contado.
 ### La Guerra Arcana
 *Un Mito de Panos y Kogarashi*
 
-![Archlich Kogarashi](../img/character-kogarashi.png){ .wiki-portrait }
+![Archlich Kogarashi](../img/character-kogarashi.webp){ .wiki-portrait }
 
 Cuando el cosmos resonó con los susurros de las recién nacidas deidades, también engendró un archimago de furia y ambición sin par: Kogarashi.
 
@@ -116,7 +116,7 @@ Al acordar respetar sus antiguos límites, detuvo la expansión. Desde entonces,
 ### Moroes el Amante
 *Un Mito de Moroes y Morphia*
 
-![Moroes, Dios de la Forja](../img/artwork-moroes.png){ .wiki-portrait }
+![Moroes, Dios de la Forja](../img/artwork-moroes.webp){ .wiki-portrait }
 
 En lo más profundo del Señor de Carbohyrr, mucho antes de que nadie ascendiera a la divinidad, un artesano llamado Moroes se enamoró de Morphia. Su amor por ella estaba a la altura de su maestría artesanal, y ambas cosas no tenían igual.
 
@@ -140,7 +140,7 @@ Con él, fundó la **Academia de las Ondas Étereas y los Sueños**, donde perso
 ### La Belleza de su Vida
 *Un Mito de Morphia y Leeve*
 
-![Leeve, Diosa de la Belleza y la Naturaleza](../img/artwork-leeve.png){ .wiki-portrait }
+![Leeve, Diosa de la Belleza y la Naturaleza](../img/artwork-leeve.webp){ .wiki-portrait }
 
 Con el corazón destrozado y el espíritu agotado, la diosa Morphia se retiró a la soledad de la naturaleza. Perdida en sus pensamientos, vagó sin rumbo, abandonando sus deberes divinos y con su otrora radiante presencia apagada por el dolor.
 
@@ -181,7 +181,7 @@ Al final, recibió la divinidad y un corazón roto.
 ### La Fundación de Lorda Gorda
 *Una Leyenda de Lumin Oldreekia*
 
-![El Rey sin Melena de Lorda Gorda, heredero del legado de Lumin](../img/character-maneless-king.png){ .wiki-portrait }
+![El Rey sin Melena de Lorda Gorda, heredero del legado de Lumin](../img/character-maneless-king.webp){ .wiki-portrait }
 
 Lumin Oldreekia, el legendario leokin felicio, fue el mayor héroe que su pueblo había conocido jamás. Antes de convertirse en su primer rey, creó la primera ciudad felicia, ahora llamada el Whisk de Lumin, a lo largo de la costa sur, como bastión contra tormentas de arena, piratas y necrófagos.
 

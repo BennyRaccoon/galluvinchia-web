@@ -52,7 +52,7 @@ Los ejércitos de no-muertos han estado en pie desde que terminó la Guerra Arca
 
 ## Sociedad
 
-![Ocupaciones en Galluvinchia](../img/chart-occupation.png){ .wiki-chart }
+![Ocupaciones en Galluvinchia](../img/chart-occupation.webp){ .wiki-chart }
 
 El pueblo de Galluvinchia es pragmático y diverso. La sociedad no está dividida por géneros, cualquiera puede convertirse en lo que quiera, y hombres y mujeres son igualmente capaces. Sin embargo:
 

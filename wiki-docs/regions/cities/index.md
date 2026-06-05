@@ -40,7 +40,7 @@ The villages around An'Ramoda are loyal to the city and send their best fighters
 - **Tanishia**, village of vineyards, producers of Galluvinchia's finest wines
 - **Gretscznievlycov**, surrounded by golden hills and windmills
 
-![The Colosseum of An'Ramoda, arena of champions](../../img/artwork-colosseum.png){ .wiki-full }
+![The Colosseum of An'Ramoda, arena of champions](../../img/artwork-colosseum.webp){ .wiki-full }
 
 !!! tip "Rumour"
  Fighters defeated at the Colosseum are yet to be seen again. Their families accept that whatever happens is glory or death, but not everyone is so certain.
@@ -67,7 +67,7 @@ Power in the Lady of Marmaros is layered and sometimes contradictory:
 | **The Fist** | A shadow network whose reach extends from royalty to the army, and whose leader is known to no one |
 
 ### The Academy of Magic Wonders
-![Magistrate Monica Mars, head of the Academy of Magic Wonders](../../img/character-monica-mars.png){ .wiki-portrait }
+![Magistrate Monica Mars, head of the Academy of Magic Wonders](../../img/character-monica-mars.webp){ .wiki-portrait }
 
 The most exclusive scholarship in Galluvinchia. Wizard apprentices trained here become multidisciplinary mages, studying all schools of magic under the guidance of some of the most brilliant minds in the world. The Academy's influence is visible across the continent through its branded potions, lotions, and magical products.
 
@@ -94,7 +94,7 @@ Space inside the mountain is precious. Citizens have learned to improvise: verti
 | **The Battlemages** | Trained magic police who maintain order and keep tax accounts |
 
 ### The Depths
-![Sara Bastu, bath house maiden of Carbohyrr](../../img/character-sara-bastu.png){ .wiki-portrait }
+![Sara Bastu, bath house maiden of Carbohyrr](../../img/character-sara-bastu.webp){ .wiki-portrait }
 
 The economy of Carbohyrr rests almost entirely on its forges. An'Ramoda is the main buyer of weapons and armor, but even Lorda Gorda has begun purchasing goods from the mountain. With the economy under strain, miners and smiths are the only reliable work available, and tensions between the working class and the ruling structure are beginning to boil.
 
@@ -107,7 +107,7 @@ The economy of Carbohyrr rests almost entirely on its forges. An'Ramoda is the m
 
 *The Fortress Island · Stronghold of the Felinfolk*
 
-![The Maneless King of Lorda Gorda](../../img/character-maneless-king.png){ .wiki-portrait }
+![The Maneless King of Lorda Gorda](../../img/character-maneless-king.webp){ .wiki-portrait }
 
 Far from the patrol zones of the Keepers of Galluvinchia lies Lorda Gorda, the proudest city in the East. Inhabited mainly by hard-working felinfolk, it shuns the blessings of the gods and prays instead to the Light.
 

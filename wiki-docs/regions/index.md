@@ -52,7 +52,7 @@ The undead armies have been raging since the Arcane War ended. An'Ramoda has bee
 
 ## Society
 
-![Occupations in Galluvinchia](../img/chart-occupation.png){ .wiki-chart }
+![Occupations in Galluvinchia](../img/chart-occupation.webp){ .wiki-chart }
 
 The people of Galluvinchia are pragmatic and diverse. Society is not divided by gender, anyone can become whatever they will, and men and women are equally capable. However:
 

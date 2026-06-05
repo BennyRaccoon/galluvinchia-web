@@ -4,7 +4,7 @@ description: Conoce a los dioses y entes poderosos de Galluvinchia, Aremedia, Pa
 
 # Los Dioses de Galluvinchia
 
-![Anthos Meyer orando en la Fuente del Resurgimiento](../img/anthos-pray.png){ .wiki-portrait }
+![Anthos Meyer orando en la Fuente del Resurgimiento](../img/anthos-pray.webp){ .wiki-portrait }
 
 En Galluvinchia, los dioses no son mitos, son vecinos.
 
@@ -21,7 +21,7 @@ La energía de los dioses se alimenta de las acciones de sus creyentes, y del po
 ### Panos
 *Guardián del Ritmo y la Magia · Dios de la Vida y el Orden*
 
-![Emblema de Panos](../img/m-panos.png){ .wiki-emblem }
+![Emblema de Panos](../img/m-panos.webp){ .wiki-emblem }
 
 Panos es el más antiguo y quizás el menos adorado de las cuatro deidades principales, pero su poder subyace a todo lo demás. Cree que el ritmo y la melodía son el latido de la existencia, que la propia magia pulsa al compás de un canto cósmico.
 
@@ -34,14 +34,14 @@ Sus fanáticos más fervorosos esconden sus rostros tras **máscaras con forma d
 !!! quote "Clases sugeridas"
  Bardo, clérigo, monje, mago
 
-![Silvino, Gran Paladín de Panos](../img/artwork-panos-cleric.png){ .wiki-full }
+![Silvino, Gran Paladín de Panos](../img/artwork-panos-cleric.webp){ .wiki-full }
 
 ---
 
 ### Brenadette
 *Guardiana del Ciclo de la Vida · Diosa del Rencarnatorno*
 
-![Emblema de Brenadette](../img/m-brenadette.png){ .wiki-emblem }
+![Emblema de Brenadette](../img/m-brenadette.webp){ .wiki-emblem }
 
 Brenadette es irritable y temperamental, y quizás se ha ganado esa reputación, su eterna labor como preservadora del Ciclo de la Vida la mantiene siempre despierta, atada para siempre al reino de los muertos. Sacrificó el sueño, y quizás la paz, para que las almas de los vivos pudieran continuar y renacer.
 
@@ -55,14 +55,14 @@ La Abadía más grande dedicada a ella se encuentra en **Pharoes**, una ciudad f
 !!! quote "Clases sugeridas"
  Brujo, clérigo, pícaro, mago
 
-![Frígida, primera acólita de Brenadette](../img/artwork-brenadette-cleric.png){ .wiki-full }
+![Frígida, primera acólita de Brenadette](../img/artwork-brenadette-cleric.webp){ .wiki-full }
 
 ---
 
 ### Aremedia
 *El Filo · Diosa del Ímpetu*
 
-![Medalla de Aremedia](../img/m-aremedia.png){ .wiki-emblem }
+![Medalla de Aremedia](../img/m-aremedia.webp){ .wiki-emblem }
 
 Aremedia es la primera hija de Panos y Brenadette, y heredó toda la energía del mundo. Es la más frecuentemente *vista* de todos los dioses, quienes han sido bendecidos con su presencia cuentan que pueden ver electricidad corriendo por su largo cabello dorado, una figura muy esbelta y alta, siempre con su armadura y una rama de olivo coronando su presencia.
 
@@ -73,14 +73,14 @@ Gobierna **An'Ramoda**, la ciudad militar más poderosa de Galluvinchia, y coman
 !!! quote "Clases sugeridas"
  Paladín, guerrero, pícaro, monje, bárbaro, hechicero, explorador
 
-![Aremedia, Diosa del Ímpetu](../img/artwork-aremedia.png){ .wiki-full }
+![Aremedia, Diosa del Ímpetu](../img/artwork-aremedia.webp){ .wiki-full }
 
 ---
 
 ### Morphia
 *La Pensadora · Guardiana de los Sueños · Diosa del Amor y los Secretos*
 
-![Signo de Morphia](../img/m-morphia.png){ .wiki-emblem }
+![Signo de Morphia](../img/m-morphia.webp){ .wiki-emblem }
 
 Morphia es tímida y retraída, y a menudo se pierde en sus propios sueños, lo que deja a sus seguidores sin su gracia durante períodos conocidos como el **Letargo de Morphia**. Aun así, su santuario en Doormi, junto a sus cascadas, atrae a artistas, médicos y buscadores de crecimiento interior de toda la tierra.
 
@@ -93,14 +93,14 @@ Morphia también compartió su poder divino generosamente, elevando tanto a **Le
 !!! quote "Clases sugeridas"
  Paladín, mago, hechicero, druida, bardo
 
-![Morphia, Diosa de los Sueños](../img/artwork-morphia.png){ .wiki-full }
+![Morphia, Diosa de los Sueños](../img/artwork-morphia.webp){ .wiki-full }
 
 ---
 
 ### Moroes
 *Dios de la Forja · Patrón del Señor de Carbohyrr*
 
-![Emblema de Moroes](../img/m-moroes.png){ .wiki-emblem }
+![Emblema de Moroes](../img/m-moroes.webp){ .wiki-emblem }
 
 En lo más profundo del Señor de Carbohyrr, el tintineo de un yunque resuena por sus cavernas como el sonido del ominoso campanario de una catedral. Ese sonido es Moroes, y no ha cesado desde que el mundo era joven.
 
@@ -114,14 +114,14 @@ Sus seguidores, herreros, escultores, trabajadores del cuero, joyeros, buscan cr
 !!! quote "Clases sugeridas"
  Bárbaro, mago, guerrero, clérigo
 
-![Moroes, Dios de la Forja](../img/artwork-moroes.png){ .wiki-full }
+![Moroes, Dios de la Forja](../img/artwork-moroes.webp){ .wiki-full }
 
 ---
 
 ### Leeve
 *Diosa de la Belleza y la Naturaleza*
 
-![Emblema de Leeve](../img/m-leeve.png){ .wiki-emblem }
+![Emblema de Leeve](../img/m-leeve.webp){ .wiki-emblem }
 
 Leeve es la más joven de los dioses, elevada a la divinidad por la propia Morphia. Se la representa de innumerables maneras, quienes no la conocen pueden abrazarla como la simple diosa de la belleza, llegando incluso a entregarse a su propia vanidad. Pero quienes han estado en su presencia comprenden que la belleza puede ser inquietante, y que la verdadera belleza se encuentra en la naturaleza y el equilibrio.
 
@@ -132,7 +132,7 @@ Aunque criada como paladín, Leeve también domina lo arcano, con vocación por 
 !!! quote "Clases sugeridas"
  Bardo, mago, clérigo, druida
 
-![Leeve, Diosa de la Belleza y la Naturaleza](../img/artwork-leeve.png){ .wiki-full }
+![Leeve, Diosa de la Belleza y la Naturaleza](../img/artwork-leeve.webp){ .wiki-full }
 
 ---
 
@@ -157,22 +157,22 @@ Muchos galluvinchianos rezan a la Luz en lugar de a un dios concreto. Los seguid
 > *"La Luz no brilla en la oscuridad."*
 
 ### La Voluntad de lo Salvaje
-![La Voluntad de lo Salvaje](../img/artwork-will-of-wild.png){ .wiki-portrait }
+![La Voluntad de lo Salvaje](../img/artwork-will-of-wild.webp){ .wiki-portrait }
 
 Desde tiempos inmemoriales, el poder de la naturaleza ha sido custodiado por la Voluntad de lo Salvaje. Sus venas son las raíces de todos los árboles de Galluvinchia, y es la guardiana eterna de **Aurora Densasilva**, el bosque perpetuo. Sus caminos pueden ser inquietantes o incluso retorcidos, pero protegerá la naturaleza para siempre, de una forma u otra.
 
 ### Los Paladines Olvidados
-![La Orden, ecos de paladines antiguos](../img/artwork-order.png){ .wiki-portrait }
+![La Orden, ecos de paladines antiguos](../img/artwork-order.webp){ .wiki-portrait }
 
 Deambulando por las ruinas de Galluvinchia, los ecos de paladines perdidos en el tiempo flotan como ángeles al servicio de la justicia. Buscan caballeros para elevar a un nuevo paladín que pueda hacer de la libertad su escudo y de la justicia su espada.
 
 ### La Estrella Deslustrada
-![Caminante del abismo, heraldo de la Estrella Deslustrada](../img/artwork-tarnished-star.png){ .wiki-portrait }
+![Caminante del abismo, heraldo de la Estrella Deslustrada](../img/artwork-tarnished-star.webp){ .wiki-portrait }
 
 En tierras lejanas, caminantes del abismo, mitad tiburón, mitad persona, atraen almas de lugares remotos e invaden reinos con un poder descomunal. Su emperatriz, la Estrella Deslustrada, ostenta el poder de muchos mundos. Observa, espera y busca heraldos que le permitan visitar y gobernar.
 
 ### El Innombrable
-![El Innombrable](../img/artwork-nameless-one.png){ .wiki-portrait }
+![El Innombrable](../img/artwork-nameless-one.webp){ .wiki-portrait }
 
 Nadando por el universo, el Innombrable desea el colapso de toda la existencia, consumir toda vida, quizás por odio, quizás buscando la paz cuando toda la luz se haya apagado. El creador del vacío y portador de la tristeza, viaja incansable por el espacio y el tiempo.
 
@@ -180,11 +180,11 @@ Nadando por el universo, el Innombrable desea el colapso de toda la existencia, 
 En las profundidades bajo el Señor de Carbohyrr, la voz que enloqueció a Moroes provenía de una mujer, la Dama de Astas. De origen e intenciones desconocidas, sus oscuros planes solo pueden ser escuchados por Moroes y seguidos por quienes sean lo suficientemente valientes, o locos, para firmar un pacto con ella.
 
 ### Los Dragones Perdidos
-![Krusninglömda, Dragón Anciano de las Venas de Mármol](../img/artwork-dragon.png){ .wiki-portrait }
+![Krusninglömda, Dragón Anciano de las Venas de Mármol](../img/artwork-dragon.webp){ .wiki-portrait }
 
 Parte de la fantasía colectiva de todos: hubo un tiempo en que los dragones habitaban Galluvinchia, o eso dicen. Cazados por los dioses o combatidos por los gigantes, ¿guardan tesoros en cuevas olvidadas, o duermen en algún lugar esperando?
 
 ### Archlich Kogarashi
-![Archlich Kogarashi](../img/character-kogarashi.png){ .wiki-portrait }
+![Archlich Kogarashi](../img/character-kogarashi.webp){ .wiki-portrait }
 
 Tras su batalla contra Panos, comenzaron a correr los rumores: ¿ganó Panos la guerra? El cuerpo del maestro nigromante nunca fue encontrado. Otros grupos de nigromantes han ido surgiendo desde el fin de la Guerra Arcana. Hay quienes aún buscan sus restos, algunos para poner fin a la amenaza de los no-muertos; otros, para obtener el conocimiento que logró alcanzar.

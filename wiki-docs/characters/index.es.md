@@ -29,7 +29,7 @@ Uno de los tres cónsules elegidos por la propia Aremedia. Conocido por su vasta
 ### Zack «La Espada» Armada
 *Campeón del Coliseo · Cónsul Valiente de An'Ramoda*
 
-![Armada «La Espada», Campeón de Aremedia](../img/artwork-minotaur.png){ .wiki-portrait }
+![Armada «La Espada», Campeón de Aremedia](../img/artwork-minotaur.webp){ .wiki-portrait }
 
 Un enorme minotauro negro de afilados cuernos y una gran espada a su espalda, una espada que nadie le ha visto jamás desenfundar. El campeón reinante del Coliseo durante más de diez años, y uno de los tres cónsules de An'Ramoda. Si lleva su autoridad política con la misma facilidad que su invicto historial es materia de debate.
 
@@ -52,7 +52,7 @@ Real por sangre, la familia Oldreekia ha ostentado el poder en la Dama de Márma
 ### El Rey sin Melena
 *Amado Gobernante de Lorda Gorda*
 
-![El Rey sin Melena de Lorda Gorda](../img/character-maneless-king.png){ .wiki-portrait }
+![El Rey sin Melena de Lorda Gorda](../img/character-maneless-king.webp){ .wiki-portrait }
 
 El Rey sin Melena ha sido siempre un rey bondadoso que vela por su población. Ostenta cuatro de los diez puntos de voto en la asamblea de Lorda Gorda, una posición poderosa pero no sin control. La gente de Lorda Gorda genuinamente lo ama, lo cual, en un mundo de gobernantes ambiciosos, es más raro de lo que parece.
 
@@ -63,7 +63,7 @@ El Rey sin Melena ha sido siempre un rey bondadoso que vela por su población. O
 ### Magistrada Mónica Mars
 *Directora de la Academia de Magias Maravillosas · Dama de Mármaros*
 
-![Magistrada Mónica Mars](../img/character-monica-mars.png){ .wiki-portrait }
+![Magistrada Mónica Mars](../img/character-monica-mars.webp){ .wiki-portrait }
 
 Una de las magas más hábiles e inteligentes de Galluvinchia. Bajo su liderazgo, la Academia de Magias Maravillosas ha crecido de institución a marca pública, sus productos vistos en cada ciudad. Si esto la convierte en una visionaria o simplemente en alguien muy bueno en los negocios depende de a quién se le pregunte. De cualquier manera, es una de las personas más poderosas de Mármaros.
 
@@ -95,7 +95,7 @@ El mayor héroe de los felicios, Lumin Oldreekia fue el legendario líder que cr
 ### Raquel Crepusculiento
 *La Última Inventora · Academia Perdida de Carbohyrr*
 
-![Raquel Crepusculiento](../img/character-raquel.png){ .wiki-portrait }
+![Raquel Crepusculiento](../img/character-raquel.webp){ .wiki-portrait }
 
 La última inventora conocida de una academia hace tiempo olvidada conectada al Señor de Carbohyrr. Sus planos y notas sobreviven en lugares ocultos, detallando diseños y conocimientos que la era actual aún no ha igualado. Su creación más notable se menciona en las leyendas, pero la verdad de ella permanece enterrada.
 
@@ -104,7 +104,7 @@ La última inventora conocida de una academia hace tiempo olvidada conectada al 
 ### Archlich Kogarashi
 *El Nigromante · Enemigo de los Dioses*
 
-![Archlich Kogarashi](../img/character-kogarashi.png){ .wiki-portrait }
+![Archlich Kogarashi](../img/character-kogarashi.webp){ .wiki-portrait }
 
 Fue en su día un archimago de furia y ambición sin par. Tras el ascenso de los dioses a la divinidad, los denunció como usurpadores de los tronos divinos e ignorantes de las artes arcanas. Forjó un pacto con un cónclave de poderosos magos y libró la **Guerra Arcana** contra el nuevo orden divino.
 
@@ -117,7 +117,7 @@ Panos triunfó, pero el cuerpo de Kogarashi nunca fue encontrado. Escondido en a
 ### Agustín de Carzagus
 *Panadero · Lakobordo*
 
-![El Último de los Virtuosos, un colgante de plata con forma de puño](../img/artwork-virtuous.png){ .wiki-portrait }
+![El Último de los Virtuosos, un colgante de plata con forma de puño](../img/artwork-virtuous.webp){ .wiki-portrait }
 
 Famoso en todo Lakobordo por sus extraordinarios croissants. También, por un viejo colgante de plata con forma de puño que lleva siempre consigo, un colgante que no puede explicar y cuyo origen ni él mismo conoce. Es un hombre amable y discreto que parece del todo improbable que sea importante.
 
@@ -137,6 +137,6 @@ Y el autómata se arrodilló.
 ### Silvino
 *Gran Paladín de Panos*
 
-![Silvino, Gran Paladín de Panos](../img/artwork-panos-cleric.png){ .wiki-portrait }
+![Silvino, Gran Paladín de Panos](../img/artwork-panos-cleric.webp){ .wiki-portrait }
 
 Uno de los campeones más devotos de Panos, Silvino sirve al dios de la magia y el orden. Su misión consiste en recuperar reliquias perdidas por su divinidad distraída, objetos que Panos cree importantes pero ya no recuerda exactamente por qué.

@@ -40,7 +40,7 @@ Las aldeas alrededor de An'Ramoda son leales a la ciudad y envían a sus mejores
 - **Tanishia**, pueblo de viñedos, productores de los mejores vinos de Galluvinchia
 - **Gretscznievlycov**, rodeado de colinas doradas y molinos de viento
 
-![El Coliseo de An'Ramoda, arena de campeones](../../img/artwork-colosseum.png){ .wiki-full }
+![El Coliseo de An'Ramoda, arena de campeones](../../img/artwork-colosseum.webp){ .wiki-full }
 
 !!! tip "Rumor"
  Los luchadores derrotados en el Coliseo aún están por aparecer. Sus familias aceptan que, pase lo que pase, es gloria o muerte, pero no todos están tan seguros.
@@ -67,7 +67,7 @@ El poder en la Dama de Mármaros es complejo y a veces contradictorio:
 | **El Puño** | Una red en la sombra cuyo alcance se extiende desde la realeza hasta el ejército, y cuyo líder no conoce nadie |
 
 ### La Academia de Magias Maravillosas
-![Magistrada Mónica Mars, directora de la Academia de Magias Maravillosas](../../img/character-monica-mars.png){ .wiki-portrait }
+![Magistrada Mónica Mars, directora de la Academia de Magias Maravillosas](../../img/character-monica-mars.webp){ .wiki-portrait }
 
 La beca estudiantil más exclusiva de Galluvinchia. Los aprendices de mago formados aquí se convierten en magos multidisciplinares, estudiando todas las escuelas de magia bajo la guía de algunas de las mentes más brillantes del mundo. La influencia de la Academia es visible por todo el continente a través de sus pociones, lociones y productos mágicos de marca.
 
@@ -94,7 +94,7 @@ El espacio dentro de la montaña es precioso. Los ciudadanos han aprendido a imp
 | **Los Magos de Batalla** | Policía mágica entrenada que mantiene el orden y lleva las cuentas fiscales |
 
 ### Las Profundidades
-![Sara Bastu, doncella de casa de baños de Carbohyrr](../../img/character-sara-bastu.png){ .wiki-portrait }
+![Sara Bastu, doncella de casa de baños de Carbohyrr](../../img/character-sara-bastu.webp){ .wiki-portrait }
 
 La economía de Carbohyrr descansa casi completamente en sus forjas. An'Ramoda es el principal comprador de armas y armadura, pero incluso Lorda Gorda ha comenzado a adquirir productos de la montaña. Con la economía bajo presión, los mineros y herreros son el único trabajo fiable disponible, y las tensiones entre la clase trabajadora y la estructura gobernante comienzan a hervir.
 
@@ -107,7 +107,7 @@ La economía de Carbohyrr descansa casi completamente en sus forjas. An'Ramoda e
 
 *La Isla-Fortaleza · Bastión de los Felicios*
 
-![El Rey sin Melena de Lorda Gorda](../../img/character-maneless-king.png){ .wiki-portrait }
+![El Rey sin Melena de Lorda Gorda](../../img/character-maneless-king.webp){ .wiki-portrait }
 
 Lejos de las zonas de patrulla de los Guardianes de Galluvinchia se encuentra Lorda Gorda, la ciudad más orgullosa del este. Habitada principalmente por trabajadores felicios, rechaza las bendiciones de los dioses y reza en cambio a la Luz.
 

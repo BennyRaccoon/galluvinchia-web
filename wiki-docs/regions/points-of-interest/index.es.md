@@ -24,7 +24,7 @@ Hace mucho tiempo, los gigantes vivían en armonía en An'Ramoda. Luego una col�
 
 *El Bosque Eterno · El Bosque Retorcido*
 
-![La Reina de las Ramas, heraldo de la Voluntad de lo Salvaje](../../img/artwork-queen-of-branches.png){ .wiki-portrait }
+![La Reina de las Ramas, heraldo de la Voluntad de lo Salvaje](../../img/artwork-queen-of-branches.webp){ .wiki-portrait }
 
 En el corazón de Galluvinchia se extiende Aurora Densasilva, el bosque perpetuo, impenetrable, antiguo. Se dice que está vivo de maneras que ningún otro bosque lo está: sus raíces recuerdan la Primera Era y sus ramas guardan rencores.
 
@@ -52,7 +52,7 @@ Ruinas antiguas salpican el desierto. Lo que fueron en su día, ciudades, templo
 
 *El Mar Púrpura · Donde Cayó la Serpiente*
 
-![Caminante del abismo, heredero del poder de la vieja serpiente](../../img/artwork-abyss-walker.png){ .wiki-portrait }
+![Caminante del abismo, heredero del poder de la vieja serpiente](../../img/artwork-abyss-walker.webp){ .wiki-portrait }
 
 Lejos al noreste, el mar alrededor de esta isla se volvió púrpura cuando la serpiente primordial **Aolosh** fue vencida por los dioses en ascenso. La isla es el hogar de una tribu que aún venera a la serpiente caída, sus rituales son los más extremos de Galluvinchia, alimentados por la sangre corrompida de su patrón caído.
 

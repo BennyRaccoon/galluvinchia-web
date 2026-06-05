@@ -138,7 +138,7 @@ Recientemente han surgido tensiones: Lorda Gorda crece en poder, y los ataques d
 
 *El Reino Inferior · Último Descanso de las Almas*
 
-![El Rencarnatorno, río de almas](../../img/artwork-neverender.png){ .wiki-portrait }
+![El Rencarnatorno, río de almas](../../img/artwork-neverender.webp){ .wiki-portrait }
 
 En lo más profundo de las entrañas de Galluvinchia se encuentra el Rencarnatorno, el último destino para las almas de los vivos. Aquí, el río de las almas encuentra su destino, uniéndose al **Resurgimiento** para convertirse en nuevas almas que nacen de nuevo en cuerpos en la superficie.
 

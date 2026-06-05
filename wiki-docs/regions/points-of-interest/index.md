@@ -24,7 +24,7 @@ Long ago, the giants lived harmoniously in An'Ramoda. Then a choleric madness be
 
 *The Eternal Forest · The Twisted Wood*
 
-![The Queen of Branches, herald of the Will of the Wild](../../img/artwork-queen-of-branches.png){ .wiki-portrait }
+![The Queen of Branches, herald of the Will of the Wild](../../img/artwork-queen-of-branches.webp){ .wiki-portrait }
 
 At the heart of Galluvinchia sprawls Aurora Densasilva, the forever forest, the impenetrable, the ancient. It is said to be alive in ways no other forest is: its roots remember the First Age, and its branches hold grudges.
 
@@ -52,7 +52,7 @@ Ancient ruins dot the desert. What they once were, cities, temples, academies, i
 
 *The Purple Sea · Where the Serpent Fell*
 
-![Abyss walker, heir of the old serpent's power](../../img/artwork-abyss-walker.png){ .wiki-portrait }
+![Abyss walker, heir of the old serpent's power](../../img/artwork-abyss-walker.webp){ .wiki-portrait }
 
 Far to the northeast, the sea around this island turned purple when the primordial snake **Aolosh** was vanquished by the ascending gods. The island is home to a tribe that still venerates the fallen serpent, their rituals are among the most extreme in Galluvinchia, fueled by the tainted blood of their fallen patron.
 
