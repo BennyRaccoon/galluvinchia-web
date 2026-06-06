@@ -24,9 +24,9 @@ El Rey sin Melena siempre ha sido un gobernante amable que vela por el bienestar
 
 ## Gobierno
 
-Lorda Gorda está gobernada por una asamblea donde se necesitan cinco votos para tomar cualquier decisión. El Rey sin Melena tiene cuatro votos, lo que le da una autoridad significativa pero no absoluta.
+[Lorda Gorda](../regions/cities/lorda-gorda.md) está gobernada por una asamblea donde se necesitan cinco votos para tomar cualquier decisión. El Rey sin Melena tiene cuatro votos, lo que le da una autoridad significativa pero no absoluta.
 
 ## Los Cristales Rosas
 
-Los cristales que iluminan las calles de Lorda Gorda contienen la energía anímica de sus ciudadanos. El Rey sin Melena participa en esta tradición como todos los demás, habiendo saltado a la Fuente del Rencarnatorno a los dieciocho años.
+Los cristales que iluminan las calles de [Lorda Gorda](../regions/cities/lorda-gorda.md) contienen la energía anímica de sus ciudadanos. El Rey sin Melena participa en esta tradición como todos los demás, habiendo saltado a la Fuente del Rencarnatorno a los dieciocho años.
 

@@ -20,7 +20,7 @@ description: An'Ramoda, la gran ciudad amurallada del norte, sede de la diosa Ar
 
 </div>
 
-Construida como santuario por Salgu, el Rey de las Bestias, An'Ramoda ha permanecido como la mayor ciudad fortaleza de Galluvinchia desde la Era de los Gigantes. Sus enormes murallas encierran a una próspera población cuyo amor por la lucha no tiene igual.
+Construida como santuario por [Salgu](../../characters/salgu.md), el Rey de las Bestias, An'Ramoda ha permanecido como la mayor ciudad fortaleza de Galluvinchia desde la Era de los Gigantes. Sus enormes murallas encierran a una próspera población cuyo amor por la lucha no tiene igual.
 
 El pueblo venera a Aremedia por encima de todos los demás. Muchos ciudadanos sueñan con competir y ganar en el **Coliseo**, donde los combates gladiatorios coronan campeones anualmente. El campeón actual, **[Armada](../../characters/armada.md)**, un enorme minotauro negro, lleva más de diez años con el título.
 
@@ -28,9 +28,9 @@ El pueblo venera a Aremedia por encima de todos los demás. Muchos ciudadanos su
 
 | Autoridad | Descripción |
 |-----------|-------------|
-| **Aremedia** | Poder supremo por derecho divino. Su voluntad es ley |
+| **[Aremedia](../../gods/aremedia.md)** | Poder supremo por derecho divino. Su voluntad es ley |
 | **Tres Cónsules** | [Lewis Pendeltag](../../characters/lewis-pendeltag.md) (sabiduría), [Armada](../../characters/armada.md) (valor), [Martin Goldberg](../../characters/martin-goldberg.md) (comercio) |
-| **Seis Senadores** | Elegidos por los cónsules con aprobación de Aremedia |
+| **Seis Senadores** | Elegidos por los cónsules con aprobación de [Aremedia](../../gods/aremedia.md) |
 
 ## El Ejército
 

@@ -17,7 +17,7 @@ description: Alice Rockwool, adventurer and legend of the timeless library disco
 
 </div>
 
-Traveling the depths beneath Lakobordo, Alice Rockwool and her companions discovered a timeless library long lost to the world, amid marble pillars and pale tourmaline dust.
+Traveling the depths beneath [Lakobordo](../regions/villages/lakobordo.md), Alice Rockwool and her companions discovered a timeless library long lost to the world, amid marble pillars and pale tourmaline dust.
 
 A cyclopean construct stood waiting for them. Before the battle could begin, Alice Rockwool stepped forward and said:
 

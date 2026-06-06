@@ -40,8 +40,3 @@ Sus seguidores, herreros, escultores, trabajadores del cuero y joyeros, buscan c
 
 !!! note "Un corazón de hierro"
     Moroes amó profundamente a [Morphia](morphia.md), entregando herramientas divinas a sus padres a cambio de su mano. Cuando se alcanzó la divinidad, la boda fue cancelada. El latido de su yunque, dicen, es lo único que puede detener el dolor de su corazón roto. Los susurros que ahora lo guían provienen, según se dice, de [la Dama de Astas](lesser-powers.md#la-dama-de-astas).
-
-!!! quote "Clases sugeridas"
-    Bárbaro, mago, guerrero, clérigo
-
-![Moroes, Dios de la Forja](../img/artwork-moroes.webp){ .wiki-full }

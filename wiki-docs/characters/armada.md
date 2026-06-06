@@ -19,7 +19,7 @@ description: Armada, undefeated Colosseum champion for over ten years and Brave 
 
 </div>
 
-A towering black minotaur with sharp horns and a massive blade worn across his back, a blade no one has ever seen him draw. Reigning Colosseum champion for more than ten years, and one of the three consuls of An'Ramoda, chosen personally by the goddess Aremedia.
+A towering black minotaur with sharp horns and a massive blade worn across his back, a blade no one has ever seen him draw. Reigning Colosseum champion for more than ten years, and one of the three consuls of An'Ramoda, chosen personally by the goddess [Aremedia](../gods/aremedia.md).
 
 ## The Colosseum
 
@@ -27,7 +27,7 @@ Challengers come from across Galluvinchia seeking glory. None has forced him to 
 
 ## Politics
 
-As Brave Consul, Armada represents martial valor in An'Ramoda's governance. Alongside Lewis Pendeltag and Martin Goldberg, he forms the triumvirate that implements Aremedia's will.
+As Brave Consul, Armada represents martial valor in An'Ramoda's governance. Alongside [Lewis Pendeltag](lewis-pendeltag.md) and [Martin Goldberg](martin-goldberg.md), he forms the triumvirate that implements Aremedia's will.
 
 !!! tip "Rumour"
     Fighters defeated at the Colosseum are yet to be seen again. Their families accept that whatever happens is glory or death, but not everyone is so certain.

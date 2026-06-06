@@ -43,7 +43,4 @@ His most fervent zealots hide their faces with **masks resembling the sun**, bel
 
 Panos met [Brenadette](brenadette.md) at one of Galluvinchia's great academies, and the two fell deeply in love. Together they ascended to divinity and became the protectors of the land, parents to [Aremedia](aremedia.md) and [Morphia](morphia.md).
 
-!!! quote "Suggested classes"
-    Bard, cleric, monk, wizard
-
 ![Silvino, High Paladin of Panos](../img/artwork-panos-cleric.webp){ .wiki-full }

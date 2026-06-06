@@ -19,9 +19,9 @@ description: Raquel Crepusculiento, last known inventor of a forgotten academy c
 
 </div>
 
-The last known inventor of a long-forgotten academy connected to the Lord of Carbohyrr. Her blueprints and notes survive in hidden places, detailing designs and knowledge that the current age has yet to match.
+The last known inventor of a long-forgotten academy connected to the [Lord of Carbohyrr](../regions/cities/lord-of-carbohyrr.md). Her blueprints and notes survive in hidden places, detailing designs and knowledge that the current age has yet to match.
 
 ## Legacy
 
-Her most notable creation is spoken of in legends among the smiths and battlemages of Carbohyrr, but the truth of it remains buried. Scholars who have found fragments of her notes speak of machines that should not exist and formulas that defy current understanding of the Ripple.
+Her most notable creation is spoken of in legends among the smiths and battlemages of [Carbohyrr](../regions/cities/lord-of-carbohyrr.md), but the truth of it remains buried. Scholars who have found fragments of her notes speak of machines that should not exist and formulas that defy current understanding of the Ripple.
 

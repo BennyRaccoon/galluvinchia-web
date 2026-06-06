@@ -20,7 +20,7 @@ Siglos después, el Whisk de Lumin sigue en pie.
 ### Alice Rockwool y el Autómata
 *Una Crónica desde las Profundidades de Lakobordo*
 
-Viajando por las profundidades bajo Lakobordo, entre pilares de mármol y pálido polvo de turmalina, [Alice Rockwool](../characters/alice-rockwool.md) y sus compañeros descubrieron una biblioteca atemporal perdida para el mundo.
+Viajando por las profundidades bajo [Lakobordo](../regions/villages/lakobordo.md), entre pilares de mármol y pálido polvo de turmalina, [Alice Rockwool](../characters/alice-rockwool.md) y sus compañeros descubrieron una biblioteca atemporal perdida para el mundo.
 
 Un autómata de inmensas proporciones los aguardaba. Antes de que la batalla pudiera comenzar, Alice Rockwool dio un paso al frente y dijo:
 

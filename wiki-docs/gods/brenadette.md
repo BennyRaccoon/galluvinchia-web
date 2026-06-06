@@ -42,7 +42,4 @@ The largest abbey dedicated to her stands in **Pharoes**, a city frequently batt
 
 Brenadette fell in love with [Panos](panos.md) during their academy years, and together they achieved divinity. She is mother to [Aremedia](aremedia.md) and [Morphia](morphia.md). Her endless vigil over the Neverender is the sorrow that Panos still wanders the world hoping to mend.
 
-!!! quote "Suggested classes"
-    Warlock, cleric, rogue, wizard
-
 ![Frigida, first acolyte of Brenadette](../img/artwork-brenadette-cleric.webp){ .wiki-full }

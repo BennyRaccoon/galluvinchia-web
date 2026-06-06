@@ -27,7 +27,7 @@ description: Morphia, la Pensadora y Guardiana de los Sueños, es la diosa del a
 
 </div>
 
-Morphia es tímida y retraída, y a menudo se pierde en sus propios sueños, lo que deja a sus seguidores sin su gracia durante períodos conocidos como el **Letargo de Morphia**. Aun así, su santuario en Doormi, junto a sus cascadas, atrae a artistas, médicos y buscadores de crecimiento interior de toda la tierra.
+Morphia es tímida y retraída, y a menudo se pierde en sus propios sueños, lo que deja a sus seguidores sin su gracia durante períodos conocidos como el **Letargo de Morphia**. Aun así, su santuario en [Doormi](../regions/villages/doormi.md), junto a sus cascadas, atrae a artistas, médicos y buscadores de crecimiento interior de toda la tierra.
 
 ## Culto
 
@@ -38,8 +38,3 @@ Presta su poder a la **Academia de las Ondas Étereas y los Sueños**, donde los
 ## Relaciones
 
 Hija de [Panos](panos.md) y [Brenadette](brenadette.md), Morphia compartió su poder divino generosamente, elevando tanto a [Leeve](leeve.md) como a [Moroes](moroes.md) a la divinidad, aunque las relaciones que siguieron no estuvieron exentas de dolor.
-
-!!! quote "Clases sugeridas"
-    Paladín, mago, hechicero, druida, bardo
-
-![Morphia, Diosa de los Sueños](../img/artwork-morphia.webp){ .wiki-full }

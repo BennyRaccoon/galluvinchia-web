@@ -19,11 +19,11 @@ description: Agustín de Carzagus, un panadero de Lakobordo famoso por sus extra
 
 </div>
 
-Famoso en todo Lakobordo por sus extraordinarios cruasanes. También, por un viejo colgante de plata con forma de puño que lleva siempre consigo, un colgante que no puede explicar, y cuyo origen ni él mismo conoce.
+Famoso en todo [Lakobordo](../regions/villages/lakobordo.md) por sus extraordinarios cruasanes. También, por un viejo colgante de plata con forma de puño que lleva siempre consigo, un colgante que no puede explicar, y cuyo origen ni él mismo conoce.
 
 Es un hombre amable y discreto que no parece tener ninguna importancia especial.
 
 ## El Colgante
 
-El colgante es de plata, antiguo, con forma de puño cerrado. No muestra ninguna marca de fabricante que ningún herrero de Lakobordo haya podido identificar.
+El colgante es de plata, antiguo, con forma de puño cerrado. No muestra ninguna marca de fabricante que ningún herrero de [Lakobordo](../regions/villages/lakobordo.md) haya podido identificar.
 

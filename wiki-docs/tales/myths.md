@@ -26,7 +26,7 @@ The war that followed shook Galluvinchia. Its final clash erupted in the forsake
 
 Older than time and crafted from the Ripple itself, gems of unimaginable power were scattered across Galluvinchia. These gems represent the different forces of existence: *Light, Growth, Time,* and *Heat*.
 
-One of them was gifted to Aremedia by Panos himself, and it is that gem whose light illuminates the city of An'Ramoda.
+One of them was gifted to Aremedia by Panos himself, and it is that gem whose light illuminates the city of [An'Ramoda](../regions/cities/anramoda.md).
 
 Where the others are, no one says for certain.
 
@@ -66,7 +66,7 @@ She travelled to the Neverender and has wandered its scorched ground ever since,
 
 A tribe descended into madness when their patron, the mythical snake Aolosh, was vanquished by the gods during their ascent to divinity. Driven by fury and despair, the tribe ventured into the Neverender and waged a ferocious battle against Brenadette herself.
 
-With the aid of Aremedia, the tribe was defeated and banished back to their island, **Ourobolis**, where the sea turned purple with the serpent's tainted blood.
+With the aid of [Aremedia](../gods/aremedia.md), the tribe was defeated and banished back to their island, **Ourobolis**, where the sea turned purple with the serpent's tainted blood.
 
 The tribe continues to venerate Aolosh and is said to conduct the most extreme rituals in all of Galluvinchia.
 
@@ -75,7 +75,7 @@ The tribe continues to venerate Aolosh and is said to conduct the most extreme r
 ### Giants of the North
 *A Myth of Aremedia*
 
-Long ago, the giants lived harmoniously in An'Ramoda, building and protecting alongside the rest of its citizens. But among them, a choleric madness began to spread, an uncontrollable rage that threatened the city's peace.
+Long ago, the giants lived harmoniously in [An'Ramoda](../regions/cities/anramoda.md), building and protecting alongside the rest of its citizens. But among them, a choleric madness began to spread, an uncontrollable rage that threatened the city's peace.
 
 Aremedia, commanding her formidable army, acted decisively. She exiled the giants from An'Ramoda and banished them to the far reaches of the North, where her influence wanes.
 
@@ -99,7 +99,7 @@ Since that agreement, a delicate peace has reigned between An'Ramoda and the wil
 
 ![Moroes, God of the Forge](../img/artwork-moroes.webp){ .wiki-portrait }
 
-Deep in the Lord of Carbohyrr, long before anyone ascended to divinity, a craftsman named Moroes fell in love with Morphia. His love for her was on par with his craftsmanship, and both were second to none.
+Deep in the [Lord of Carbohyrr](../regions/cities/lord-of-carbohyrr.md), long before anyone ascended to divinity, a craftsman named Moroes fell in love with Morphia. His love for her was on par with his craftsmanship, and both were second to none.
 
 He gifted the gods item after item, each one granting them more power, the sound of his anvil keeping rhythm with his heartbeat. He asked for Morphia's hand in exchange, and was promised it.
 
@@ -114,7 +114,7 @@ Even if the blessing of godhood was shared with him, it was not enough to fill t
 
 After enduring the pain of leaving Moroes behind, and after a long period of isolation and grief, Morphia emerged with a renewed perspective. She wandered the land and, after great determination, created the **Thread of Virtue**, a divine thread imbued with the essence of her experiences.
 
-With it, she founded the **Academy of Magic Waves and Dreams**, where magically attuned people from across the land would come to learn, grow, and craft garments that make everyone's life a little more wonderful.
+With it, she founded the **[Academy of Magic Waves and Dreams](../regions/villages/doormi.md)**, where magically attuned people from across the land would come to learn, grow, and craft garments that make everyone's life a little more wonderful.
 
 ---
 

@@ -17,7 +17,7 @@ description: Salgu, el legendario Rey de las Bestias que construyó An'Ramoda co
 
 </div>
 
-En la Era de los Gigantes, Salgu construyó An'Ramoda como un santuario donde humanos, centauros y minotauros pudieran vivir seguros. Es la leyenda fundacional de la mayor ciudad de Galluvinchia.
+En la Era de los Gigantes, Salgu construyó [An'Ramoda](../regions/cities/anramoda.md) como un santuario donde humanos, centauros y minotauros pudieran vivir seguros. Es la leyenda fundacional de la mayor ciudad de Galluvinchia.
 
 También es el origen del nombre de la raza minotauro: se dice que el primer minotauro fue el hijo del propio Salgu.
 

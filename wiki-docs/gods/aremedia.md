@@ -35,9 +35,4 @@ She promotes striving, fighting, and working hard above all else. The harder peo
 
 ## Domain
 
-She rules over **An'Ramoda**, the most powerful military city in Galluvinchia, and commands the mightiest army on the continent. Her champion, **Armada**, has held the title of Colosseum Champion for more than ten years. Her achievements are celebrated yearly in the Colosseum with great gladiatorial games.
-
-!!! quote "Suggested classes"
-    Paladin, warrior, rogue, monk, barbarian, sorcerer, ranger
-
-![Aremedia, Goddess of Impetus](../img/artwork-aremedia.webp){ .wiki-full }
+She rules over **[An'Ramoda](../regions/cities/anramoda.md)**, the most powerful military city in Galluvinchia, and commands the mightiest army on the continent. Her champion, **[Armada](../characters/armada.md)**, has held the title of Colosseum Champion for more than ten years. Her achievements are celebrated yearly in the Colosseum with great gladiatorial games.

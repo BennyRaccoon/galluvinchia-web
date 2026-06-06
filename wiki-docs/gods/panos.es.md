@@ -43,7 +43,4 @@ Sus fanáticos más fervorosos esconden sus rostros tras **máscaras con forma d
 
 Panos conoció a [Brenadette](brenadette.md) en una de las grandes academias de Galluvinchia, y ambos se enamoraron perdidamente. Juntos ascendieron a la divinidad y se convirtieron en protectores de la tierra, padres de [Aremedia](aremedia.md) y [Morphia](morphia.md).
 
-!!! quote "Clases sugeridas"
-    Bardo, clérigo, monje, mago
-
 ![Silvino, Gran Paladín de Panos](../img/artwork-panos-cleric.webp){ .wiki-full }

@@ -20,7 +20,7 @@ description: An'Ramoda, the great walled northern city, seat of the goddess Arem
 
 </div>
 
-Built as a sanctuary by Salgu, the King of the Beasts, An'Ramoda has stood as the greatest fortress city in Galluvinchia since the Age of the Giants. Its enormous walls enclose a thriving population whose love for the fight and the pursuit of a strong body is second to none.
+Built as a sanctuary by [Salgu](../../characters/salgu.md), the King of the Beasts, An'Ramoda has stood as the greatest fortress city in Galluvinchia since the Age of the Giants. Its enormous walls enclose a thriving population whose love for the fight and the pursuit of a strong body is second to none.
 
 The people worship Aremedia above all others. Many citizens dream of competing and winning in the **Colosseum**, where gladiatorial matches crown champions yearly. The current champion, **[Armada](../../characters/armada.md)**, a towering black minotaur, has held the title for more than ten years. None has ever forced him to draw his sword.
 
@@ -28,9 +28,9 @@ The people worship Aremedia above all others. Many citizens dream of competing a
 
 | Authority | Description |
 |-----------|-------------|
-| **Aremedia** | Ultimate power by divine right. Her will is law |
+| **[Aremedia](../../gods/aremedia.md)** | Ultimate power by divine right. Her will is law |
 | **Three Consuls** | [Lewis Pendeltag](../../characters/lewis-pendeltag.md) (wisdom), [Armada](../../characters/armada.md) (valor), [Martin Goldberg](../../characters/martin-goldberg.md) (commerce) |
-| **Six Senators** | Chosen by the consuls with Aremedia's approval |
+| **Six Senators** | Chosen by the consuls with [Aremedia](../../gods/aremedia.md)'s approval |
 
 ## The Army
 

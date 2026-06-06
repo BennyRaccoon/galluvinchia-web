@@ -18,14 +18,14 @@ description: El Rey Fernando Oldreekia, gobernante real de la Dama de Mármaros,
 
 </div>
 
-De sangre real, la familia Oldreekia ha mantenido el poder en la Dama de Mármaros desde antes de que los dioses pisaran la tierra. Fernando gobierna junto a la Academia y el Gremio, aunque el equilibrio de ese triángulo nunca es del todo estable.
+De sangre real, la familia Oldreekia ha mantenido el poder en la [Dama de Mármaros](../regions/cities/lady-of-marmaros.md) desde antes de que los dioses pisaran la tierra. Fernando gobierna junto a la Academia y el Gremio, aunque el equilibrio de ese triángulo nunca es del todo estable.
 
 ## El Triángulo del Poder
 
 | Autoridad | Descripción |
 |-----------|-------------|
 | **Rey Fernando Oldreekia** | Real por sangre, propietario de la Guardia Real, la tierra y las minas de mármol |
-| **Academia de Magias Maravillosas** | Dirigida por la Magistrada Monica Mars; poder creciente |
+| **Academia de Magias Maravillosas** | Dirigida por la [Magistrada Monica Mars](monica-mars.md); poder creciente |
 | **El Gremio** | Gremio de mercaderes que controla los registros comerciales de toda Galluvinchia |
 
 Y en las sombras: **El Puño**, cuyo líder nadie conoce.

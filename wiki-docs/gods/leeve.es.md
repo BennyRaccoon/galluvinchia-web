@@ -39,8 +39,3 @@ Es amada por la gente de la **[Joya Siemprecreciente](../regions/villages/index.
 ## Historia
 
 Cuando Morphia se sumió en el desamor, uno de sus paladines nunca perdió la fe y la persiguió incluso en sus pesadillas. Cuando la diosa regresó, aquella paladín devota fue elevada como Leeve, la diosa de la belleza y la naturaleza, ocupando el trono vacío del amor.
-
-!!! quote "Clases sugeridas"
-    Bardo, mago, clérigo, druida
-
-![Leeve, Diosa de la Belleza y la Naturaleza](../img/artwork-leeve.webp){ .wiki-full }

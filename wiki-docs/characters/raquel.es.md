@@ -1,5 +1,5 @@
 ---
-description: Raquel Crepusculiento, la última inventora conocida de una academia olvidada vinculada al Señor de Carbohyrr.
+description: Raquel Crepusculiento, la última inventora conocida de una academia olvidada vinculada al [Señor de Carbohyrr](../regions/cities/lord-of-carbohyrr.md).
 ---
 
 # Raquel Crepusculiento
@@ -23,5 +23,5 @@ La última inventora conocida de una academia olvidada vinculada al Señor de Ca
 
 ## Legado
 
-Su creación más notable es objeto de leyendas entre los herreros y Mago-Guerreros de Carbohyrr, pero la verdad permanece enterrada. Los eruditos que han encontrado fragmentos de sus notas hablan de máquinas que no deberían existir.
+Su creación más notable es objeto de leyendas entre los herreros y Mago-Guerreros de [Carbohyrr](../regions/cities/lord-of-carbohyrr.md), pero la verdad permanece enterrada. Los eruditos que han encontrado fragmentos de sus notas hablan de máquinas que no deberían existir.
 

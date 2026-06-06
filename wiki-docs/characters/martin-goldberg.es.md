@@ -17,7 +17,7 @@ description: Martin Goldberg, Cónsul Poderoso de An'Ramoda y propietario de la 
 
 </div>
 
-Propietario de la mina de oro de An'Ramoda y el tercero de los cónsules elegidos por la diosa. El comercio y las monedas son su dominio, y en una ciudad donde la mina lo impulsa todo, su poder es considerable.
+Propietario de la mina de oro de An'Ramoda y el tercero de los cónsules elegidos por la diosa [Aremedia](../gods/aremedia.md). El comercio y las monedas son su dominio, y en una ciudad donde la mina lo impulsa todo, su poder es considerable.
 
-Como Cónsul Poderoso, Martin controla el motor económico de An'Ramoda. La mina de oro es el cimiento del poder militar de la ciudad.
+Como Cónsul Poderoso, Martin controla el motor económico de [An'Ramoda](../regions/cities/anramoda.md). La mina de oro es el cimiento del poder militar de la ciudad.
 

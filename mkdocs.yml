@@ -100,6 +100,13 @@ plugins:
             Myths: Mitos
             Legends: Leyendas
             Folktales: Cuentos Populares
+            The Light: La Luz
+            Will of the Wild: Voluntad de lo Salvaje
+            Long-Lost Paladins: Los Paladines Olvidados
+            The Tarnished Star: La Estrella Deslustrada
+            The Nameless One: El Innombrable
+            Lady of Horns: La Dama de Astas
+            The Dragons: Los Dragones Perdidos
 
 markdown_extensions:
   - attr_list
@@ -138,7 +145,15 @@ nav:
       - Morphia: gods/morphia.md
       - Moroes: gods/moroes.md
       - Leeve: gods/leeve.md
-      - Lesser Powers & Legends: gods/lesser-powers.md
+      - Lesser Powers & Legends:
+          - Overview: gods/lesser-powers/index.md
+          - The Light: gods/lesser-powers/the-light.md
+          - Will of the Wild: gods/lesser-powers/will-of-the-wild.md
+          - Long-Lost Paladins: gods/lesser-powers/long-lost-paladins.md
+          - The Tarnished Star: gods/lesser-powers/tarnished-star.md
+          - The Nameless One: gods/lesser-powers/nameless-one.md
+          - Lady of Horns: gods/lesser-powers/lady-of-horns.md
+          - The Dragons: gods/lesser-powers/dragons.md
   - World:
       - Overview: regions/index.md
       - Cities:

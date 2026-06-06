@@ -19,7 +19,7 @@ description: Lumin Oldreekia, el legendario leokin, mayor héroe felicios y fund
 
 El mayor héroe de los felicios, Lumin Oldreekia fue el legendario leokin que creó la primera ciudad felicia, ahora llamada el Whisk de Lumin, en la costa sur, como bastión contra tormentas de arena, piratas y necrófagos.
 
-Más tarde se convirtió en el primer rey de Lorda Gorda. Siglos después, el Whisk de Lumin sigue en pie.
+Más tarde se convirtió en el primer rey de [Lorda Gorda](../regions/cities/lorda-gorda.md). Siglos después, el [Whisk de Lumin](../regions/villages/whisk-of-lumin.md) sigue en pie.
 
 El [Rey sin Melena](maneless-king.md) es visto como su heredero espiritual.
 

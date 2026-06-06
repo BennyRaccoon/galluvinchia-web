@@ -42,7 +42,4 @@ La Abadía más grande dedicada a ella se encuentra en **Pharoes**, una ciudad f
 
 Brenadette se enamoró de [Panos](panos.md) durante sus años en la academia, y juntos alcanzaron la divinidad. Es madre de [Aremedia](aremedia.md) y [Morphia](morphia.md). Su vigilia eterna sobre el Rencarnatorno es la tristeza que Panos aún recorre el mundo esperando sanar.
 
-!!! quote "Clases sugeridas"
-    Brujo, clérigo, pícaro, mago
-
 ![Frígida, primera acólita de Brenadette](../img/artwork-brenadette-cleric.webp){ .wiki-full }

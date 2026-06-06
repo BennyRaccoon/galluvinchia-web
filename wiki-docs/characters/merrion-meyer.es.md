@@ -17,7 +17,7 @@ description: Merrion Meyer, Regente de la Academia de las Ondas Étereas y los S
 
 </div>
 
-Merrion Meyer dirige la Academia de las Ondas Étereas y los Sueños en Doormi. Donde Monica Mars construye imperios, Merrion construye oportunidades.
+Merrion Meyer dirige la Academia de las Ondas Étereas y los Sueños en [Doormi](../regions/villages/doormi.md). Donde Monica Mars construye imperios, Merrion construye oportunidades.
 
 El primer año de estudio es gratuito para los estudiantes más brillantes, independientemente de su origen. La especialidad de la academia es el **Telar de los Sueños** y la confección de prendas mágicas.
 

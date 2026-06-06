@@ -27,7 +27,7 @@ description: Morphia, the Thoughtful and Guardian of Dreams, is the goddess of l
 
 </div>
 
-Morphia is shy, timid, and often lost in her own dreams, which leaves her followers without her grace for stretches of time known as **Morphia's Slumber**. Yet her shrine at Doormi, beside its waterfalls, draws artists, doctors, and seekers of inner growth from across the land.
+Morphia is shy, timid, and often lost in her own dreams, which leaves her followers without her grace for stretches of time known as **Morphia's Slumber**. Yet her shrine at [Doormi](../regions/villages/doormi.md), beside its waterfalls, draws artists, doctors, and seekers of inner growth from across the land.
 
 ## Worship
 
@@ -38,8 +38,3 @@ She lends her power to the **Academy of Magic Waves and Dreams**, where craftspe
 ## Relationships
 
 Daughter of [Panos](panos.md) and [Brenadette](brenadette.md), Morphia shared her divine power generously, elevating both [Leeve](leeve.md) and [Moroes](moroes.md) to godhood, though the relationships that followed were not without heartbreak.
-
-!!! quote "Suggested classes"
-    Paladin, wizard, sorcerer, druid, bard
-
-![Morphia, Goddess of Dreams](../img/artwork-morphia.webp){ .wiki-full }

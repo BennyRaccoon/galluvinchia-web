@@ -17,7 +17,7 @@ description: Merrion Meyer, Regent of the Academy of Magic Waves and Dreams in D
 
 </div>
 
-Merrion Meyer leads the more humble but generously spirited Academy of Magic Waves and Dreams at Doormi. Where Monica Mars builds empires, Merrion builds opportunities.
+Merrion Meyer leads the more humble but generously spirited Academy of Magic Waves and Dreams at [Doormi](../regions/villages/doormi.md). Where Monica Mars builds empires, Merrion builds opportunities.
 
-The first year of study is free for brilliant students, regardless of background. This policy has made magic more accessible in Doormi than anywhere else in Galluvinchia. The academy's specialty is the **Loom of Dreams** and the craft of magical garments.
+The first year of study is free for brilliant students, regardless of background. This policy has made magic more accessible in [Doormi](../regions/villages/doormi.md) than anywhere else in Galluvinchia. The academy's specialty is the **Loom of Dreams** and the craft of magical garments.
 

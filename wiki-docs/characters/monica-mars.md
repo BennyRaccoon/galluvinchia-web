@@ -1,5 +1,5 @@
 ---
-description: Magister Monica Mars, head of the Academy of Magic Wonders and one of the most powerful figures in the Lady of Marmaros.
+description: Magister Monica Mars, head of the Academy of Magic Wonders and one of the most powerful figures in the [Lady of Marmaros](../regions/cities/lady-of-marmaros.md).
 ---
 
 # Magister Monica Mars

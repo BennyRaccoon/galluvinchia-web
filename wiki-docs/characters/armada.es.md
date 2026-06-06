@@ -19,7 +19,7 @@ description: Armada, campeón invicto del Coliseo durante más de diez años y C
 
 </div>
 
-Un enorme minotauro negro con cuernos afilados y una enorme espada cargada a la espalda, una espada que nadie le ha visto desenfundar jamás. Campeón reinante del Coliseo durante más de diez años, y uno de los tres cónsules de An'Ramoda, elegido personalmente por la diosa Aremedia.
+Un enorme minotauro negro con cuernos afilados y una enorme espada cargada a la espalda, una espada que nadie le ha visto desenfundar jamás. Campeón reinante del Coliseo durante más de diez años, y uno de los tres cónsules de An'Ramoda, elegido personalmente por la diosa [Aremedia](../gods/aremedia.md).
 
 ## El Coliseo
 
@@ -27,7 +27,7 @@ Los aspirantes vienen de toda Galluvinchia en busca de gloria. Ninguno le ha obl
 
 ## Política
 
-Como Cónsul Valiente, Armada representa el valor marcial en el gobierno de An'Ramoda. Junto a Lewis Pendeltag y Martin Goldberg, forma el triunvirato que implementa la voluntad de Aremedia.
+Como Cónsul Valiente, Armada representa el valor marcial en el gobierno de An'Ramoda. Junto a [Lewis Pendeltag](lewis-pendeltag.md) y [Martin Goldberg](martin-goldberg.md), forma el triunvirato que implementa la voluntad de Aremedia.
 
 !!! tip "Rumor"
     Los luchadores derrotados en el Coliseo aún no han vuelto a ser vistos. Sus familias aceptan que lo que ocurra es gloria o muerte, pero no todos están tan seguros.

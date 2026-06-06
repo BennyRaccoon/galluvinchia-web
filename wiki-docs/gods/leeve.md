@@ -39,8 +39,3 @@ She is beloved by the people of the **[Jewel of Evergrowth](../regions/villages/
 ## History
 
 When Morphia withdrew into heartbreak, one of her paladins never lost faith and chased her even into her nightmares. When the goddess returned, that devoted paladin was raised as Leeve, the goddess of beauty and nature, filling the empty throne of love.
-
-!!! quote "Suggested classes"
-    Bard, wizard, cleric, druid
-
-![Leeve, Goddess of Beauty and Nature](../img/artwork-leeve.webp){ .wiki-full }

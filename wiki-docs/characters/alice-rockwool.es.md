@@ -17,7 +17,7 @@ description: Alice Rockwool, aventurera y leyenda de la biblioteca atemporal des
 
 </div>
 
-Viajando por las profundidades bajo Lakobordo, Alice Rockwool y sus compañeros descubrieron una biblioteca atemporal perdida para el mundo, entre pilares de mármol y pálido polvo de turmalina.
+Viajando por las profundidades bajo [Lakobordo](../regions/villages/lakobordo.md), Alice Rockwool y sus compañeros descubrieron una biblioteca atemporal perdida para el mundo, entre pilares de mármol y pálido polvo de turmalina.
 
 Un autómata de inmensas proporciones los aguardaba. Antes de que la batalla pudiera comenzar, Alice Rockwool dio un paso al frente y dijo:
 

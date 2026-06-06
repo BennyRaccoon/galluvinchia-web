@@ -31,13 +31,9 @@ Aremedia es la primera hija de [Panos](panos.md) y [Brenadette](brenadette.md), 
 
 ## Descripción
 
-Esforzarse, luchar, trabajar duro es todo lo que promueve. Cuanto más duro trabajen las personas, más recibirán su bendición. Su fe es el credo de la propia An'Ramoda: fuerza, honor y esfuerzo incansable.
+Esforzarse, luchar, trabajar duro es todo lo que promueve. Cuanto más duro trabajen las personas, más recibirán su bendición. Su fe es el credo de la propia [An'Ramoda](../regions/cities/anramoda.md): fuerza, honor y esfuerzo incansable.
 
 ## Dominio
 
-Gobierna **An'Ramoda**, la ciudad militar más poderosa de Galluvinchia, y comanda el ejército más formidable del continente. Su campeón, **Armada**, lleva más de diez años ostentando el título de Campeón del Coliseo. Sus logros se celebran cada año en el Coliseo con grandes juegos de gladiadores.
+Gobierna **[An'Ramoda](../regions/cities/anramoda.md)**, la ciudad militar más poderosa de Galluvinchia, y comanda el ejército más formidable del continente. Su campeón, **[Armada](../characters/armada.md)**, lleva más de diez años ostentando el título de Campeón del Coliseo. Sus logros se celebran cada año en el Coliseo con grandes juegos de gladiadores.
 
-!!! quote "Clases sugeridas"
-    Paladín, guerrero, pícaro, monje, bárbaro, hechicero, explorador
-
-![Aremedia, Diosa del Ímpetu](../img/artwork-aremedia.webp){ .wiki-full }

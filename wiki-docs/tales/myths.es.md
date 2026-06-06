@@ -26,7 +26,7 @@ La guerra que siguió sacudió Galluvinchia. Su enfrentamiento final estalló en
 
 Más antiguas que el tiempo y forjadas de la propia Reverberación, gemas de un poder inimaginable están dispersadas por las tierras de Galluvinchia. Estas gemas representan las diferentes fuerzas de la existencia: *Luz, Crecimiento, Tiempo* y *Calor*.
 
-Una de ellas fue entregada a Aremedia por Panos, y es la luz que ilumina An'Ramoda.
+Una de ellas fue entregada a Aremedia por Panos, y es la luz que ilumina [An'Ramoda](../regions/cities/anramoda.md).
 
 Dónde están las demás, nadie lo dice con certeza.
 
@@ -64,7 +64,7 @@ Viajó al Rencarnatorno y desde entonces recorre su suelo abrasado, esclava del 
 
 Una tribu descendió a la locura cuando su patrón, la mítica serpiente Aolosh, fue vencida por los dioses. Impulsada por la furia y la desesperación, la tribu se adentró en el Rencarnatorno y libró una feroz batalla contra la propia Brenadette.
 
-Con la ayuda de Aremedia, la tribu fue finalmente derrotada y desterrada de vuelta a su isla, **Ourobolis**, donde el mar se tiñó de púrpura.
+Con la ayuda de [Aremedia](../gods/aremedia.md), la tribu fue finalmente derrotada y desterrada de vuelta a su isla, **Ourobolis**, donde el mar se tiñó de púrpura.
 
 La tribu continúa venerando a Aolosh y se dice que lleva a cabo los rituales más extremos de todo Galluvinchia.
 
@@ -73,7 +73,7 @@ La tribu continúa venerando a Aolosh y se dice que lleva a cabo los rituales m�
 ### Los Gigantes del Norte
 *Un Mito de Aremedia*
 
-Hace mucho tiempo, los gigantes vivían en armonía en An'Ramoda. Pero entre ellos, una colérica locura comenzó a extenderse.
+Hace mucho tiempo, los gigantes vivían en armonía en [An'Ramoda](../regions/cities/anramoda.md). Pero entre ellos, una colérica locura comenzó a extenderse.
 
 Aremedia tomó medidas decisivas. Desterró a los gigantes de An'Ramoda y los mandó a los confines del norte.
 
@@ -97,7 +97,7 @@ Desde entonces, una delicada paz ha reinado entre An'Ramoda y lo salvaje.
 
 ![Moroes, Dios de la Forja](../img/artwork-moroes.webp){ .wiki-portrait }
 
-En lo más profundo del Señor de Carbohyrr, mucho antes de que nadie ascendiera a la divinidad, un artesano llamado Moroes se enamoró de Morphia.
+En lo más profundo del [Señor de Carbohyrr](../regions/cities/lord-of-carbohyrr.md), mucho antes de que nadie ascendiera a la divinidad, un artesano llamado Moroes se enamoró de Morphia.
 
 Regalo tras regalo, herramientas de poder, objetos de maravilla, los colocó a los pies de quienes se convertirían en dioses, el sonido de su yunque llevando el ritmo de los latidos de su corazón. Pidió la mano de Morphia a cambio, y se la prometieron.
 
@@ -112,7 +112,7 @@ Hasta el fin de los días, el latido de su yunque es lo único que puede detener
 
 Tras soportar el dolor de dejar atrás a un ser querido, y tras un largo período de aislamiento, Morphia emergió con una perspectiva renovada. Recorrió las tierras y creó el **Hilo de la Virtud**, un hilo divino imbuido de la esencia de sus experiencias.
 
-Con él, fundó la **Academia de las Ondas Étereas y los Sueños**.
+Con él, fundó la **[Academia de las Ondas Étereas y los Sueños](../regions/villages/doormi.md)**.
 
 ---
 
@@ -125,7 +125,7 @@ Con el corazón destrozado, la diosa Morphia se retiró a la soledad de la natur
 
 Uno de sus devotos paladines juró restaurar a Morphia a su antiguo esplendor. Con palabras amables y actos de bondad, fue sacando poco a poco a Morphia de su aislamiento.
 
-Conmovida por esta revelación, Morphia otorgó a la paladina un don divino, elevándola a la divinidad. Se convirtió en **Leeve**, la diosa de la belleza y la naturaleza.
+Conmovida por esta revelación, Morphia otorgó a la paladina un don divino, elevándola a la divinidad. Se convirtió en **[Leeve](../gods/leeve.md)**, la diosa de la belleza y la naturaleza.
 
 ---
 

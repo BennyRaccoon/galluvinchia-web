@@ -19,7 +19,7 @@ description: Lumin Oldreekia, legendary leokin, greatest felinfolk hero and foun
 
 The greatest hero of the felinfolk, Lumin Oldreekia was the legendary leokin who created the first felinfolk city, now called the Whisk of Lumin, along the southern coast, as a bastion against sandstorms, pirates, and ghouls.
 
-He later became the first king of Lorda Gorda. Centuries later, the Whisk of Lumin still stands, its towers guarding the eastern horizon night and day.
+He later became the first king of [Lorda Gorda](../regions/cities/lorda-gorda.md). Centuries later, the [Whisk of Lumin](../regions/villages/whisk-of-lumin.md) still stands, its towers guarding the eastern horizon night and day.
 
 The [Maneless King](maneless-king.md) is seen as his spiritual heir. His legend is told in full in the [Tales of Galluvinchia](../tales/index.md).
 

@@ -80,4 +80,4 @@ From her deep sadness, the throne of love was left empty. But one of her paladin
 
 Not all powerful entities in Galluvinchia are among the six gods. Some are ancient, some are hidden, and some are best not spoken of too loudly.
 
-[Lesser Powers & Legends](lesser-powers.md){ .md-button }
+[Lesser Powers & Legends](lesser-powers/index.md){ .md-button }

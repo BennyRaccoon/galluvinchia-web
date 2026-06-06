@@ -19,7 +19,7 @@ description: Silvino, High Paladin of Panos, on a quest to recover the relics hi
 
 </div>
 
-One of Panos's most devoted champions, Silvino serves the god of magic and order with absolute dedication. His current quest involves the recovery of relics lost by his absentminded deity, objects that Panos believes are important but can no longer remember exactly why.
+One of Panos's most devoted champions, Silvino serves the god of magic and order with absolute dedication. His current quest involves the recovery of relics lost by his absentminded deity, objects that [Panos](../gods/panos.md) believes are important but can no longer remember exactly why.
 
 ## The Quest
 

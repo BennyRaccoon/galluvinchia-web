@@ -24,9 +24,9 @@ The Maneless King has always been a kind ruler who looks forward to his people's
 
 ## Governance
 
-Lorda Gorda is governed by an assembly where five votes are needed to pass any decision. The Maneless King holds four votes, giving him significant but not unchecked authority. He has consistently used this power in service of the people.
+[Lorda Gorda](../regions/cities/lorda-gorda.md) is governed by an assembly where five votes are needed to pass any decision. The Maneless King holds four votes, giving him significant but not unchecked authority. He has consistently used this power in service of the people.
 
 ## The Pink Crystals
 
-The crystals that light Lorda Gorda's streets hold the soul-energy of its citizens. The Maneless King participates in this tradition like every citizen, having jumped into the Fountain of Renewal at eighteen.
+The crystals that light [Lorda Gorda](../regions/cities/lorda-gorda.md)'s streets hold the soul-energy of its citizens. The Maneless King participates in this tradition like every citizen, having jumped into the Fountain of Renewal at eighteen.
 
