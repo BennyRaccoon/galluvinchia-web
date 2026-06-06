@@ -2,114 +2,716 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://galluvinchia.com/wiki/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/"/>
     </url>
     <url>
         <loc>https://galluvinchia.com/wiki/characters/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/characters/agustin/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/agustin/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/agustin/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/alice-rockwool/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/alice-rockwool/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/alice-rockwool/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/armada/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/armada/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/armada/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/fernando-oldreekia/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/fernando-oldreekia/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/fernando-oldreekia/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/kogarashi/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/kogarashi/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/kogarashi/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/lewis-pendeltag/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/lewis-pendeltag/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/lewis-pendeltag/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/lumin-oldreekia/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/lumin-oldreekia/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/lumin-oldreekia/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/maneless-king/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/maneless-king/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/maneless-king/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/martin-goldberg/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/martin-goldberg/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/martin-goldberg/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/merrion-meyer/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/merrion-meyer/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/merrion-meyer/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/monica-mars/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/monica-mars/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/monica-mars/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/raquel/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/raquel/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/raquel/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/salgu/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/salgu/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/salgu/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/characters/silvino/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/silvino/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/silvino/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/gods/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/gods/aremedia/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/aremedia/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/aremedia/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/gods/brenadette/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/brenadette/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/brenadette/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/gods/leeve/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/leeve/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/leeve/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/gods/lesser-powers/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/lesser-powers/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/lesser-powers/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/gods/moroes/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/moroes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/moroes/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/gods/morphia/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/morphia/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/morphia/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/gods/panos/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/panos/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/panos/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/regions/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/"/>
     </url>
     <url>
         <loc>https://galluvinchia.com/wiki/regions/cities/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/regions/cities/anramoda/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/anramoda/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/anramoda/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/cities/lady-of-marmaros/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/lady-of-marmaros/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/lady-of-marmaros/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/cities/lord-of-carbohyrr/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/lord-of-carbohyrr/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/lord-of-carbohyrr/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/cities/lorda-gorda/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/lorda-gorda/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/lorda-gorda/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/regions/points-of-interest/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/regions/points-of-interest/academies/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/academies/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/academies/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/points-of-interest/aurora-densasilva/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/aurora-densasilva/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/aurora-densasilva/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/points-of-interest/breath-of-sand/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/breath-of-sand/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/breath-of-sand/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/points-of-interest/ice-peak/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/ice-peak/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/ice-peak/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/points-of-interest/ourobolis/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/ourobolis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/ourobolis/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/points-of-interest/the-mist/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/the-mist/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/the-mist/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/regions/villages/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/anzulejosh/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/anzulejosh/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/anzulejosh/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/doormi/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/doormi/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/doormi/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/jewel-of-evergrowth/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/jewel-of-evergrowth/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/jewel-of-evergrowth/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/lakobordo/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/lakobordo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/lakobordo/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/montebordo/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/montebordo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/montebordo/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/neverender/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/neverender/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/neverender/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/pharoes/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/pharoes/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/pharoes/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/rivabordo/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/rivabordo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/rivabordo/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/regions/villages/whisk-of-lumin/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/whisk-of-lumin/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/whisk-of-lumin/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/tales/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/tales/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/tales/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/tales/folktales/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/tales/folktales/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/tales/folktales/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/tales/legends/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/tales/legends/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/tales/legends/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/tales/myths/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/tales/myths/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/tales/myths/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/es/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/"/>
     </url>
     <url>
         <loc>https://galluvinchia.com/wiki/es/characters/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/agustin/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/agustin/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/agustin/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/alice-rockwool/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/alice-rockwool/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/alice-rockwool/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/armada/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/armada/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/armada/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/fernando-oldreekia/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/fernando-oldreekia/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/fernando-oldreekia/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/kogarashi/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/kogarashi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/kogarashi/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/lewis-pendeltag/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/lewis-pendeltag/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/lewis-pendeltag/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/lumin-oldreekia/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/lumin-oldreekia/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/lumin-oldreekia/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/maneless-king/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/maneless-king/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/maneless-king/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/martin-goldberg/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/martin-goldberg/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/martin-goldberg/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/merrion-meyer/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/merrion-meyer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/merrion-meyer/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/monica-mars/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/monica-mars/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/monica-mars/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/raquel/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/raquel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/raquel/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/salgu/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/salgu/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/salgu/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/characters/silvino/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/characters/silvino/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/characters/silvino/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/es/gods/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/es/gods/aremedia/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/aremedia/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/aremedia/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/gods/brenadette/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/brenadette/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/brenadette/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/gods/leeve/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/leeve/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/leeve/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/gods/lesser-powers/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/lesser-powers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/lesser-powers/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/gods/moroes/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/moroes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/moroes/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/gods/morphia/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/morphia/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/morphia/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/gods/panos/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/gods/panos/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/gods/panos/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/es/regions/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/"/>
     </url>
     <url>
         <loc>https://galluvinchia.com/wiki/es/regions/cities/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/cities/anramoda/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/anramoda/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/anramoda/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/cities/lady-of-marmaros/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/lady-of-marmaros/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/lady-of-marmaros/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/cities/lord-of-carbohyrr/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/lord-of-carbohyrr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/lord-of-carbohyrr/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/cities/lorda-gorda/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/cities/lorda-gorda/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/cities/lorda-gorda/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/es/regions/points-of-interest/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/points-of-interest/academies/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/academies/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/academies/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/points-of-interest/aurora-densasilva/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/aurora-densasilva/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/aurora-densasilva/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/points-of-interest/breath-of-sand/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/breath-of-sand/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/breath-of-sand/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/points-of-interest/ice-peak/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/ice-peak/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/ice-peak/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/points-of-interest/ourobolis/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/ourobolis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/ourobolis/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/points-of-interest/the-mist/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/points-of-interest/the-mist/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/points-of-interest/the-mist/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/es/regions/villages/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/"/>
     </url>
     <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/anzulejosh/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/anzulejosh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/anzulejosh/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/doormi/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/doormi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/doormi/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/jewel-of-evergrowth/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/jewel-of-evergrowth/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/jewel-of-evergrowth/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/lakobordo/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/lakobordo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/lakobordo/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/montebordo/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/montebordo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/montebordo/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/neverender/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/neverender/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/neverender/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/pharoes/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/pharoes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/pharoes/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/rivabordo/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/rivabordo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/rivabordo/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/regions/villages/whisk-of-lumin/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/regions/villages/whisk-of-lumin/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/regions/villages/whisk-of-lumin/"/>
+    </url>
+    <url>
         <loc>https://galluvinchia.com/wiki/es/tales/</loc>
-        <lastmod>2026-06-05</lastmod>
+        <lastmod>2026-06-06</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/tales/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/tales/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/tales/folktales/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/tales/folktales/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/tales/folktales/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/tales/legends/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/tales/legends/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/tales/legends/"/>
+    </url>
+    <url>
+        <loc>https://galluvinchia.com/wiki/es/tales/myths/</loc>
+        <lastmod>2026-06-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://galluvinchia.com/wiki/es/tales/myths/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://galluvinchia.com/wiki/tales/myths/"/>
     </url>
 </urlset>
