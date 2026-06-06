@@ -13,21 +13,26 @@
 /* ── Light scheme ── */
 :root,
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color:              #FF00CA;
-  --md-primary-fg-color--light:       #ff40d8;
-  --md-primary-fg-color--dark:        #cc0099;
+  --md-primary-fg-color:              #F0C84B;
+  --md-primary-fg-color--light:       #f5d77a;
+  --md-primary-fg-color--dark:        #c9a227;
+  --md-primary-bg-color:              #242833;          /* text on the gold header */
+  --md-primary-bg-color--light:       rgba(36,40,51,0.7);
   --md-accent-fg-color:               #01FFB3;
   --md-accent-fg-color--transparent:  #01FFB31a;
   --md-typeset-color:                 #242833;
   --md-typeset-a-color:               #3801FF;
   --md-default-bg-color:              #FFFFFF;
+  --gv-heading:                       #242833;          /* dark text: readable on white */
 }
 
 /* ── Dark scheme ── */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color:              #FF00CA;
-  --md-primary-fg-color--light:       #ff40d8;
-  --md-primary-fg-color--dark:        #cc0099;
+  --md-primary-fg-color:              #F0C84B;
+  --md-primary-fg-color--light:       #f5d77a;
+  --md-primary-fg-color--dark:        #c9a227;
+  --md-primary-bg-color:              #242833;
+  --md-primary-bg-color--light:       rgba(36,40,51,0.7);
   --md-accent-fg-color:               #01FFB3;
   --md-accent-fg-color--transparent:  #01FFB31a;
   --md-default-fg-color:              #FFFFFF;
@@ -35,6 +40,7 @@
   --md-typeset-a-color:               #01FFB3;
   --md-typeset-color:                 #e8e8e8;
   --md-code-bg-color:                 #1a1d24;
+  --gv-heading:                       #F0C84B;          /* bright gold on dark */
 }
 
 /* ── Typography ── */
@@ -50,8 +56,12 @@
   letter-spacing: 0.07em;
 }
 
-.md-typeset h1 { color: var(--bun-pink); }
+.md-typeset h1 { color: var(--gv-heading); }
 .md-typeset h2 { border-bottom: 2px solid var(--bun-gold); padding-bottom: 0.25em; }
+
+/* Active nav item: dark on white, gold on dark (stays readable in both schemes) */
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link { color: var(--gv-heading); }
 
 .md-typeset,
 .md-typeset p,
@@ -86,8 +96,8 @@
   letter-spacing: 0.08em;
   border-radius: 6px;
   border: none;
-  background: var(--bun-pink);
-  color: var(--bun-white);
+  background: var(--bun-gold);
+  color: var(--bun-dark);
   padding: 0.5em 1.2em;
   transition: background 0.2s ease, color 0.2s ease;
 }
@@ -177,4 +187,79 @@
   content: "";
   display: table;
   clear: both;
+}
+
+/* ── Infobox (Fandom-style sidebar card) ── */
+.wiki-infobox {
+  float: right;
+  width: 300px;
+  max-width: 46%;
+  margin: 0.2rem 0 1.5rem 1.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest, rgba(0,0,0,0.12));
+  border-top: 4px solid var(--bun-gold);
+  border-radius: 8px;
+  background: var(--md-code-bg-color, rgba(0,0,0,0.03));
+  overflow: hidden;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+.wiki-infobox p { margin: 0; line-height: 0; }
+.wiki-infobox-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--bun-dark);
+}
+.wiki-infobox-name {
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--gv-heading);
+  text-align: center;
+  margin: 0.7rem 0.6rem 0.15rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+.wiki-infobox-epithet {
+  text-align: center;
+  font-style: italic;
+  color: var(--md-default-fg-color--light, #6b6b6b);
+  margin: 0 0.8rem 0.7rem;
+  font-size: 0.82rem;
+}
+.wiki-infobox-emblem {
+  display: block;
+  width: 62px;
+  height: auto;
+  margin: 0.1rem auto 0.7rem;
+  opacity: 0.95;
+}
+.wiki-infobox dl {
+  margin: 0;
+  padding: 0.5rem 0.9rem 0.85rem;
+  display: grid;
+  grid-template-columns: minmax(72px, auto) 1fr;
+  gap: 0.4rem 0.85rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest, rgba(0,0,0,0.1));
+}
+.wiki-infobox dt {
+  font-family: 'Cinzel', Georgia, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.07em;
+  color: var(--bun-gold);
+  align-self: start;
+  padding-top: 0.12rem;
+}
+.wiki-infobox dd { margin: 0; }
+
+@media (max-width: 720px) {
+  .wiki-infobox {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1.5rem;
+  }
 }

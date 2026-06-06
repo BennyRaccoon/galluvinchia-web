@@ -58,11 +58,48 @@ plugins:
             Gods: Dioses
             World: Mundo
             Overview: Vista general
+            Lesser Powers & Legends: Poderes Menores y Leyendas
             Cities: Ciudades
             Villages: Aldeas
             Points of Interest: Puntos de Interés
             Characters: Personajes
             Tales: Relatos
+            "An'Ramoda": "An'Ramoda"
+            Lady of Marmaros: Dama de Mármaros
+            Lord of Carbohyrr: Señor de Carbohyrr
+            Lorda Gorda: Lorda Gorda
+            Jewel of Evergrowth: Joya Siemprecreciente
+            Doormi: Doormi
+            Pharoes: Pharoes
+            Lakobordo: Lakobordo
+            "An'Zulejosh": "An'Zulejosh"
+            Montebordo: Montebordo
+            Rivabordo: Rivabordo
+            Whisk of Lumin: Whisk de Lumin
+            The Neverender: El Rencarnatorno
+            Ice Peak: Puntahelada
+            Aurora Densasilva: Aurora Densasilva
+            Breath of Sand: El Suspiro de Arena
+            Ourobolis: Ourobolis
+            The Mist: La Bruma
+            The Academies: Las Academias
+            Armada: Armada
+            The Maneless King: El Rey sin Melena
+            Monica Mars: Monica Mars
+            Raquel: Raquel
+            Kogarashi: Kogarashi
+            Agustin: Agustín
+            Silvino: Silvino
+            Lewis Pendeltag: Lewis Pendeltag
+            Martin Goldberg: Martin Goldberg
+            Fernando Oldreekia: Fernando Oldreekia
+            Merrion Meyer: Merrion Meyer
+            Salgu: Salgu
+            Lumin Oldreekia: Lumin Oldreekia
+            Alice Rockwool: Alice Rockwool
+            Myths: Mitos
+            Legends: Leyendas
+            Folktales: Cuentos Populares
 
 markdown_extensions:
   - attr_list
@@ -93,11 +130,60 @@ extra:
 
 nav:
   - Home: index.md
-  - Gods: gods/index.md
+  - Gods:
+      - Overview: gods/index.md
+      - Panos: gods/panos.md
+      - Brenadette: gods/brenadette.md
+      - Aremedia: gods/aremedia.md
+      - Morphia: gods/morphia.md
+      - Moroes: gods/moroes.md
+      - Leeve: gods/leeve.md
+      - Lesser Powers & Legends: gods/lesser-powers.md
   - World:
       - Overview: regions/index.md
-      - Cities: regions/cities/index.md
-      - Villages: regions/villages/index.md
-      - Points of Interest: regions/points-of-interest/index.md
-  - Characters: characters/index.md
-  - Tales: tales/index.md
+      - Cities:
+          - Overview: regions/cities/index.md
+          - "An'Ramoda": regions/cities/anramoda.md
+          - Lady of Marmaros: regions/cities/lady-of-marmaros.md
+          - Lord of Carbohyrr: regions/cities/lord-of-carbohyrr.md
+          - Lorda Gorda: regions/cities/lorda-gorda.md
+      - Villages:
+          - Overview: regions/villages/index.md
+          - Jewel of Evergrowth: regions/villages/jewel-of-evergrowth.md
+          - Doormi: regions/villages/doormi.md
+          - Pharoes: regions/villages/pharoes.md
+          - Lakobordo: regions/villages/lakobordo.md
+          - "An'Zulejosh": regions/villages/anzulejosh.md
+          - Montebordo: regions/villages/montebordo.md
+          - Rivabordo: regions/villages/rivabordo.md
+          - Whisk of Lumin: regions/villages/whisk-of-lumin.md
+          - The Neverender: regions/villages/neverender.md
+      - Points of Interest:
+          - Overview: regions/points-of-interest/index.md
+          - Ice Peak: regions/points-of-interest/ice-peak.md
+          - Aurora Densasilva: regions/points-of-interest/aurora-densasilva.md
+          - Breath of Sand: regions/points-of-interest/breath-of-sand.md
+          - Ourobolis: regions/points-of-interest/ourobolis.md
+          - The Mist: regions/points-of-interest/the-mist.md
+          - The Academies: regions/points-of-interest/academies.md
+  - Characters:
+      - Overview: characters/index.md
+      - Armada: characters/armada.md
+      - The Maneless King: characters/maneless-king.md
+      - Monica Mars: characters/monica-mars.md
+      - Raquel: characters/raquel.md
+      - Kogarashi: characters/kogarashi.md
+      - Agustin: characters/agustin.md
+      - Silvino: characters/silvino.md
+      - Lewis Pendeltag: characters/lewis-pendeltag.md
+      - Martin Goldberg: characters/martin-goldberg.md
+      - Fernando Oldreekia: characters/fernando-oldreekia.md
+      - Merrion Meyer: characters/merrion-meyer.md
+      - Salgu: characters/salgu.md
+      - Lumin Oldreekia: characters/lumin-oldreekia.md
+      - Alice Rockwool: characters/alice-rockwool.md
+  - Tales:
+      - Overview: tales/index.md
+      - Myths: tales/myths.md
+      - Legends: tales/legends.md
+      - Folktales: tales/folktales.md
