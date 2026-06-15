@@ -35,9 +35,7 @@ Su papel como dios de la magia y el orden lo hace también responsable de manten
 
 ## Culto
 
-Sus seguidores son pocos pero profundamente devotos, preservando antiguos bailes y canciones casi olvidadas como actos de fe. Sus devotos emprenden misiones eternas para recuperar sus reliquias perdidas, creyendo que cada hallazgo restaura parte de su memoria divina y su poder.
-
-Sus fanáticos más fervorosos esconden sus rostros tras **máscaras con forma de sol**, creyendo que Panos arrastra el astro desde el horizonte cada día para que los mortales tengan claridad.
+Sus seguidores son pocos pero profundamente devotos, preservando antiguos bailes y canciones casi olvidadas como actos de fe. Sus devotos emprenden misiones para recuperar sus reliquias perdidas. Sus fanáticos más fervorosos se cubren el rostro con **máscaras de sol**.
 
 ## Relaciones
 

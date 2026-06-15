@@ -38,4 +38,4 @@ She is beloved by the people of the **[Jewel of Evergrowth](../regions/villages/
 
 ## History
 
-When Morphia withdrew into heartbreak, one of her paladins never lost faith and chased her even into her nightmares. When the goddess returned, that devoted paladin was raised as Leeve, the goddess of beauty and nature, filling the empty throne of love.
+One of Morphia's devoted paladins never lost faith, and chased the grieving goddess even into her nightmares. Morphia, restored by this devotion, raised the paladin to godhood as Leeve.

@@ -31,9 +31,7 @@ Brenadette is tetchy and temperamental, and perhaps she has earned that reputati
 
 ## Worship
 
-Her followers are some of the most fervent in Galluvinchia. Their practices are shrouded in mystery, governed by strict rules, and marked by the occasional blood sacrifice. They believe each act of devotion calms a raging storm or draws schools of fish closer to the shore.
-
-The largest abbey dedicated to her stands in **Pharoes**, a city frequently battered by stormy weather. There, the locals revere her not only as keeper of the dead but also as the **Goddess of the Tempest**.
+Her followers are some of the most fervent in Galluvinchia — their practices shrouded in mystery, governed by strict rules, and marked by occasional blood sacrifice. The largest abbey stands in **Pharoes**, where she is revered not only as keeper of the dead but also as the **Goddess of the Tempest**.
 
 !!! warning "Dark faith"
     Many of her followers see Brenadette as justification for harsh deeds. Gangs, violence, and darker ambitions shelter themselves beneath her name.

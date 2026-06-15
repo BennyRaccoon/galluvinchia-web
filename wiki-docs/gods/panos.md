@@ -35,9 +35,7 @@ His role as god of magic and order means he is also responsible for keeping the 
 
 ## Worship
 
-His followers are few but deeply devoted, preserving ancient dances and songs long forgotten by the world. Devoted worshippers embark on quests to recover his lost relics, believing each recovery restores part of his divine memory and power.
-
-His most fervent zealots hide their faces with **masks resembling the sun**, believing Panos brings it every day to cast light and clarity upon mortals.
+His followers are few but deeply devoted, preserving ancient dances and songs long forgotten by the world. Devoted worshippers embark on quests to recover his lost relics. His most fervent zealots wear **masks resembling the sun**.
 
 ## Relationships
 

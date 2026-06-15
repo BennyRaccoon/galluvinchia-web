@@ -31,9 +31,7 @@ Brenadette es irritable y temperamental, y quizás se ha ganado esa reputación.
 
 ## Culto
 
-Sus seguidores son algunos de los más fervientes de Galluvinchia. Sus prácticas están envueltas en misterio, regidas por normas estrictas y marcadas por ocasionales sacrificios de sangre. Creen que cada acto de devoción puede calmar una tormenta furiosa o atraer bancos de peces hacia las costas.
-
-La Abadía más grande dedicada a ella se encuentra en **Pharoes**, una ciudad frecuentemente azotada por tormentas. Allí los lugareños la veneran no solo como guardiana de los muertos sino también como la **Diosa de la Tempestad**.
+Sus seguidores son algunos de los más fervientes de Galluvinchia — sus prácticas envueltas en misterio, regidas por normas estrictas y marcadas por ocasionales sacrificios de sangre. La Abadía más grande está en **Pharoes**, donde la veneran no solo como guardiana de los muertos sino también como la **Diosa de la Tempestad**.
 
 !!! warning "Fe oscura"
     Muchos de sus seguidores ven a Brenadette como justificación para sus actos más oscuros. Bandas, violencia y ambiciones siniestras se cobijan bajo su nombre.

@@ -38,4 +38,4 @@ Es amada por la gente de la **[Joya Siemprecreciente](../regions/villages/index.
 
 ## Historia
 
-Cuando Morphia se sumió en el desamor, uno de sus paladines nunca perdió la fe y la persiguió incluso en sus pesadillas. Cuando la diosa regresó, aquella paladín devota fue elevada como Leeve, la diosa de la belleza y la naturaleza, ocupando el trono vacío del amor.
+Una devota paladín de Morphia nunca perdió la fe, y persiguió a la diosa dolida incluso en sus pesadillas. Morphia, restaurada por esta devoción, la elevó a la divinidad como Leeve.
