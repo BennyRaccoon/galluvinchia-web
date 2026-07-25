@@ -30,7 +30,7 @@ No todos los seres poderosos de Galluvinchia están entre los seis dioses. Algun
 
     ---
 
-    Una emperatriz de tierras lejanas que observa, espera y envía caminantes del abismo por delante de su llegada.
+    Una emperatriz de tierras lejanas que observa, espera y envía caminantes del abismo advirtiendo de su llegada.
 
 -   **[El Innombrable](nameless-one.md)**
 
@@ -50,10 +50,10 @@ No todos los seres poderosos de Galluvinchia están entre los seis dioses. Algun
 
     Parte de la fantasía colectiva de todos: hubo un tiempo en que los dragones habitaban Galluvinchia. O eso dicen.
 
--   **[Archliche Kogarashi](../../characters/kogarashi.md)**
+-   **[Archlich Kogarashi](../../characters/kogarashi.md)**
 
     ---
 
-    El nigromante que libró la Guerra Arcana contra los dioses. Su cuerpo nunca fue encontrado.
+    El nigromante que libró la guerra arcana contra los dioses. Su cuerpo nunca fue encontrado.
 
 </div>

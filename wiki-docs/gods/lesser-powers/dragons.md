@@ -21,11 +21,7 @@ description: The Long-Lost Dragons of Galluvinchia, part of collective memory, h
 
 Part of everyone's collective memory: there was a time when dragons inhabited Galluvinchia, or so they say. Slain by gods or fought by giants, do they still hold treasures in forgotten caves, or are they sleeping somewhere, waiting?
 
-## Krusninglömda
-
-One name surfaces in the oldest texts recovered from the [Lady of Marmaros](../../regions/cities/lady-of-marmaros.md): **Krusninglömda**, an Elder Dragon said to have made its home in the marble veins deep below what is now the city. Whether it was slain during the founding of Marmaros, or simply retreated deeper, no scholar has confirmed.
-
 ## The Collective Memory
 
-No one alive has seen a dragon. But the word for dragon exists in every language in Galluvinchia, including ones so old they are no longer spoken. Something named them. Something remembered them long enough for the word to survive.
+No one alive has seen a dragon. But the word for dragon exists in the language of Galluvinchia, even in long lost stories, so old they are no longer remembered. Something named them. Something remembered them long enough for the word to survive.
 

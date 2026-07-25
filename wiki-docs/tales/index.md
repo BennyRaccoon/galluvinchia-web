@@ -25,18 +25,17 @@ This is the archive of what has been told.
 
     ---
 
-    Stories of the gods: the Arcane War, the Gems of Origin, the Pillars of Rebirth, and the tales that explain the shape of the world.
+    Stories of the gods
 
 -   **[Legends](legends.md)**
 
     ---
 
-    Tales of mortal heroes: the founding of Lorda Gorda, the library beneath Lakobordo, and the deeds that outlasted their makers.
+    Tales of mortal heroes
 
 -   **[Folktales](folktales.md)**
 
     ---
 
-    What the common folk say: the moon that never moves, the sound of the anvil, and the wisdom carried in old stories.
-
+    What the common folk talk about
 </div>

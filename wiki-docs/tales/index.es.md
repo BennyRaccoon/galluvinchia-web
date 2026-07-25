@@ -25,18 +25,18 @@ Este es el archivo de lo que se ha contado.
 
     ---
 
-    Historias de los dioses: la Guerra Arcana, las Gemas del Origen, los Pilares del Resurgimiento, y los relatos que explican la forma del mundo.
+    Historias de los dioses
 
 -   **[Leyendas](legends.md)**
 
     ---
 
-    Hazañas de héroes mortales: la fundación de Lorda Gorda, la biblioteca bajo Lakobordo, y los actos que sobrevivieron a quienes los realizaron.
+    Hazañas de héroes mortales
 
 -   **[Cuentos Populares](folktales.md)**
 
     ---
 
-    Lo que dice el pueblo: la luna que nunca se mueve, el sonido del yunque, y la sabiduría en las historias antiguas.
+    Lo que dice el pueblo
 
 </div>

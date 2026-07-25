@@ -21,5 +21,3 @@ El pueblo tiene una explicación más simple: *está observando.*
 Quienes pasan demasiado tiempo sintonizados con la Reverberación, o que escuchan demasiado de cerca la magia, comienzan a oír algo en el borde de la percepción. No exactamente una voz. Más bien un sonido.
 
 El tintineo de un martillo. El repique de un yunque.
-
-Nadie forja en el aire abierto de ese sonido. Pero algo está dando forma a algo, siempre, en algún lugar.

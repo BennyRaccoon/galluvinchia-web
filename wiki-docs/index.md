@@ -14,7 +14,7 @@ This wiki is a living document. Pages grow as legends are made.
 
 ## The World at a Glance
 
-Galluvinchia *(pronounced: gah-YU-vin-chee-ah)* is a land born from myth and shaped by war. Inspired by the epic tales of ancient Rome and Greece, it is a place where mortals rise to become mighty heroes and sometimes even challenge their divine patrons.
+Galluvinchia *(pronounced: gah-YU-vin-chee-ah)* is a land born from myth and shaped by war. Inspired by the epic tales from Mediterranean mythology, it is a place where mortals rise to become mighty heroes and sometimes even challenge their divine patrons.
 
 It is the **24th of the Fifth month of 1802**. Life is tranquil in the farmland, and the *Pax Aremedia* keeps things easy even in the cities. Peace endures… for now.
 

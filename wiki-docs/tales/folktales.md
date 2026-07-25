@@ -21,5 +21,3 @@ The common folk have a simpler explanation: *it is watching.*
 Those who spend too long attuned to the Ripple, or who listen too closely to magic, begin to hear something at the edge of perception. Not a voice exactly. More like a sound.
 
 The clink of a hammer. The ring of an anvil.
-
-Nobody forges in the open air of that sound. But something is shaping something, always, somewhere.
