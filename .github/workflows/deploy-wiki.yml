@@ -40,6 +40,15 @@ jobs:
             ! -name 'CNAME' \
             ! -name '*.md' \
             -exec cp {} _deploy/ \;
+          # Copy root-level subdirectories (excluding internal ones)
+          find . -maxdepth 1 -type d \
+            ! -name '.' \
+            ! -name '.git' \
+            ! -name '.github' \
+            ! -name 'wiki-docs' \
+            ! -name 'wiki-site' \
+            ! -name '_deploy' \
+            -exec cp -r {} _deploy/ \;
           # Place the built wiki at /wiki/
           cp -r wiki-site _deploy/wiki
 
