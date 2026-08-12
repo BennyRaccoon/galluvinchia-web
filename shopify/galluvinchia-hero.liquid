@@ -1,0 +1,215 @@
+{%- comment -%}
+  Galluvinchia hero — standalone, self-contained block for Shopify.
+
+  Usage:
+    • Drop this file in your theme's /snippets folder and render it:
+        {% render 'galluvinchia-hero' %}
+      (or paste the whole block into a "Custom Liquid" section).
+
+  Notes:
+    • Everything is scoped under .gvh so it won't clash with your theme's CSS.
+    • Images load from https://galluvinchia.com (already deployed). If you'd
+      rather host them in Shopify, upload them to Files/Assets and swap each
+      URL for {{ 'filename.webp' | asset_url }} or the Files CDN URL.
+    • The centre text is static (no rotation).
+{%- endcomment -%}
+
+<section class="gvh" aria-label="Discover Galluvinchia">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+    .gvh {
+      --pink:       #FF00CA;
+      --green:      #01FFB3;
+      --green-dark: #00c890;
+      --blue:       #3801FF;
+      --dark:       #242833;
+      --white:      #FFFFFF;
+      --ink-muted:  rgba(36,40,51,0.65);
+
+      position: relative; width: 100%;
+      min-height: 540px; overflow: hidden;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 4rem 1.5rem;
+      background: var(--white);
+      box-sizing: border-box;
+      font-family: 'Crimson Text', Georgia, serif;
+    }
+    .gvh *, .gvh *::before, .gvh *::after { box-sizing: border-box; }
+
+    /* Drifting map backdrop */
+    .gvh-map {
+      position: absolute; inset: -30px;
+      background-image: url('https://galluvinchia.com/map-hero.webp');
+      background-size: cover; background-position: 20% center;
+      animation: gvh-mapDrift 14s ease-in-out infinite alternate;
+      will-change: transform;
+      filter: saturate(0.22) brightness(0.95) opacity(0.35);
+    }
+    @keyframes gvh-mapDrift {
+      0%   { transform: scale(1.6) translate(-2.5%, -1.5%); }
+      100% { transform: scale(1.6) translate(2.5%,  1.5%); }
+    }
+    .gvh-overlay {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%,
+        rgba(255,255,255,0.92) 15%, rgba(255,255,255,0.72) 45%, rgba(255,255,255,0.05) 100%);
+    }
+    .gvh-side-fade {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.45) 12%,
+        transparent 26%, transparent 74%,
+        rgba(255,255,255,0.45) 88%, rgba(255,255,255,0.9) 100%);
+    }
+    .gvh-glow-left, .gvh-glow-right {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 300px; height: 300px; border-radius: 50%; pointer-events: none;
+    }
+    .gvh-glow-left  { left: -80px;  background: radial-gradient(circle, rgba(255,0,202,0.10) 0%, transparent 70%); }
+    .gvh-glow-right { right: -80px; background: radial-gradient(circle, rgba(1,255,179,0.10) 0%, transparent 70%); }
+
+    /* God slots */
+    .gvh-god-slot {
+      position: absolute; top: 0; bottom: 0;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 3; width: 25vw;
+    }
+    .gvh-god-slot-left  { left:  clamp(4px, 1.5vw, 16px); }
+    .gvh-god-slot-right { right: clamp(4px, 1.5vw, 16px); }
+    .gvh-god {
+      position: absolute; display: flex; flex-direction: column;
+      align-items: center; opacity: 0; width: 100%;
+    }
+    .gvh-god-frame { position: relative; width: 100%; padding-bottom: 3px; margin-bottom: 8px; }
+    .gvh-god-frame::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
+    .gvh-god-slot-left  .gvh-god-frame::after { background: var(--pink);  box-shadow: 0 0 10px rgba(255,0,202,0.5); }
+    .gvh-god-slot-right .gvh-god-frame::after { background: var(--green); box-shadow: 0 0 10px rgba(1,255,179,0.5); }
+    .gvh-god-icon {
+      width: 100%; height: clamp(110px, 18vw, 190px);
+      object-fit: cover; object-position: top center; display: block;
+    }
+    .gvh-god-name {
+      font-family: 'Cinzel', serif; font-size: 20px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin-bottom: 3px; text-align: center; font-weight: 700;
+    }
+    .gvh-god-slot-left  .gvh-god-name { color: var(--pink); }
+    .gvh-god-slot-right .gvh-god-name { color: var(--green-dark); }
+    .gvh-god-subtitle {
+      font-family: 'Crimson Text', serif; font-size: 16px; font-style: italic;
+      color: rgba(36,40,51,0.55); text-align: center; line-height: 1.3;
+      max-width: 110px; display: none;
+    }
+    @media (min-width: 900px) {
+      .gvh-god-subtitle { display: block; }
+      .gvh-god-icon { height: clamp(300px, 28vw, 380px); }
+    }
+    .gvh-god.god-left-1  { animation: gvh-godCycle 18s ease-in-out infinite; animation-delay: 0s; }
+    .gvh-god.god-left-2  { animation: gvh-godCycle 18s ease-in-out infinite; animation-delay: 9s; }
+    .gvh-god.god-right-1 { animation: gvh-godCycle 18s ease-in-out infinite; animation-delay: 4.5s; }
+    .gvh-god.god-right-2 { animation: gvh-godCycle 18s ease-in-out infinite; animation-delay: 13.5s; }
+    @keyframes gvh-godCycle {
+      0%        { opacity: 0; transform: translateY(10px); }
+      6%, 44%   { opacity: 1; transform: translateY(0); }
+      50%, 100% { opacity: 0; transform: translateY(-10px); }
+    }
+
+    /* Centre content (static) */
+    .gvh-content { position: relative; z-index: 2; text-align: center; width: min(560px, 64vw); }
+    .gvh-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(18px, 4.5vw, 36px); font-weight: 700;
+      color: var(--dark); letter-spacing: 0.1em; text-transform: uppercase;
+      margin: 0 0 1.5rem; line-height: 1.2;
+    }
+    .gvh-lead {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(14px, 2.1vw, 18px); font-style: italic;
+      color: var(--ink-muted); line-height: 1.7; margin: 0 0 1rem;
+    }
+    .gvh-lead-accent {
+      font-style: normal; font-weight: 700; color: var(--dark);
+      margin-top: 1.2rem; margin-bottom: 2rem;
+    }
+    .gvh-cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .gvh-cta, .gvh-cta-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      color: var(--white); font-family: 'Cinzel', serif; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border: none; border-radius: 6px;
+      transition: all 0.25s ease; cursor: pointer;
+    }
+    .gvh-cta { padding: clamp(10px,1.8vw,14px) clamp(24px,4vw,42px); background: var(--pink); font-size: clamp(11px,1.6vw,14px); }
+    .gvh-cta-secondary { padding: clamp(8px,1.4vw,12px) clamp(20px,3.5vw,36px); background: var(--blue); font-size: clamp(10px,1.4vw,12px); }
+    .gvh-cta:hover, .gvh-cta-secondary:hover {
+      background: var(--green); color: var(--dark);
+      transform: translateY(-2px); box-shadow: 0 8px 24px rgba(1,255,179,0.3);
+    }
+    .gvh-cta-flag { display: block; width: 18px; height: 18px; border-radius: 3px; flex-shrink: 0; }
+
+    @media (max-width: 480px) {
+      .gvh-god-slot { display: none; }
+      .gvh-content { width: min(420px, 92vw); }
+      .gvh { padding: 2.5rem 1rem; }
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+      .gvh-god-slot { width: clamp(70px, 12vw, 110px); }
+      .gvh-content { width: min(440px, 58vw); }
+    }
+  </style>
+
+  <div class="gvh-map" aria-hidden="true"></div>
+  <div class="gvh-overlay" aria-hidden="true"></div>
+  <div class="gvh-side-fade" aria-hidden="true"></div>
+  <div class="gvh-glow-left" aria-hidden="true"></div>
+  <div class="gvh-glow-right" aria-hidden="true"></div>
+
+  <!-- Left gods (pink) -->
+  <div class="gvh-god-slot gvh-god-slot-left">
+    <div class="gvh-god god-left-1">
+      <div class="gvh-god-frame">
+        <img class="gvh-god-icon" src="https://galluvinchia.com/god-aremedia.webp" alt="Aremedia, Goddess of Impetus" loading="lazy">
+      </div>
+      <div class="gvh-god-name">Aremedia</div>
+      <div class="gvh-god-subtitle">Goddess of Impetus</div>
+    </div>
+    <div class="gvh-god god-left-2">
+      <div class="gvh-god-frame">
+        <img class="gvh-god-icon" src="https://galluvinchia.com/god-panos.webp" alt="Panos, Guardian of the Arcane" loading="lazy">
+      </div>
+      <div class="gvh-god-name">Panos</div>
+      <div class="gvh-god-subtitle">Guardian of the Arcane</div>
+    </div>
+  </div>
+
+  <!-- Right characters (green) -->
+  <div class="gvh-god-slot gvh-god-slot-right">
+    <div class="gvh-god god-right-1">
+      <div class="gvh-god-frame">
+        <img class="gvh-god-icon" src="https://galluvinchia.com/god-morphia.webp" alt="Morphia, Guardian of Dreams" loading="lazy">
+      </div>
+      <div class="gvh-god-name">Morphia</div>
+      <div class="gvh-god-subtitle">Guardian of Dreams</div>
+    </div>
+    <div class="gvh-god god-right-2">
+      <div class="gvh-god-frame">
+        <img class="gvh-god-icon" src="https://galluvinchia.com/char-silvia.webp" alt="Silvia Kagerisu, Last Queen of the Elves" loading="lazy">
+      </div>
+      <div class="gvh-god-name">Silvia Kagerisu</div>
+      <div class="gvh-god-subtitle">Last Queen of the Elves</div>
+    </div>
+  </div>
+
+  <!-- Centre content -->
+  <div class="gvh-content">
+    <h2 class="gvh-title">Discover Galluvinchia</h2>
+    <p class="gvh-lead">Where gods walk among mortals and heroes ascend to glory in the quilt of stars. A land where wildly different societies are built on conflicting truths, magic resonates like the strike of an anvil, and the souls of the dead fuel the lights of entire cities.</p>
+    <p class="gvh-lead gvh-lead-accent">And something darker stirs in the depths.</p>
+    <div class="gvh-cta-wrap">
+      <a class="gvh-cta" href="https://www.thebuncult.com/products/fables-of-galluvinchia-the-jewel-of-evergrowth">Become a Legend!</a>
+      <a class="gvh-cta-secondary" href="https://www.thebuncult.com/products/fabulas-de-galluvinchia-la-joya-siemprecreciente"><img class="gvh-cta-flag" src="https://galluvinchia.com/es.svg" alt="" aria-hidden="true" width="18" height="18"> También en castellano</a>
+    </div>
+  </div>
+</section>

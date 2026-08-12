@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Generator — Galluvinchia</title>
+  <meta name="description" content="Create your Galluvinchian character. Choose your race, origins, and class — then forge your legend.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #FF00CA;
+      --pink-dark:  #cc0099;
+      --pink-soft:  rgba(255,0,202,0.08);
+      --green:      #01FFB3;
+      --green-dark: #00c890;
+      --blue:       #3801FF;
+      --gold:       #F0C84B;
+      --dark:       #242833;
+      --dark-soft:  #313644;
+      --white:      #FFFFFF;
+      --text-muted: rgba(255,255,255,0.55);
+      --ink-muted:  rgba(36,40,51,0.6);
+      --border:     rgba(240,200,75,0.25);
+    }
+
+    html, body { min-height: 100%; background: var(--white); color: var(--dark); font-family: 'Crimson Text', Georgia, serif; overflow-x: hidden; }
+    body { display: flex; flex-direction: column; }
+
+    /* ── HEADER ── */
+    header { position: relative; z-index: 10; text-align: center; padding: 1.6rem 2rem 1.2rem; background: var(--dark); border-bottom: 3px solid var(--pink); }
+    .header-logo { max-width: min(380px, 80vw); height: auto; display: block; margin: 0 auto; }
+    .header-sub { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.5rem; }
+
+    /* ── MARQUEE ── */
+    .marquee-bar { overflow: hidden; background: var(--pink); border-bottom: 2px solid var(--pink-dark); padding: 0.4rem 0; }
+    .marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+    .marquee-content { font-family: 'Cinzel', serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--white); white-space: nowrap; padding-right: 2rem; }
+
+    /* ── MAIN ── */
+    main { flex: 1; padding: 2.5rem 1.5rem 4rem; max-width: 860px; margin: 0 auto; width: 100%; }
+    .gen-title { font-family: 'Cinzel', serif; font-size: clamp(1.2rem,3vw,1.9rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; text-align: center; color: var(--dark); margin-bottom: 0.35rem; }
+    .gen-subtitle { font-family: 'Crimson Text', serif; font-size: clamp(1rem,1.8vw,1.15rem); font-style: italic; text-align: center; color: var(--ink-muted); margin-bottom: 2rem; }
+
+    /* ── PROGRESS ── */
+    .gen-progress { display: flex; align-items: center; justify-content: center; margin-bottom: 2.5rem; }
+    .gen-step-dot { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+    .gen-step-dot .dot { width: 32px; height: 32px; border-radius: 50%; border: 2px solid rgba(36,40,51,0.2); background: var(--white); display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 700; color: var(--ink-muted); transition: all 0.3s; }
+    .gen-step-dot .dot-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); white-space: nowrap; transition: color 0.3s; }
+    .gen-step-dot.active .dot { background: var(--pink); border-color: var(--pink); color: var(--white); box-shadow: 0 0 12px rgba(255,0,202,0.35); }
+    .gen-step-dot.active .dot-label { color: var(--pink); font-weight: 600; }
+    .gen-step-dot.done .dot { background: var(--dark); border-color: var(--dark); color: var(--white); }
+    .gen-step-dot.done .dot-label { color: var(--dark); }
+    .gen-progress-line { flex: 1; height: 2px; background: rgba(36,40,51,0.12); max-width: 60px; margin: 0 4px 20px; }
+    .gen-progress-line.done { background: var(--dark); }
+
+    /* ── STEP PANELS ── */
+    .gen-step { display: none; animation: fadeIn 0.3s ease; }
+    .gen-step.active { display: block; }
+    .step-heading { font-family: 'Cinzel', serif; font-size: clamp(0.9rem,2vw,1.1rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dark); margin-bottom: 0.3rem; }
+    .step-hint { font-family: 'Crimson Text', serif; font-size: 1rem; font-style: italic; color: var(--ink-muted); margin-bottom: 1.4rem; }
+
+    /* ── CARDS GRID ── */
+    .cards-grid { display: grid; gap: 1rem; margin-bottom: 1.5rem; }
+    .cards-grid.cols-2 { grid-template-columns: repeat(2,1fr); }
+    .cards-grid.cols-auto { grid-template-columns: repeat(auto-fill,minmax(180px,1fr)); }
+    @media (max-width: 600px) { .cards-grid.cols-auto { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 400px) { .cards-grid.cols-2, .cards-grid.cols-auto { grid-template-columns: 1fr; } }
+
+    /* ── SELECTION CARD ── */
+    .sel-card { border: 2px solid rgba(36,40,51,0.12); border-radius: 8px; padding: 0; cursor: pointer; transition: all 0.2s; background: var(--white); overflow: hidden; position: relative; user-select: none; }
+    .sel-card:hover { border-color: var(--pink); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,0,202,0.12); }
+    .sel-card.selected { border-color: var(--pink); background: var(--pink-soft); box-shadow: 0 0 0 1px var(--pink),0 6px 20px rgba(255,0,202,0.18); }
+    .sel-card.selected::after { content: '✓'; position: absolute; top: 8px; right: 10px; font-size: 0.75rem; font-weight: 700; color: var(--pink); font-family: 'Cinzel', serif; }
+
+    .sel-card-img-wrap { position: relative; width: 100%; aspect-ratio: 3/4; background: var(--dark-soft); }
+    .sel-card-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+    .sel-card-img-placeholder { position: absolute; inset: 0; background: linear-gradient(160deg,var(--dark-soft) 0%,var(--dark) 100%); display: flex; align-items: center; justify-content: center; }
+    .sel-card-img-placeholder span { font-size: 2.5rem; opacity: 0.4; }
+
+    .sel-card-body { padding: 0.8rem 0.9rem 1rem; }
+    .sel-card-name { font-family: 'Cinzel', serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dark); margin-bottom: 0.25rem; }
+    .sel-card-desc { font-family: 'Crimson Text', serif; font-size: 0.9rem; color: var(--ink-muted); line-height: 1.5; }
+    .sel-card-tag { display: inline-block; margin-top: 0.5rem; font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 2px 7px; border: 1px solid var(--border); color: var(--ink-muted); }
+
+    .sel-card.gender-card { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem; text-align: center; min-height: 140px; }
+    .gender-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .gender-card .sel-card-name { font-size: 0.85rem; }
+
+    .sel-card.city-card { display: flex; flex-direction: column; justify-content: space-between; padding: 1rem 1.1rem; min-height: 120px; }
+    .city-card .sel-card-name { font-size: 0.78rem; }
+    .city-card .sel-card-desc { font-size: 0.88rem; }
+
+    .sel-card.class-card { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.9rem 1rem; }
+    .class-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .sel-card.class-card .sel-card-name { font-size: 0.78rem; margin-bottom: 0.2rem; }
+    .sel-card.class-card .sel-card-desc { font-size: 0.85rem; }
+
+    /* ── NAV ── */
+    .gen-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(36,40,51,0.1); }
+    .btn { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 6px; cursor: pointer; transition: all 0.25s; padding: 0.7rem 1.8rem; font-size: 0.75rem; }
+    .btn-back { background: transparent; color: var(--ink-muted); border: 2px solid rgba(36,40,51,0.2); }
+    .btn-back:hover { border-color: var(--dark); color: var(--dark); }
+    .btn-back:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+    .btn-next { background: var(--pink); color: var(--white); }
+    .btn-next:hover:not(:disabled) { background: var(--pink-dark); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255,0,202,0.3); }
+    .btn-next:disabled { opacity: 0.35; cursor: default; pointer-events: none; }
+
+    /* ── RESULT CARD ── */
+    .result-card { background: var(--dark); border-radius: 10px; overflow: hidden; border: 1px solid rgba(240,200,75,0.2); }
+    .result-header { background: linear-gradient(135deg,var(--dark) 0%,#1a1e2a 100%); border-bottom: 3px solid var(--pink); padding: 2rem 2rem 1.5rem; text-align: center; }
+    .result-name { font-family: 'Cinzel', serif; font-size: clamp(1.4rem,4vw,2rem); font-weight: 700; letter-spacing: 0.08em; color: var(--white); margin-bottom: 0.6rem; }
+    .result-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+    .badge { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; font-weight: 700; }
+    .badge-race   { background: var(--pink); color: var(--white); }
+    .badge-class  { background: var(--blue); color: var(--white); }
+    .badge-origin { background: var(--dark-soft); color: var(--gold); border: 1px solid rgba(240,200,75,0.3); }
+
+    /* ── STAT GRID ── */
+    .stat-grid { display: grid; grid-template-columns: repeat(6,1fr); border-top: 1px solid rgba(240,200,75,0.15); }
+    .stat-cell { text-align: center; padding: 0.75rem 0.3rem 0.65rem; border-right: 1px solid rgba(240,200,75,0.1); }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell.save-prof { background: rgba(240,200,75,0.07); }
+    .stat-label { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: 0.25rem; }
+    .stat-label .save-star { color: var(--gold); font-size: 0.48rem; }
+    .stat-score { font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-mod { font-family: 'Crimson Text', serif; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.1rem; }
+    .stat-legend { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.12em; color: rgba(240,200,75,0.5); text-align: right; padding: 0.3rem 1rem 0; }
+    .stat-cell.asi-boost { background: rgba(1,255,179,0.09); }
+    .asi-mark { font-family: 'Cinzel', serif; font-size: 0.44rem; color: var(--green); margin-left: 2px; vertical-align: middle; }
+
+    /* ── LEVEL TOGGLE ── */
+    .level-toggle { display: flex; justify-content: center; border-top: 1px solid rgba(240,200,75,0.15); }
+    .lvl-btn { flex: 1; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.65rem 0.5rem; border: none; cursor: pointer; transition: all 0.2s; background: transparent; color: var(--text-muted); border-bottom: 2px solid transparent; }
+    .lvl-btn.active { color: var(--gold); border-bottom-color: var(--gold); background: rgba(240,200,75,0.04); }
+    .lvl-btn:hover:not(.active) { color: rgba(255,255,255,0.75); }
+
+    /* ── RESULT BODY ── */
+    .result-body { padding: 1.4rem 1.8rem 1.8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+    @media (max-width: 580px) { .result-body { grid-template-columns: 1fr; } }
+
+    .result-section-title { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(240,200,75,0.2); }
+    .result-trait { font-family: 'Crimson Text', serif; font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.3rem; padding-left: 0.8rem; position: relative; }
+    .result-trait::before { content: '◆'; position: absolute; left: 0; font-size: 0.45rem; color: var(--gold); top: 0.35em; }
+
+    .result-profs { grid-column: 1/-1; }
+    .prof-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+    .prof-pill { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; }
+    .prof-pill.class-prof { background: rgba(56,1,255,0.25); color: rgba(180,160,255,0.9); border: 1px solid rgba(56,1,255,0.4); }
+    .prof-pill.race-prof  { background: rgba(255,0,202,0.12); color: rgba(255,140,235,0.9); border: 1px solid rgba(255,0,202,0.3); }
+    .prof-legend { font-family: 'Crimson Text', serif; font-size: 0.78rem; color: var(--text-muted); font-style: italic; margin-top: 0.5rem; }
+
+    .result-flaw { grid-column: 1/-1; background: rgba(255,0,202,0.06); border: 1px solid rgba(255,0,202,0.2); border-radius: 6px; padding: 0.9rem 1.1rem; }
+    .result-flaw .result-section-title { color: var(--pink); border-bottom-color: rgba(255,0,202,0.2); }
+    .result-flaw p { font-family: 'Crimson Text', serif; font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.6; font-style: italic; }
+
+    .result-background { grid-column: 1/-1; background: rgba(1,255,179,0.04); border: 1px solid rgba(1,255,179,0.15); border-radius: 6px; padding: 0.9rem 1.1rem; }
+    .result-background .result-section-title { color: var(--green-dark); border-bottom-color: rgba(1,255,179,0.15); }
+    .result-background p { font-family: 'Crimson Text', serif; font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.7; font-style: italic; }
+    .btn-reroll { margin-top: 0.8rem; font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; background: transparent; border: 1px solid rgba(1,255,179,0.3); color: var(--green-dark); padding: 4px 12px; cursor: pointer; border-radius: 3px; transition: all 0.2s; }
+    .btn-reroll:hover { background: rgba(1,255,179,0.08); border-color: var(--green); color: var(--green); }
+
+    .result-footer { grid-column: 1/-1; display: flex; justify-content: center; gap: 0.75rem; padding-top: 0.5rem; }
+    .btn-restart { background: transparent; color: var(--text-muted); font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.15); padding: 6px 18px; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
+    .btn-restart:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .btn-print { background: transparent; color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(240,200,75,0.3); padding: 6px 18px; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
+    .btn-print:hover { background: rgba(240,200,75,0.08); border-color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark); border-top: 3px solid var(--pink); padding: 1.2rem; text-align: center; }
+    .footer-copy { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--text-muted); text-transform: uppercase; }
+    .footer-copy a { color: var(--gold); text-decoration: none; }
+
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── PRINT ── */
+    @media print {
+      @page { margin: 1.5cm; }
+      header, footer, .marquee-bar, .gen-title, .gen-subtitle,
+      .gen-progress, .gen-nav, #panel-1, #panel-2, #panel-3, #panel-4, #panel-5 { display: none !important; }
+      #panel-result { display: block !important; }
+      main { padding: 0; max-width: 100%; }
+      body { background: white; }
+      .btn-print, .btn-restart, .btn-reroll { display: none !important; }
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="../"><img class="header-logo" src="../title.png" alt="Galluvinchia"></a>
+  <p class="header-sub">Character Generator</p>
+</header>
+
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-content">
+      Forge your legend &nbsp;◆&nbsp; Choose your race &nbsp;◆&nbsp; Find your destiny &nbsp;◆&nbsp;
+      Forge your legend &nbsp;◆&nbsp; Choose your race &nbsp;◆&nbsp; Find your destiny &nbsp;◆&nbsp;
+      Forge your legend &nbsp;◆&nbsp; Choose your race &nbsp;◆&nbsp; Find your destiny &nbsp;◆&nbsp;
+    </span>
+  </div>
+</div>
+
+<main>
+  <h1 class="gen-title">Create Your Character</h1>
+  <p class="gen-subtitle">Choose your path. The gods are watching.</p>
+
+  <div class="gen-progress" id="progress"></div>
+
+  <!-- PANEL 1: Gender -->
+  <div class="gen-step" id="panel-1">
+    <p class="step-heading">Who are you?</p>
+    <p class="step-hint">This shapes the names available for your character.</p>
+    <div class="cards-grid cols-2">
+      <div class="sel-card gender-card" data-value="male" onclick="pickCard(this,'gender')">
+        <div class="gender-icon">♂</div>
+        <div class="sel-card-name">Male</div>
+      </div>
+      <div class="sel-card gender-card" data-value="female" onclick="pickCard(this,'gender')">
+        <div class="gender-icon">♀</div>
+        <div class="sel-card-name">Female</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 2: Race -->
+  <div class="gen-step" id="panel-2">
+    <p class="step-heading">What is your race?</p>
+    <p class="step-hint">Each race carries its own traits and a defining flaw.</p>
+    <div class="cards-grid cols-auto" id="race-grid"></div>
+  </div>
+
+  <!-- PANEL 3: Subrace (felinfolk only) -->
+  <div class="gen-step" id="panel-3">
+    <p class="step-heading">Choose your subrace</p>
+    <p class="step-hint">Each felinfolk lineage has its own strengths.</p>
+    <div class="cards-grid cols-auto" id="subrace-grid"></div>
+  </div>
+
+  <!-- PANEL 4: City of Origin -->
+  <div class="gen-step" id="panel-4">
+    <p class="step-heading">Where do you come from?</p>
+    <p class="step-hint">Your city of origin shapes your story and background.</p>
+    <div class="cards-grid cols-auto" id="city-grid"></div>
+  </div>
+
+  <!-- PANEL 5: Class -->
+  <div class="gen-step" id="panel-5">
+    <p class="step-heading">What is your class?</p>
+    <p class="step-hint">Choose your path in the world of Galluvinchia.</p>
+    <div class="cards-grid cols-auto" id="class-grid"></div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="gen-step" id="panel-result">
+    <div class="result-card" id="result-card"></div>
+  </div>
+
+  <!-- NAV -->
+  <div class="gen-nav" id="gen-nav">
+    <button class="btn btn-back" id="btn-back" onclick="goBack()" disabled>← Back</button>
+    <button class="btn btn-next" id="btn-next" onclick="goNext()" disabled>Next →</button>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-copy">
+    &copy; <span id="year"></span> Galluvinchia &middot;
+    <a href="https://thebuncult.com" target="_blank" rel="noopener">thebuncult.com</a>
+    &middot; <a href="../wiki/">Wiki</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+const state = { panel: 1, gender: null, race: null, subrace: null, city: null, charClass: null };
+
+// ── DATA ───────────────────────────────────────────────────────────────────
+const RACES = [
+  {
+    id: 'human', name: 'Human',
+    imgMale: 'race-human-m.webp', imgFemale: 'race-human-f.webp', icon: '👤',
+    description: 'Adaptable and ambitious. The most common race in Galluvinchia and its most devout worshippers.',
+    tag: 'Adaptable · Ambitious',
+    traits: ['+1 to two ability scores of your choice','Proficiency in one skill of your choice','One feat of your choice'],
+    flaw: 'Ardent worshippers — you must follow one deity or the Light and honour their oaths as much as possible.',
+    hasSubrace: false, abilityBonus: 'Two scores +1 (your choice)', speed: 30,
+  },
+  {
+    id: 'felinfolk', name: 'Felinfolk',
+    imgMale: 'race-felinfolk-m.webp', imgFemale: 'race-felinfolk-f.webp', icon: '🐱',
+    description: 'Proud feline humanoids, stoic and unafraid to defy even the gods. Masters of craft and independent thought.',
+    tag: 'Proud · Stoic',
+    traits: ['Feline Claws — climbing speed 20ft, 1d4+STR slashing natural weapon','Darkvision 60ft'],
+    flaw: 'Discomfort in water — Disadvantage on ability checks while in contact with water.',
+    hasSubrace: true, speed: null,
+  },
+  {
+    id: 'centaur', name: 'Centaur',
+    imgMale: 'race-centaur-m.webp', imgFemale: 'race-centaur-f.webp', icon: '🐴',
+    description: 'Equine and mighty, centaurs work the fields and heal the sick. They prefer peace but can charge with devastating force.',
+    tag: 'Strong · Compassionate',
+    traits: ['STR +2, WIS +1','Speed 40ft','Charge — move 30ft straight then bonus attack or shove','Hooves — 1d4+STR bludgeoning natural weapon'],
+    flaw: 'Equine Build — any climb that requires hands and feet costs 5ft of movement per foot instead of the normal extra foot.',
+    hasSubrace: false, abilityBonus: 'STR +2, WIS +1', speed: 40,
+  },
+  {
+    id: 'minotaur', name: 'Minotaur',
+    imgMale: 'race-minotaur-m.webp', imgFemale: 'race-minotaur-f.webp', icon: '🐂',
+    description: 'Powerful bull-headed warriors fighting to be seen beyond the prejudice of their fearsome reputation.',
+    tag: 'Powerful · Passionate',
+    traits: ['STR +2, CON +1','Speed 30ft','Imposing Presence — proficiency in Intimidation','Horns — 1d6+STR piercing natural weapon','Goring Rush — after Dash 20ft, bonus horn attack','Piercing Horns — after melee hit, bonus action shove'],
+    flaw: 'Heavy Build — Disadvantage on Stealth checks.',
+    hasSubrace: false, abilityBonus: 'STR +2, CON +1', speed: 30,
+  },
+  {
+    id: 'faun', name: 'Faun',
+    imgMale: 'race-faun-m.webp', imgFemale: 'race-faun-f.webp', icon: '🌿',
+    description: 'Children of the Will of the Wild. Carpe diem embodied — cheerful wanderers with fey blood and a song for every occasion.',
+    tag: 'Fey · Charismatic',
+    traits: ['CHA +2, DEX +1','Speed 35ft · Fey creature type','Ram — 1d4+STR bludgeoning natural weapon','Magic Resistance — Advantage on saving throws against spells','Spirit of the Party — proficiency in Performance, Persuasion, and one musical instrument'],
+    flaw: 'Naive Behaviour — Disadvantage on Insight or Perception checks.',
+    hasSubrace: false, abilityBonus: 'CHA +2, DEX +1', speed: 35,
+  },
+  {
+    id: 'elf', name: 'Elf of the Mist',
+    imgMale: 'race-elf-m.webp', imgFemale: 'race-elf-f.webp', icon: '✦',
+    description: 'Ancient and nearly forgotten, elves are legend made flesh. Marked by the Ripple, they carry a lost civilisation on their skin.',
+    tag: 'Ancient · Arcane',
+    traits: ['INT +2, WIS +1','Speed 35ft · Lifespan ×10 human','Empowered by the Mist — fog and smoke cannot block your vision','Marks of the Ripple — Arcana proficiency, Gust cantrip; Fog Cloud at lvl 3; Gust of Wind at lvl 5'],
+    flaw: 'Scarred Body — outside the Mist, your first exhaustion counts as two levels instead of one.',
+    hasSubrace: false, abilityBonus: 'INT +2, WIS +1', speed: 35,
+  },
+];
+
+const SUBRACES = {
+  felinfolk: [
+    {
+      id: 'felisian', name: 'Felisian', icon: '🏙',
+      imgMale: 'race-felisian-m.webp', imgFemale: 'race-felisian-f.webp',
+      description: 'Urban felinfolk of the great cities. Cheeky, fast, and perceptive — the first scholars and wielders of Academy power.',
+      abilityBonus: 'DEX +2, CHA +1', speed: 30,
+      traits: ['DEX +2, CHA +1 · Speed 30ft','Feline Agility — double movement speed once per turn (until a turn with no movement)','Proficiency in Perception and Stealth'],
+    },
+    {
+      id: 'leokin', name: 'Leokin', icon: '🦁',
+      imgMale: 'race-leokin-m.webp', imgFemale: 'race-leokin-f.webp',
+      description: 'Mane-bearing felinfolk of the savanna. Forged by a harsh climate into strong leaders. The founders of Lorda Gorda.',
+      abilityBonus: 'CON +2, STR +1', speed: 35,
+      traits: ['CON +2, STR +1 · Speed 35ft','Royal Roar — bonus action, frighten within 10ft (WIS DC 8+prof+CON). Once per short rest.','Proficiency in Athletics or Intimidation'],
+    },
+    {
+      id: 'notatus', name: 'Notatus', icon: '🐯',
+      imgMale: 'race-notatus-m.webp', imgFemale: 'race-notatus-f.webp',
+      description: 'Striped jungle felinfolk with mystic ties to an ancient past. Elusive, clairvoyant, and keepers of Galluvinchia\'s oldest stories.',
+      abilityBonus: 'WIS +2, DEX +1', speed: 35,
+      traits: ['WIS +2, DEX +1 · Speed 35ft','Memories of the Dreams — Guidance cantrip','Proficiency in Stealth or Acrobatics'],
+    },
+  ],
+};
+
+const CITIES = [
+  { id: 'anramoda',   name: "An'Ramoda",        description: "The walled fortress city of the north. Strength, honour, and relentless effort shape everyone who grows up here.", hint: 'STR & DEX' },
+  { id: 'marmaros',   name: 'Lady of Marmaros',  description: 'City of mages and commerce. The Academy of Magic Wonders touches every life here.',                              hint: 'WIS & CHA' },
+  { id: 'carbohyrr',  name: 'Lord of Carbohyrr', description: 'Mountain fortress of smiths and miners. The forge is life; the copper pass is law.',                             hint: 'CON & INT' },
+  { id: 'lordagorda', name: 'Lorda Gorda',        description: 'Felinfolk island fortress lit by pink crystals. The Light is the only faith they trust.',                        hint: 'DEX & CHA' },
+  { id: 'doormi',     name: 'Doormi',             description: 'Village of dreamers and healers, blessed by Morphia. The loom of dreams calls artists from across the land.',   hint: 'WIS & CHA' },
+  { id: 'wandering',  name: 'No Fixed City',      description: 'The road is your home. A wanderer shaped by encounters more than walls.',                                        hint: 'Any two' },
+];
+
+const CLASSES = [
+  { id: 'barbarian', name: 'Barbarian', icon: '⚔',  desc: 'Primal fury unleashed. Rages like a northern storm.',                        deity: 'Aremedia' },
+  { id: 'bard',      name: 'Bard',      icon: '♪',  desc: 'Words and music as weapons. Tales that reshape reality.',                     deity: 'Panos or Morphia' },
+  { id: 'cleric',    name: 'Cleric',    icon: '✦',  desc: 'Divine conduit. The gods\' will made flesh in the mortal world.',            deity: 'Any of the six gods' },
+  { id: 'druid',     name: 'Druid',     icon: '🌿', desc: 'Nature\'s guardian. The First Tree and the Will of the Wild call.',          deity: 'Leeve or Will of the Wild' },
+  { id: 'fighter',   name: 'Fighter',   icon: '🛡', desc: 'Master of arms. The Colosseum was built for people like you.',               deity: 'Aremedia' },
+  { id: 'monk',      name: 'Monk',      icon: '◎',  desc: 'Discipline as power. The Ripple flows through empty hands.',                 deity: 'Panos or The Light' },
+  { id: 'paladin',   name: 'Paladin',   icon: '◈',  desc: 'Oath-bound champion. Worthy of ascending like the gods themselves.',         deity: 'Aremedia or The Light' },
+  { id: 'ranger',    name: 'Ranger',    icon: '🏹', desc: 'Hunter of the wild. The forest remembers their name.',                      deity: 'Leeve' },
+  { id: 'rogue',     name: 'Rogue',     icon: '🗡', desc: 'Shadow and precision. The copper pass is never an obstacle.',                deity: 'Morphia or Brenadette' },
+  { id: 'sorcerer',  name: 'Sorcerer',  icon: '✧',  desc: 'Born from the Ripple. Magic answers before they can ask.',                  deity: 'Panos' },
+  { id: 'warlock',   name: 'Warlock',   icon: '◑',  desc: 'Pact-bound seeker. Power always has a price — and they paid it.',           deity: 'Brenadette or The Lady of Horns' },
+  { id: 'wizard',    name: 'Wizard',    icon: '📖', desc: 'Scholar of the arcane. The Academy would be proud. Or afraid.',             deity: 'Panos or Morphia' },
+];
+
+const NAMES = {
+  human:     { male: ['Marco','Caio','Bruno','Cesare','Dante','Rodrigo','Alberto','Victor','Rafael','Adriano','Cosimo','Lucio','Fernando','Agustin','Martin'], female: ['Elena','Marta','Lucia','Sofia','Isadora','Camila','Valentina','Adelina','Rossana','Fiora','Monica','Alice','Raquel','Sera'] },
+  felinfolk: { male: ['Verde','Lucius','Caius','Tavis','Fenx','Miro','Dorian','Renne','Orin','Lithe'], female: ['Velka','Sana','Lysa','Fenne','Ciara','Naia','Mira','Vira','Kessa','Sera'] },
+  centaur:   { male: ['Theron','Kalos','Arvid','Brekk','Eldan','Torvak','Darian','Kessos'], female: ['Tera','Auren','Velda','Rhena','Calla','Esen','Myra','Thyra'] },
+  minotaur:  { male: ['Brak','Toruk','Gard','Renos','Valok','Miral','Dauth','Kruun'], female: ['Boda','Ura','Raka','Thela','Veska','Arka','Gruda','Mira'] },
+  faun:      { male: ['Pan','Silvio','Castor','Miro','Tobio','Renne','Darvo','Lirio','Fenn'], female: ['Lola','Sylva','Rinna','Calla','Fira','Merry','Blythe','Vira','Danya'] },
+  elf:       { male: ['Elan','Vaen','Sorel','Caen','Mirel','Taen','Aven','Saen','Lhuel'], female: ['Silvia','Kira','Aela','Vessa','Nira','Lhune','Sael','Vyssa','Mirel'] },
+};
+
+const SURNAMES = ['Oldreekia','Passage','Fernwhisper','Kagerisu','Crepusculiento','Goldberg','Pendeltag','Rockwool','Meyer','Tempiras','Borrasco','Altaverde','Castaneira','del Viento','Ironwool','Silvermark','de Loma','Fuego-Santo','Bravamare','della Mist'];
+
+const BACKGROUNDS = {
+  anramoda:   ['Raised in the shadow of the Colosseum, you dreamed of glory long before you could hold a weapon. That dream has teeth now.','A veteran of the An\'Ramodian army, you left after a battle you do not speak of. Aremedia\'s call hasn\'t left you.','Your family has served under the goddess\'s banner for generations. The weight of that name is yours to carry.','You were passed over for the Consuls\' inner circle. You intend to make them remember your name.','A merchant of arms who supplied both sides of a border skirmish. The coin was good. The conscience, less so.'],
+  marmaros:   ['An apprentice at the Academy of Magic Wonders, you were expelled for an experiment that should not have worked — but did.','You worked the marble mines until the whispers started. You don\'t go back.','A cosmetics trader whose signature potion had deeply unexpected arcane effects on a very important client.','Noble blood, a minor title, and a gambling debt larger than your estate.','A prized student of Monica Mars herself, until the day your paths suddenly diverged.'],
+  carbohyrr:  ['A smith\'s child who lost their family to the copper tax. The forge is both a wound and a purpose.','A former battlemage cadet who refused the final oath. The copper pass in your pocket is counterfeit.','You came to Carbohyrr as a trader and never found your way back out.','You found something in the deep mines that no one believes — and fled before you could prove it.'],
+  lordagorda: ['A jeweler whose finest work reached the capitals. Now someone wants the secrets of your craft by force.','Crew of a merchant ship that sailed from the Whisk of Lumin. The sea had other plans.','A devotee of the Light who left Lorda Gorda to prove that faith can travel beyond its walls.','The pink crystals once spoke to you. You have been searching for what they said ever since.'],
+  doormi:     ['A student at the Academy of Magic Waves and Dreams whose loom-work revealed something it should not have shown.','A healer who treated someone they were not supposed to, and had to leave the city quietly.','You spent too long in Morphia\'s Slumber and woke with no memory of three months. The loom still calls.','An initiate of the Order of the Dormant who walked away before the final vow. The Order does not forget.'],
+  wandering:  ['You grew up in a village too small to appear on most maps. Adventure found you anyway.','A hamlet dweller who watched the Keepers of Galluvinchia pass through once, and followed without a second thought.','Your village elder sent you away with three coins and a warning you didn\'t understand until much later.','No one from where you come from has ever done anything remarkable. You intend to be the first.'],
+};
+
+// ── D&D MECHANICS DATA ────────────────────────────────────────────────────
+const STANDARD_ARRAY = [15, 14, 13, 12, 10, 8];
+const STAT_NAMES = ['STR','DEX','CON','INT','WIS','CHA'];
+
+const STAT_PRIORITY = {
+  barbarian: ['STR','CON','DEX','WIS','CHA','INT'],
+  bard:      ['CHA','DEX','CON','WIS','STR','INT'],
+  cleric:    ['WIS','CON','STR','CHA','DEX','INT'],
+  druid:     ['WIS','CON','DEX','INT','CHA','STR'],
+  fighter:   ['STR','CON','DEX','WIS','CHA','INT'],
+  monk:      ['DEX','WIS','CON','STR','CHA','INT'],
+  paladin:   ['STR','CHA','CON','WIS','DEX','INT'],
+  ranger:    ['DEX','WIS','CON','STR','INT','CHA'],
+  rogue:     ['DEX','CHA','CON','WIS','INT','STR'],
+  sorcerer:  ['CHA','CON','DEX','WIS','INT','STR'],
+  warlock:   ['CHA','CON','DEX','WIS','INT','STR'],
+  wizard:    ['INT','CON','DEX','WIS','CHA','STR'],
+};
+
+const CLASS_SAVES = {
+  barbarian: ['STR','CON'], bard:     ['DEX','CHA'], cleric:  ['WIS','CHA'],
+  druid:     ['INT','WIS'], fighter:  ['STR','CON'], monk:    ['STR','DEX'],
+  paladin:   ['WIS','CHA'], ranger:   ['STR','DEX'], rogue:   ['DEX','INT'],
+  sorcerer:  ['CON','CHA'], warlock:  ['WIS','CHA'], wizard:  ['INT','WIS'],
+};
+
+// Skill proficiencies auto-chosen per class (optimal picks)
+const CLASS_SKILL_PICKS = {
+  barbarian: ['Athletics','Perception'],
+  bard:      ['Performance','Persuasion','Deception'],
+  cleric:    ['Insight','Religion'],
+  druid:     ['Nature','Perception'],
+  fighter:   ['Athletics','Perception'],
+  monk:      ['Acrobatics','Stealth'],
+  paladin:   ['Athletics','Persuasion'],
+  ranger:    ['Perception','Stealth','Survival'],
+  rogue:     ['Stealth','Deception','Perception','Sleight of Hand'],
+  sorcerer:  ['Arcana','Persuasion'],
+  warlock:   ['Arcana','Deception'],
+  wizard:    ['Arcana','History'],
+};
+
+const CLASS_ARMOR = {
+  barbarian: 'Light · Medium · Shields · Martial weapons',
+  bard:      'Light armor · Simple weapons',
+  cleric:    'Light · Medium · Shields · Simple weapons',
+  druid:     'Light · Medium (non-metal) · Simple weapons',
+  fighter:   'All armor · Shields · All weapons',
+  monk:      'Simple weapons · Shortswords',
+  paladin:   'All armor · Shields · All weapons',
+  ranger:    'Light · Medium · Shields · Martial weapons',
+  rogue:     'Light armor · Simple weapons · Thieves\' tools',
+  sorcerer:  'Daggers · Quarterstaffs · Light crossbows',
+  warlock:   'Light armor · Simple weapons',
+  wizard:    'Daggers · Quarterstaffs · Light crossbows',
+};
+
+// ── STAT CALCULATION ──────────────────────────────────────────────────────
+function getRacialBonuses(raceId, subraceId) {
+  const b = { STR:0, DEX:0, CON:0, INT:0, WIS:0, CHA:0 };
+  if (raceId === 'centaur')  { b.STR=2; b.WIS=1; }
+  if (raceId === 'minotaur') { b.STR=2; b.CON=1; }
+  if (raceId === 'faun')     { b.CHA=2; b.DEX=1; }
+  if (raceId === 'elf')      { b.INT=2; b.WIS=1; }
+  if (raceId === 'felinfolk') {
+    if (subraceId === 'felisian') { b.DEX=2; b.CHA=1; }
+    if (subraceId === 'leokin')   { b.CON=2; b.STR=1; }
+    if (subraceId === 'notatus')  { b.WIS=2; b.DEX=1; }
+  }
+  return b;
+}
+
+function assignStats(raceId, subraceId, classId) {
+  const priority = STAT_PRIORITY[classId] || STAT_NAMES;
+  const bonuses  = getRacialBonuses(raceId, subraceId);
+  const base = {};
+  priority.forEach((s, i) => { base[s] = STANDARD_ARRAY[i]; });
+  // Human: +1 to the two top-priority stats
+  if (raceId === 'human') { base[priority[0]] += 1; base[priority[1]] += 1; }
+  const final = {};
+  STAT_NAMES.forEach(s => { final[s] = base[s] + (bonuses[s] || 0); });
+  return final;
+}
+
+function mod(score) {
+  const m = Math.floor((score - 10) / 2);
+  return (m >= 0 ? '+' : '') + m;
+}
+
+// ── PROFICIENCY RESOLUTION ────────────────────────────────────────────────
+function getRacialSkills(raceId, subraceId) {
+  if (raceId === 'felinfolk') {
+    if (subraceId === 'felisian') return ['Perception','Stealth'];
+    if (subraceId === 'leokin')   return ['Intimidation'];
+    if (subraceId === 'notatus')  return ['Stealth'];
+  }
+  if (raceId === 'minotaur') return ['Intimidation'];
+  if (raceId === 'faun')     return ['Performance','Persuasion'];
+  if (raceId === 'elf')      return ['Arcana'];
+  return [];
+}
+
+// ── HELPERS ───────────────────────────────────────────────────────────────
+const pick     = arr => arr[Math.floor(Math.random() * arr.length)];
+const getRace  = id => RACES.find(r => r.id === id);
+const getClass = id => CLASSES.find(c => c.id === id);
+const getCity  = id => CITIES.find(c => c.id === id);
+const getSR    = id => (SUBRACES.felinfolk || []).find(s => s.id === id);
+
+function stepSequence() {
+  return state.race === 'felinfolk' ? [1,2,3,4,5] : [1,2,4,5];
+}
+function nextPanel(p) {
+  const s = stepSequence(); const i = s.indexOf(p);
+  return (i >= 0 && i < s.length - 1) ? s[i+1] : 'result';
+}
+function prevPanel(p) {
+  const s = stepSequence(); const i = s.indexOf(p);
+  return i > 0 ? s[i-1] : 1;
+}
+
+// ── PROGRESS BAR ──────────────────────────────────────────────────────────
+function renderProgress() {
+  const isFelin = state.race === 'felinfolk';
+  const steps   = isFelin
+    ? [{p:1,l:'Gender'},{p:2,l:'Race'},{p:3,l:'Subrace'},{p:4,l:'City'},{p:5,l:'Class'}]
+    : [{p:1,l:'Gender'},{p:2,l:'Race'},{p:4,l:'City'},{p:5,l:'Class'}];
+  const seq  = stepSequence();
+  const idx  = seq.indexOf(state.panel);
+  document.getElementById('progress').innerHTML = steps.map((s,i) => {
+    const cls  = i < idx ? 'done' : i === idx ? 'active' : '';
+    const line = i < steps.length-1 ? `<div class="gen-progress-line${i < idx ? ' done':''}"></div>` : '';
+    return `<div class="gen-step-dot ${cls}"><div class="dot">${i+1}</div><div class="dot-label">${s.l}</div></div>${line}`;
+  }).join('');
+}
+
+// ── IMAGE HELPER ──────────────────────────────────────────────────────────
+function imgHtml(imgMale, imgFemale, icon) {
+  const src = state.gender === 'female' ? imgFemale : imgMale;
+  return `<div class="sel-card-img-wrap">
+    <img class="sel-card-img" src="${src}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="sel-card-img-placeholder" style="display:none"><span>${icon}</span></div>
+  </div>`;
+}
+
+// ── GRID BUILDERS ─────────────────────────────────────────────────────────
+function buildRaceGrid() {
+  document.getElementById('race-grid').innerHTML = RACES.map(r => `
+    <div class="sel-card" data-value="${r.id}" onclick="pickCard(this,'race')">
+      ${imgHtml(r.imgMale, r.imgFemale, r.icon)}
+      <div class="sel-card-body">
+        <div class="sel-card-name">${r.name}</div>
+        <div class="sel-card-desc">${r.description}</div>
+        <div class="sel-card-tag">${r.tag}</div>
+      </div>
+    </div>`).join('');
+}
+
+function buildSubraceGrid() {
+  document.getElementById('subrace-grid').innerHTML = (SUBRACES.felinfolk||[]).map(sr => `
+    <div class="sel-card" data-value="${sr.id}" onclick="pickCard(this,'subrace')">
+      ${imgHtml(sr.imgMale, sr.imgFemale, sr.icon)}
+      <div class="sel-card-body">
+        <div class="sel-card-name">${sr.name}</div>
+        <div class="sel-card-desc">${sr.description}</div>
+        <div class="sel-card-tag">${sr.abilityBonus}</div>
+      </div>
+    </div>`).join('');
+}
+
+function buildCityGrid() {
+  document.getElementById('city-grid').innerHTML = CITIES.map(c => `
+    <div class="sel-card city-card" data-value="${c.id}" onclick="pickCard(this,'city')">
+      <div>
+        <div class="sel-card-name">${c.name}</div>
+        <div class="sel-card-desc">${c.description}</div>
+      </div>
+      <div class="sel-card-tag" style="margin-top:0.6rem">Flavour: ${c.hint}</div>
+    </div>`).join('');
+}
+
+function buildClassGrid() {
+  document.getElementById('class-grid').innerHTML = CLASSES.map(c => `
+    <div class="sel-card class-card" data-value="${c.id}" onclick="pickCard(this,'charClass')">
+      <div class="class-icon">${c.icon}</div>
+      <div>
+        <div class="sel-card-name">${c.name}</div>
+        <div class="sel-card-desc">${c.desc}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ── ASI (Ability Score Improvement at level 4) ────────────────────────────
+function applyASI(stats, classId) {
+  const priority = STAT_PRIORITY[classId] || STAT_NAMES;
+  const result   = { ...stats };
+  // Find the highest-priority stat below 20 to boost by +2
+  const target = priority.find(s => result[s] < 20) || priority[0];
+  result[target] = Math.min(20, result[target] + 2);
+  return { stats: result, boosted: target };
+}
+
+function renderStatGrid(stats, saves, boostedStat) {
+  document.getElementById('stat-grid-inner').innerHTML = STAT_NAMES.map(s => {
+    const isSave  = saves.includes(s);
+    const isBoost = boostedStat && s === boostedStat;
+    return `<div class="stat-cell${isSave ? ' save-prof' : ''}${isBoost ? ' asi-boost' : ''}">
+      <div class="stat-label">${s}${isSave ? ' <span class="save-star">✦</span>' : ''}${isBoost ? ' <span class="asi-mark">▲</span>' : ''}</div>
+      <div class="stat-score">${stats[s]}</div>
+      <div class="stat-mod">${mod(stats[s])}</div>
+    </div>`;
+  }).join('');
+}
+
+function setLevel(n) {
+  const stats   = n === 4 ? window._statsL4 : window._statsL1;
+  const boosted = n === 4 ? window._asiBoosted : null;
+  renderStatGrid(stats, window._saves, boosted);
+  document.getElementById('lvl-btn-1').classList.toggle('active', n === 1);
+  document.getElementById('lvl-btn-4').classList.toggle('active', n === 4);
+}
+
+// ── RESULT ────────────────────────────────────────────────────────────────
+function buildResult() {
+  const race  = getRace(state.race);
+  const cls   = getClass(state.charClass);
+  const city  = getCity(state.city);
+  const sr    = state.subrace ? getSR(state.subrace) : null;
+
+  const firstName = pick(NAMES[state.race][state.gender]);
+  const name = `${firstName} ${pick(SURNAMES)}`;
+
+  const bgPool = BACKGROUNDS[state.city] || BACKGROUNDS.wandering;
+  window._bgPool = bgPool;
+  const bg = pick(bgPool);
+
+  // Traits
+  let traits = [...race.traits];
+  let abilityBonus = race.abilityBonus || '';
+  let speed = race.speed;
+  if (sr) { traits = [...race.traits, ...sr.traits]; abilityBonus = sr.abilityBonus; speed = sr.speed; }
+
+  // Stats (level 1 and level 4)
+  const statsL1  = assignStats(state.race, state.subrace, state.charClass);
+  const saves    = CLASS_SAVES[state.charClass] || [];
+  const asiResult = applyASI(statsL1, state.charClass);
+  const statsL4   = asiResult.stats;
+  window._statsL1    = statsL1;
+  window._statsL4    = statsL4;
+  window._asiBoosted = asiResult.boosted;
+  window._saves      = saves;
+
+  // Proficiencies
+  const classSkills  = CLASS_SKILL_PICKS[state.charClass] || [];
+  const racialSkills = getRacialSkills(state.race, state.subrace);
+  const racialSet    = new Set(racialSkills);
+  // class pills (excluding duplicates that come from race — mark those as race instead)
+  const classPills  = classSkills.filter(s => !racialSet.has(s)).map(s => `<span class="prof-pill class-prof">${s}</span>`).join('');
+  const racialPills = racialSkills.map(s => `<span class="prof-pill race-prof">${s}</span>`).join('');
+  // Class saves as text
+  const savesText = saves.join(' · ');
+
+  // Badges
+  const raceBadge   = sr ? `${sr.name} Felinfolk` : race.name;
+  const originBadge = city ? city.name : state.city;
+
+  document.getElementById('result-card').innerHTML = `
+    <div class="result-header">
+      <div class="result-name">${name}</div>
+      <div class="result-badges">
+        <span class="badge badge-race">${raceBadge}</span>
+        <span class="badge badge-class">${cls.name}</span>
+        <span class="badge badge-origin">${originBadge}</span>
+      </div>
+    </div>
+
+    <div class="level-toggle">
+      <button class="lvl-btn active" id="lvl-btn-1" onclick="setLevel(1)">Level 1</button>
+      <button class="lvl-btn" id="lvl-btn-4" onclick="setLevel(4)">Level 4 &nbsp;·&nbsp; ASI +2 ${asiResult.boosted}</button>
+    </div>
+    <div class="stat-grid" id="stat-grid-inner"></div>
+    <div class="stat-legend">✦ saving throw &nbsp;·&nbsp; ▲ ASI boost &nbsp;·&nbsp; Standard Array [15 14 13 12 10 8] + racial bonuses</div>
+
+    <div class="result-body">
+      <div>
+        <div class="result-section-title">Racial Traits</div>
+        ${traits.map(t => `<div class="result-trait">${t}</div>`).join('')}
+      </div>
+      <div>
+        <div class="result-section-title">Class Details</div>
+        <div class="result-trait"><strong style="color:var(--gold);font-size:0.78rem;">Saving throws</strong><br>${savesText}</div>
+        <div class="result-trait"><strong style="color:var(--gold);font-size:0.78rem;">Suggested deity</strong><br>${cls.deity}</div>
+        <div class="result-trait"><strong style="color:var(--gold);font-size:0.78rem;">Speed</strong> &nbsp;${speed ? speed + ' ft' : '30 ft'}</div>
+        <div class="result-trait"><strong style="color:var(--gold);font-size:0.78rem;">Armor &amp; weapons</strong><br>${CLASS_ARMOR[state.charClass]||''}</div>
+      </div>
+
+      <div class="result-profs">
+        <div class="result-section-title">Skill Proficiencies</div>
+        <div class="prof-pills">${classPills}${racialPills}</div>
+        <div class="prof-legend">
+          <span style="color:rgba(180,160,255,0.8)">■</span> class choice &nbsp;
+          <span style="color:rgba(255,140,235,0.8)">■</span> from racial traits
+        </div>
+      </div>
+
+      <div class="result-flaw">
+        <div class="result-section-title">Racial Flaw</div>
+        <p>${race.flaw}</p>
+      </div>
+
+      <div class="result-background">
+        <div class="result-section-title">Background Hook</div>
+        <p id="bg-text">${bg}</p>
+        <button class="btn-reroll" onclick="rerollBg()">↻ Reroll background</button>
+      </div>
+
+      <div class="result-footer">
+        <button class="btn-print" onclick="window.print()">⎙ Print card</button>
+        <button class="btn-restart" onclick="restart()">Start over</button>
+      </div>
+    </div>`;
+
+  // Populate stat grid (level 1 by default)
+  renderStatGrid(statsL1, saves, null);
+}
+
+function rerollBg() {
+  document.getElementById('bg-text').textContent = pick(window._bgPool);
+}
+
+// ── SELECTION ─────────────────────────────────────────────────────────────
+function pickCard(card, key) {
+  card.parentElement.querySelectorAll('.sel-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  if (key === 'race' && state.race !== card.dataset.value) {
+    state.subrace = null; state.city = null; state.charClass = null;
+  }
+  state[key] = card.dataset.value;
+  document.getElementById('btn-next').disabled = false;
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────────────────
+const stateKey = { 1:'gender', 2:'race', 3:'subrace', 4:'city', 5:'charClass' };
+
+function goNext() {
+  const p = state.panel;
+  if (p === 5) { buildResult(); showPanel('result'); document.getElementById('gen-nav').style.display='none'; return; }
+  const np = nextPanel(p);
+  showPanel(np);
+  if (np === 2) buildRaceGrid();
+  if (np === 3) buildSubraceGrid();
+  if (np === 4) buildCityGrid();
+  if (np === 5) buildClassGrid();
+  document.getElementById('btn-next').disabled = !state[stateKey[np]];
+  updateNextLabel(np);
+}
+
+function goBack() {
+  if (state.panel <= 1) return;
+  const pp = prevPanel(state.panel);
+  showPanel(pp);
+  document.getElementById('btn-next').disabled = !state[stateKey[pp]];
+  updateNextLabel(pp);
+}
+
+function updateNextLabel(p) {
+  const seq = stepSequence();
+  document.getElementById('btn-next').textContent = seq.indexOf(p) === seq.length-1 ? 'Generate ✦' : 'Next →';
+}
+
+function showPanel(id) {
+  document.querySelectorAll('.gen-step').forEach(s => s.classList.remove('active'));
+  document.getElementById(`panel-${id}`).classList.add('active');
+  state.panel = id;
+  renderProgress();
+  document.getElementById('btn-back').disabled = id === 1;
+}
+
+function restart() {
+  Object.assign(state, { panel:1, gender:null, race:null, subrace:null, city:null, charClass:null });
+  document.getElementById('gen-nav').style.display = '';
+  document.querySelectorAll('#panel-1 .sel-card').forEach(c => c.classList.remove('selected'));
+  showPanel(1);
+  document.getElementById('btn-next').disabled = true;
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+showPanel(1);
+</script>
+</body>
+</html>

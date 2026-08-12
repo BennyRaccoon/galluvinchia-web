@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards Codenames - Sueco (con explicaciones)</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f5f4ef;
+    color: #2c2c2a;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 24px 16px 60px;
+  }
+  h1 { font-size: 20px; font-weight: 500; margin: 0 0 20px; text-align: center; }
+  select {
+    width: 100%; padding: 10px 12px; font-size: 15px; border-radius: 8px;
+    border: 1px solid #d3d1c7; background: white; margin-bottom: 12px;
+  }
+  .row { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; }
+  .row select { margin-bottom: 0; flex: 1; }
+  button.icon-btn {
+    width: 44px; height: 44px; border-radius: 8px; border: 1px solid #d3d1c7;
+    background: white; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  button.icon-btn:active { background: #ececE6; }
+  #card {
+    background: white; border: 1px solid #d3d1c7; border-radius: 12px;
+    padding: 40px 24px; text-align: center; cursor: pointer; user-select: none;
+    min-height: 180px; display: flex; flex-direction: column; justify-content: center;
+    gap: 10px; margin-bottom: 16px;
+  }
+  #sv { font-size: 30px; font-weight: 500; }
+  #en { font-size: 16px; color: #5f5e5a; display: none; }
+  #expl { font-size: 13px; color: #7a7972; display: none; line-height: 1.4; padding: 0 8px; }
+  #hint { font-size: 12px; color: #888780; margin-top: 8px; }
+  .actions { display: flex; gap: 8px; margin-bottom: 16px; }
+  .actions button {
+    flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #d3d1c7;
+    background: white; font-size: 15px; cursor: pointer;
+  }
+  #reviewBtn { color: #A32D2D; }
+  #knowBtn { color: #3B6D11; }
+  .footer { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #5f5e5a; }
+  .footer button {
+    font-size: 12px; padding: 6px 10px; border-radius: 6px;
+    border: 1px solid #d3d1c7; background: white; cursor: pointer;
+  }
+  .note { font-size: 12px; color: #888780; text-align: center; margin-top: 24px; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<h1>Flashcards Codenames — Sueco</h1>
+
+<div class="row">
+  <select id="catSel"></select>
+  <button class="icon-btn" id="speakBtn" aria-label="Escuchar pronunciación">&#128266;</button>
+</div>
+
+<div id="card">
+  <div id="sv"></div>
+  <div id="en"></div>
+  <div id="expl"></div>
+  <div id="hint">Toca la ficha para ver la traducción</div>
+</div>
+
+<div class="actions">
+  <button id="reviewBtn">Repasar</button>
+  <button id="knowBtn">Ya lo sé</button>
+</div>
+
+<div class="footer">
+  <span id="progress"></span>
+  <button id="resetBtn">&#8635; Reiniciar</button>
+</div>
+
+<p class="note">La pronunciación usa la voz sueca de tu navegador (Web Speech API). Ábrelo directamente en Safari/Chrome (no en vistas previas integradas) para que suene.</p>
+
+<script>
+// Formato: [palabra sueca, traducción inglés, explicación en español]
+const DATA = {
+"Animales":[
+["häst","horse","caballo"],["hund","dog","perro"],["tiger","tiger","tigre"],["lejon","lion","león"],
+["ren","reindeer","reno"],["älg","moose","alce, típico en Suecia"],["val","whale","ballena"],["fisk","fish","pez/pescado, genérico"],
+["kanin","rabbit","conejo"],["katt","cat","gato"],["björn","bear","oso"],["örn","eagle","águila"],
+["uggla","owl","búho"],["mås","seagull","gaviota"],["tärna","tern","charrán, ave marina"],["kräfta","crayfish","cangrejo de río, típico en la fiesta kräftskiva"],
+["larv","caterpillar","oruga"],["bläckfisk","octopus","pulpo"],["pingvin","penguin","pingüino"],["näbbdjur","platypus","ornitorrinco"],
+["spindel","spider","araña"],["slända","dragonfly","libélula"],["fluga","fly","mosca, insecto"],["kor","cows","vacas, plural"],
+["får","sheep","oveja"],["svin","pig","cerdo, tono más despectivo que 'gris'"],["bock","goat","macho cabrío"],["mullvad","mole","topo"],
+["mammut","mammoth","mamut"],["känguru","kangaroo","canguro"],["mus","mouse","ratón"],["räv","fox","zorro"],
+["varg","wolf","lobo"],["orm","snake","serpiente"],["groda","frog","rana"],["fjäril","butterfly","mariposa"],
+["get","goat","cabra"],["gris","pig","cerdo, la palabra más común"],["ko","cow","vaca, singular"],["fågel","bird","pájaro, genérico"],
+["elefant","elephant","elefante"],["giraff","giraffe","jirafa"],["zebra","zebra","cebra"],["krokodil","crocodile","cocodrilo"],
+["leopard","leopard","leopardo"],["gepard","cheetah","guepardo"],["delfin","dolphin","delfín"],["haj","shark","tiburón"],
+["sköldpadda","turtle","tortuga"],["igelkott","hedgehog","erizo"],["ekorre","squirrel","ardilla"],["hare","hare","liebre"],
+["lodjur","lynx","lince"],["utter","otter","nutria"],["säl","seal","foca"],["valross","walrus","morsa"],
+["flodhäst","hippo","hipopótamo"],["noshörning","rhino","rinoceronte"],["apa","monkey","mono"],["gorilla","gorilla","gorila"],
+["panda","panda","panda"],["koala","koala","koala"],["struts","ostrich","avestruz"],["påfågel","peacock","pavo real"],
+["flamingo","flamingo","flamenco"],["humla","bumblebee","abejorro"],["myra","ant","hormiga"],["skalbagge","beetle","escarabajo"],
+["mal","moth","polilla"],["näktergal","nightingale","ruiseñor"],["lax","salmon","salmón"],["torsk","cod","bacalao"],
+["gädda","pike","lucio, pez de río"],["hummer","lobster","langosta"],["krabba","crab","cangrejo de mar"],["mussla","clam","almeja/mejillón"]
+],
+"Mitología y fantasía":[
+["troll","troll","criatura del folclore nórdico"],["zombie","zombie","muerto viviente"],["häxa","witch","bruja"],["enhörning","unicorn","unicornio"],
+["dvärg","dwarf","enano, de fantasía"],["drake","dragon","dragón"],["fenix","phoenix","ave fénix"],["odjur","beast","bestia/monstruo"],
+["kentaur","centaur","centauro"],["spöke","ghost","fantasma"],["ängel","angel","ángel"],["tomte","gnome","gnomo navideño sueco, parecido a Santa"],
+["utomjording","alien","extraterrestre"],["superhjälte","superhero","superhéroe"],["riddare","knight","caballero medieval"],["ninja","ninja","ninja"],
+["pirat","pirate","pirata"],["dinosaurie","dinosaur","dinosaurio"],["jätte","giant","gigante"],["älva","elf","elfo/hada"],
+["varulv","werewolf","hombre lobo"],["magiker","wizard","mago"],["demon","demon","demonio"],["monster","monster","monstruo, préstamo del inglés"],
+["gnom","gnome","gnomo, sinónimo de tomte"],["fantasy","fantasy","el género literario, préstamo directo del inglés"],["äventyr","adventure","aventura"],["sagovärld","fairytale world","mundo de cuento de hadas"],
+["mytologi","mythology","mitología"],["gud","god","dios"],["gudinna","goddess","diosa"],["magi","magic","magia"],
+["trollformel","spell","hechizo/conjuro"],["besvärjelse","incantation","conjuro/invocación"],["amulett","amulet","amuleto"],["orakel","oracle","oráculo"],
+["profetia","prophecy","profecía"],["legend","legend","leyenda"],["myt","myth","mito"],["hjälte","hero","héroe"],
+["skurk","villain","villano/malo"],["alv","elf","elfo, variante de älva"],["nymf","nymph","ninfa"],["valkyria","valkyrie","valquiria, guerrera nórdica mítica"],
+["asgård","Asgard","reino de los dioses en la mitología nórdica"],["oden","Odin","dios principal nórdico, padre de Thor"],["thor","Thor","dios del trueno nórdico"],["loke","Loki","dios embaucador nórdico"],
+["ragnarök","Ragnarök","el fin del mundo en la mitología nórdica"],["tolkien","Tolkien","J.R.R. Tolkien, autor de El Señor de los Anillos"]
+],
+"Personas y oficios":[
+["krona","crown","corona, objeto real"],["kung","king","rey"],["drottning","queen","reina"],["prinsessa","princess","princesa"],
+["tron","throne","trono"],["spira","scepter","cetro real"],["soldat","soldier","soldado"],["agent","agent","agente de espionaje"],
+["spion","spy","espía"],["pilot","pilot","piloto de avión"],["kock","cook","cocinero/chef"],["lärare","teacher","profesor"],
+["doktor","doctor","médico"],["advokat","lawyer","abogado"],["forskare","researcher","investigador/científico"],["polis","police","policía"],
+["dykare","diver","buceador"],["luffare","tramp","vagabundo"],["miljonär","millionaire","millonario"],["geni","genius","genio, persona muy inteligente"],
+["tjuv","thief","ladrón"],["far","father","padre"],["syster","sister","hermana"],["same","Sami person","persona sami, pueblo indígena del norte escandinavo"],
+["indian","Native American","indígena americano, no de la India"],["prins","prince","príncipe"],["bonde","farmer","granjero/campesino"],["präst","priest","sacerdote"],
+["krigare","warrior","guerrero"],["sjuksköterska","nurse","enfermera"],["student","student","estudiante"],["ingenjör","engineer","ingeniero"],
+["programmerare","programmer","programador"],["konstnär","artist","artista"],["författare","writer","escritor"],["skådespelare","actor","actor"],
+["musiker","musician","músico"],["tandläkare","dentist","dentista"],["brandman","firefighter","bombero"],["snickare","carpenter","carpintero"],
+["smed","blacksmith","herrero"],["bagare","baker","panadero"],["frisör","hairdresser","peluquero"],["journalist","journalist","periodista"],
+["domare","judge","juez"],["politiker","politician","político"],["diplomat","diplomat","diplomático"],["general","general","general, rango militar"],
+["kapten","captain","capitán"],["amiral","admiral","almirante"],["hertig","duke","duque"],["hertiginna","duchess","duquesa"],
+["greve","count","conde"],["väktare","guard","guardia/vigilante"],["fånge","prisoner","prisionero"],["rebell","rebel","rebelde"],
+["upptäcktsresande","explorer","explorador"]
+],
+"Países y lugares":[
+["sverige","Sweden","Suecia"],["amerika","America","América/EE.UU. de forma coloquial"],["grekland","Greece","Grecia"],["rom","Rome","Roma"],
+["skandinavien","Scandinavia","Escandinavia"],["norden","the Nordics","los países nórdicos"],["moskva","Moscow","Moscú"],["frankrike","France","Francia"],
+["europa","Europe","Europa"],["london","London","Londres"],["tokyo","Tokyo","Tokio"],["afrika","Africa","África"],
+["egypten","Egypt","Egipto"],["australien","Australia","Australia"],["england","England","Inglaterra"],["kina","China","China"],
+["alperna","the Alps","los Alpes"],["stockholm","Stockholm","Estocolmo"],["new york","New York","Nueva York"],["amazon","Amazon","el río Amazonas"],
+["atlantis","Atlantis","la Atlántida, ciudad mítica"],["antarktis","Antarctica","la Antártida"],["medelhavet","Mediterranean","el mar Mediterráneo"],["östersjön","Baltic Sea","el mar Báltico"],
+["hollywood","Hollywood","Hollywood"],["mars","Mars","el planeta Marte, también 'marzo'"],["spanien","Spain","España"],["japan","Japan","Japón"],
+["tyskland","Germany","Alemania"],["italien","Italy","Italia"],["norge","Norway","Noruega"],["danmark","Denmark","Dinamarca"],
+["finland","Finland","Finlandia"],["ryssland","Russia","Rusia"],["indien","India","India"],["brasilien","Brazil","Brasil"],
+["mexiko","Mexico","México"],["kanada","Canada","Canadá"],["portugal","Portugal","Portugal"],["nederländerna","Netherlands","los Países Bajos"],
+["schweiz","Switzerland","Suiza"],["österrike","Austria","Austria"],["polen","Poland","Polonia"],["turkiet","Turkey","Turquía"],
+["island","Iceland","Islandia"],["irland","Ireland","Irlanda"],["skottland","Scotland","Escocia"],["belgien","Belgium","Bélgica"],
+["sydkorea","South Korea","Corea del Sur"],["thailand","Thailand","Tailandia"],["vietnam","Vietnam","Vietnam"],["nya zeeland","New Zealand","Nueva Zelanda"],
+["argentina","Argentina","Argentina"],["chile","Chile","Chile"],["peru","Peru","Perú"],["colombia","Colombia","Colombia"]
+],
+"Edificios":[
+["biograf","cinema","cine"],["teater","theatre","teatro"],["kyrka","church","iglesia"],["fängelse","prison","cárcel"],
+["hotell","hotel","hotel"],["sjukhus","hospital","hospital"],["skola","school","escuela/colegio"],["casino","casino","casino"],
+["bank","bank","banco, institución financiera"],["opera","opera house","teatro de ópera"],["ambassad","embassy","embajada"],["skyskrapa","skyscraper","rascacielos"],
+["zoo","zoo","zoológico"],["arena","arena","recinto deportivo/de espectáculos"],["stadium","stadium","estadio"],["centrum","city center","centro de la ciudad"],
+["kåk","jail","cárcel, coloquial, también 'edificio grande'"],["bibliotek","library","biblioteca"],["museum","museum","museo"],["restaurang","restaurant","restaurante"],
+["torg","town square","plaza del pueblo/ciudad"],["flygplats","airport","aeropuerto"],["palats","palace","palacio"],["slott","castle","castillo"],
+["fabrik","factory","fábrica"],["köpcentrum","mall","centro comercial"],["gym","gym","gimnasio"],["akvarium","aquarium","acuario"],
+["planetarium","planetarium","planetario"],["herrgård","manor house","casa señorial/mansión"],["stuga","cottage","cabaña típica sueca"],["lada","barn","granero"],
+["växthus","greenhouse","invernadero"],["badhus","public baths","baños públicos/piscina cubierta"],["kontor","office","oficina"],["universitet","university","universidad"]
+],
+"Naturaleza":[
+["skog","forest","bosque"],["gräs","grass","hierba/césped"],["snö","snow","nieve"],["is","ice","hielo"],
+["vind","wind","viento; también 'ático' en otro contexto"],["damm","dust","polvo; también puede significar 'estanque'"],["vulkan","volcano","volcán"],["fjäll","mountain","montaña, típicamente escandinava"],
+["grotta","cave","cueva"],["dal","valley","valle"],["strand","beach","playa"],["klippa","cliff","acantilado/roca"],
+["åker","field","campo de cultivo"],["mark","ground","suelo/terreno"],["fält","field","campo, sentido más general"],["gran","spruce","abeto/pícea"],
+["ek","oak","roble"],["blad","leaf","hoja de planta"],["regnbåge","rainbow","arcoíris"],["stjärna","star","estrella"],
+["måne","moon","luna"],["planet","planet","planeta"],["sund","strait","estrecho marino"],["stam","tribe","tribu; también 'tronco de árbol'"],
+["bär","berry","baya/fruto del bosque"],["sjö","lake","lago"],["hav","sea","mar/océano"],["berg","mountain","montaña, término genérico"],
+["sol","sun","sol"],["moln","cloud","nube"],["regn","rain","lluvia"],["äng","meadow","prado"],
+["buske","bush","arbusto"],["gren","branch","rama"],["rot","root","raíz"],["stig","path","sendero"],
+["sand","sand","arena"],["lera","clay","arcilla/barro"],["dimma","fog","niebla"],["storm","storm","tormenta"],
+["åska","thunder","trueno"],["frost","frost","escarcha"],["glaciär","glacier","glaciar"],["ravin","ravine","barranco"],
+["kust","coast","costa"],["ö","island","isla"],["halvö","peninsula","península"],["öken","desert","desierto"],
+["tundra","tundra","tundra"],["savann","savannah","sabana"],["djungel","jungle","jungla/selva"],["regnskog","rainforest","selva tropical"],
+["källa","spring","manantial/fuente de agua"],["flod","river","río grande"],["å","stream","arroyo/río pequeño"]
+],
+"Objetos cotidianos":[
+["hål","hole","agujero"],["snöre","string","cuerda fina/cordel"],["klocka","clock","reloj de pared o pulsera"],["matta","rug","alfombra"],
+["paraply","umbrella","paraguas"],["stol","chair","silla"],["papper","paper","papel"],["nål","needle","aguja"],
+["skydd","protection","protección/resguardo"],["linje","line","línea"],["nät","net","red"],["tavla","painting","cuadro/pintura"],
+["skärm","screen","pantalla"],["fläck","stain","mancha"],["bok","book","libro"],["flaska","bottle","botella"],
+["glas","glass","vaso/cristal"],["sadel","saddle","silla de montar"],["nyckel","key","llave"],["spik","nail","clavo"],
+["gaffel","fork","tenedor"],["fackla","torch","antorcha"],["pipa","pipe","pipa de fumar"],["lur","old phone","teléfono antiguo tipo bocina; también 'cuerno'"],
+["ring","ring","anillo"],["knapp","button","botón"],["hylla","shelf","estante"],["våg","scale","báscula; también 'ola'"],
+["klister","glue","pegamento"],["stolpe","pole","poste"],["mätare","meter","medidor/contador"],["etikett","label","etiqueta"],
+["docka","doll","muñeca, juguete"],["fat","dish","plato hondo/fuente"],["bord","table","mesa"],["panna","pan","sartén; también 'frente' del cuerpo"],
+["säng","bed","cama"],["spets","tip","punta afilada; también 'encaje' de tela"],["kran","tap","grifo; también 'grúa'"],["block","block","bloque"],
+["rör","pipe","tubería"],["valv","vault","bóveda/arco"],["skiva","disc","disco; también 'rodaja'"],["punkt","point","punto"],
+["broms","brake","freno de vehículo"],["tank","tank","tanque, vehículo militar"],["kod","code","código"],["cirkel","circle","círculo"],
+["länk","link","enlace"],["vägg","wall","pared"],["diamant","diamond","diamante"],["kristall","crystal","cristal, mineral"],
+["elfenben","ivory","marfil"],["box","box","caja"],["ram","frame","marco"],["knut","knot","nudo"],
+["tång","tongs","tenazas/pinzas; también 'alga marina'"],["sax","scissors","tijeras"],["hammare","hammer","martillo"],["spegel","mirror","espejo"],
+["tallrik","plate","plato llano"],["skruv","screw","tornillo"],["kastrull","pot","cazuela"],["sked","spoon","cuchara"],
+["kudde","pillow","almohada"],["filt","blanket","manta"],["lampa","lamp","lámpara"],["telefon","phone","teléfono"],
+["dator","computer","ordenador"],["penna","pen","bolígrafo/lápiz"],["sudd","eraser","goma de borrar"],["linjal","ruler","regla de medir"],
+["tejp","tape","cinta adhesiva"],["låda","box/drawer","caja o cajón"],["korg","basket","cesta"],["väska","bag","bolso/maleta"],
+["plånbok","wallet","cartera"],["regnrock","raincoat","impermeable"],["stövlar","boots","botas"],["skruvmejsel","screwdriver","destornillador"],
+["borste","brush","cepillo"]
+],
+"Cuerpo humano":[
+["hjärta","heart","corazón"],["mun","mouth","boca"],["hand","hand","mano"],["tand","tooth","diente"],
+["tunga","tongue","lengua"],["fot","foot","pie"],["lår","thigh","muslo"],["tumme","thumb","pulgar"],
+["ansikte","face","cara/rostro"],["öga","eye","ojo"],["axel","shoulder","hombro"],["huvud","head","cabeza"],
+["ben","leg/bone","pierna o hueso, según contexto"],["kam","comb","peine"],["man","mane","melena de animal, no confundir con 'hombre'"],["näsa","nose","nariz"],
+["öra","ear","oreja"],["arm","arm","brazo"],["mage","stomach","estómago/barriga"],["rygg","back","espalda"],
+["hår","hair","pelo/cabello"],["hjärna","brain","cerebro"],["lunga","lung","pulmón"],["lever","liver","hígado"],
+["muskel","muscle","músculo"],["skelett","skeleton","esqueleto"],["blod","blood","sangre"],["puls","pulse","pulso"],
+["höft","hip","cadera"],["armbåge","elbow","codo"],["knä","knee","rodilla"],["ankel","ankle","tobillo"],
+["handled","wrist","muñeca de la mano"],["haka","chin","barbilla"]
+],
+"Ropa":[
+["mantel","cloak","capa"],["pyjamas","pajamas","pijama"],["dräkt","costume","disfraz/traje"],["handske","glove","guante"],
+["sko","shoe","zapato"],["bälte","belt","cinturón"],["mocka","suede","ante, tipo de cuero"],["maskerad","masquerade","fiesta de disfraces"],
+["hatt","hat","sombrero"],["skjorta","shirt","camisa"],["byxor","pants","pantalones"],["klänning","dress","vestido"],
+["jacka","jacket","chaqueta"],["tröja","sweater","jersey/sudadera"],["strumpor","socks","calcetines"],["slips","tie","corbata"],
+["kappa","coat","abrigo"],["keps","cap","gorra"],["sjal","scarf","bufanda/pañuelo"],["kjol","skirt","falda"]
+],
+"Armas y guerra":[
+["kniv","knife","cuchillo"],["svärd","sword","espada"],["pistol","gun","pistola"],["kanon","cannon","cañón"],
+["missil","missile","misil"],["bomb","bomb","bomba"],["mina","mine","mina explosiva"],["sköld","shield","escudo"],
+["yxa","axe","hacha"],["piska","whip","látigo"],["krig","war","guerra"],["ambulans","ambulance","ambulancia"],
+["skott","shot","disparo"],["krock","crash","choque/colisión"],["pil","arrow","flecha"],["båge","bow","arco, de tirar flechas; también 'arco arquitectónico'"],
+["rustning","armor","armadura"],["spjut","spear","lanza"],["hjälm","helmet","casco"],["armé","army","ejército"],
+["flotta","fleet","flota naval"],["uniform","uniform","uniforme"],["granat","grenade","granada"],["gevär","rifle","rifle/fusil"],
+["armborst","crossbow","ballesta"],["dolk","dagger","daga"],["stridsyxa","battle axe","hacha de guerra"],["kanonkula","cannonball","bala de cañón"],
+["fästning","fortress","fortaleza"],["belägring","siege","asedio"],["slagfält","battlefield","campo de batalla"],["vapensköld","coat of arms","escudo de armas heráldico"]
+],
+"Vehículos":[
+["bil","car","coche"],["cykel","bicycle","bicicleta"],["båt","boat","barco pequeño"],["eka","rowboat","bote de remos"],
+["bro","bridge","puente"],["brygga","jetty","embarcadero/muelle"],["jet","jet","avión a reacción"],["helikopter","helicopter","helicóptero"],
+["skåpbil","van","furgoneta"],["limousine","limousine","limusina"],["vagn","wagon","carro/carreta"],["plan","plane","avión; también significa 'plan'"],
+["däck","tire","neumático; también 'cubierta de barco'"],["tåg","train","tren"],["buss","bus","autobús"],["lastbil","truck","camión"],
+["flygplan","airplane","avión, forma completa"],["motorcykel","motorcycle","motocicleta"],["skoter","scooter","moto de nieve o patinete, según contexto"],["ubåt","submarine","submarino"],
+["segelbåt","sailboat","velero"],["kanot","canoe","canoa"],["traktor","tractor","tractor"],["spårvagn","tram","tranvía"],
+["taxi","taxi","taxi"],["rymdskepp","spaceship","nave espacial"],["ballong","balloon","globo aerostático"],["släde","sled","trineo"]
+],
+"Espacio y ciencia":[
+["rymd","space","espacio exterior"],["astronaut","astronaut","astronauta"],["satellit","satellite","satélite"],["saturnus","Saturn","el planeta Saturno"],
+["laser","laser","láser"],["teleskop","telescope","telescopio"],["mikroskop","microscope","microscopio"],["robot","robot","robot"],
+["hologram","hologram","holograma"],["internet","internet","internet"],["raket","rocket","cohete"],["atom","atom","átomo"],
+["galax","galaxy","galaxia"],["universum","universe","universo"],["meteor","meteor","meteoro"],["komet","comet","cometa"],
+["svart hål","black hole","agujero negro"],["gravitation","gravity","gravedad"],["kemi","chemistry","química"],["fysik","physics","física"],
+["molekyl","molecule","molécula"],["experiment","experiment","experimento"],["laboratorium","laboratory","laboratorio"]
+],
+"Comida y bebida":[
+["banan","banana","plátano"],["äpple","apple","manzana"],["päron","pear","pera"],["choklad","chocolate","chocolate"],
+["godis","candy","caramelos/golosinas"],["honung","honey","miel"],["ketchup","ketchup","ketchup"],["glass","ice cream","helado"],
+["tårta","cake","tarta"],["bulle","bun","bollo dulce"],["skinka","ham","jamón"],["morot","carrot","zanahoria"],
+["ris","rice","arroz"],["fika","coffee break","pausa para café con dulce, tradición sueca"],["bomull","cotton","algodón, no es comida pero aparece en el mazo"],["kaffe","coffee","café"],
+["bröd","bread","pan"],["ost","cheese","queso"],["köttbullar","meatballs","albóndigas suecas"],["te","tea","té"],
+["mjölk","milk","leche"],["smör","butter","mantequilla"],["ägg","egg","huevo"],["kyckling","chicken","pollo"],
+["pasta","pasta","pasta"],["pizza","pizza","pizza"],["soppa","soup","sopa"],["sallad","salad","ensalada"],
+["potatis","potato","patata"],["lök","onion","cebolla"],["vitlök","garlic","ajo"],["socker","sugar","azúcar"],
+["salt","salt","sal"]
+],
+"Deportes y ocio":[
+["spel","game","juego, concepto general"],["lek","play","juego infantil/de niños"],["roulette","roulette","ruleta"],["kort","card","carta/naipe; también 'corto'"],
+["runda","round","ronda/vuelta"],["dans","dance","baile"],["vals","waltz","vals"],["konsert","concert","concierto"],
+["film","film","película"],["serie","series","serie de TV/cómic"],["saga","fairy tale","cuento de hadas"],["låt","song","canción"],
+["pjäs","play","obra de teatro"],["gunga","swing","columpio"],["lag","team","equipo; también 'ley'"],["klöver","clover","trébol; también el palo de cartas 'tréboles'"],
+["fotboll","football","fútbol"],["match","match","partido deportivo"],["schack","chess","ajedrez"],["tennis","tennis","tenis"],
+["hockey","hockey","hockey"],["simning","swimming","natación"],["löpning","running","correr/running"],["gymnastik","gymnastics","gimnasia"],
+["boxning","boxing","boxeo"],["brottning","wrestling","lucha libre"],["poker","poker","póker"],["bingo","bingo","bingo"],
+["pussel","puzzle","rompecabezas"],["gåta","riddle","acertijo/adivinanza"],["tävling","competition","competición"],["turnering","tournament","torneo"],
+["publik","audience","público/audiencia"],["scen","stage","escenario de teatro o concierto, NO significa 'etapa'"]
+],
+"Otros":[
+["hopp","hope","esperanza; también 'salto'"],["drag","draft","corriente de aire; también 'tirón' o 'jugada'"],["träff","hit","encuentro/cita; también 'acierto'"],["kall","cold","frío, adjetivo"],
+["halt","lame","cojo/rengo"],["spår","track","pista/rastro/vía"],["vakuum","vacuum","vacío físico"],["län","county","provincia/condado sueco"],
+["lov","vacation","vacaciones escolares; también 'permiso'"],["hon","she","ella, pronombre"],["ström","current","corriente eléctrica o de agua"],["kraft","power","fuerza/potencia"],
+["tid","time","tiempo cronológico"],["tur","luck","suerte; también 'turno' o 'excursión'"],["liv","life","vida"],["död","death","muerte"],
+["gift","poison","veneno; también significa 'casado/a'"],["sjukdom","disease","enfermedad"],["guld","gold","oro"],["järn","iron","hierro"],
+["koppar","copper","cobre"],["motor","motor","motor"],["slant","coin","moneda"],["lager","stock","almacén/inventario; también 'capa'"],
+["fil","file","archivo; también 'carril de carretera'"],["väst","west","oeste; también 'chaleco'"],["under","under","debajo/bajo; también 'maravilla'"],["kors","cross","cruz"],
+["kontra","versus","contra/versus"],["tangent","key","tecla de piano o teclado"],["dag","day","día"],["figur","figure","figura/forma"],
+["ruta","square","casilla/cuadrado"],["grad","degree","grado, de temperatura o título académico"],["press","press","prensa; también 'presión'"],["mål","goal","portería/meta en deportes; también significa 'comida'"],
+["slag","blow","golpe; también 'batalla'"],["slang","hose","manguera"],["fall","case","caso; también 'caída'"],["skatt","treasure","tesoro; también significa 'impuesto'"],
+["skål","bowl","cuenco; también se usa para brindar, '¡salud!'"],["natt","night","noche"],["springa","to run","correr, verbo"],["tappa","to drop","dejar caer/perder, verbo"],
+["krita","chalk","tiza"],["kanal","channel","canal de agua o de TV"],["lapp","note","nota de papel"],["snapphane","guerrilla fighter","guerrillero histórico sueco del s. XVII"],
+["leder","joints","articulaciones del cuerpo"],["stav","staff","bastón/cayado"],["vass","sharp","afilado; también 'caña/junco'"],["grav","grave","tumba"],
+["tunna","barrel","barril"],["ledning","management","dirección/gestión; también 'cable eléctrico'"],["bak","back","parte trasera; también 'hornear'"],["klämma","clamp","pinza/abrazadera, o el verbo 'apretar'"],
+["lik","corpse","cadáver; también 'parecido'"],["kö","queue","cola/fila de espera"],["post","mail","correo postal"],["drog","drug","droga"],
+["vad","bet","apuesta; también 'pantorrilla'"],["rabatt","discount","descuento; también 'arriate de flores'"],["luft","air","aire"],["blixt","lightning","relámpago"],
+["skugga","shadow","sombra"],["vår","spring","primavera; también 'nuestro/a'"],["lucia","Lucia","Santa Lucía, tradición sueca de diciembre"],["väder","weather","clima/tiempo atmosférico"],
+["känsla","feeling","sentimiento"],["dröm","dream","sueño, al dormir"],["minne","memory","recuerdo/memoria"],["hemlighet","secret","secreto"],
+["sanning","truth","verdad"],["lögn","lie","mentira"],["framtid","future","futuro"],["förflutet","past","pasado"],
+["nutid","present","presente"],["beslut","decision","decisión"],["idé","idea","idea"],["vana","habit","costumbre/hábito"],
+["lycka","happiness","felicidad"],["sorg","sorrow","pena/tristeza"],["rädsla","fear","miedo"],["mod","courage","valentía"]
+]
+};
+
+const catSel = document.getElementById('catSel');
+const svEl = document.getElementById('sv');
+const enEl = document.getElementById('en');
+const explEl = document.getElementById('expl');
+const hintEl = document.getElementById('hint');
+const cardEl = document.getElementById('card');
+const progressEl = document.getElementById('progress');
+
+let allCards = [];
+let known = new Set();
+let deck = [];
+let idx = 0;
+let flipped = false;
+
+Object.keys(DATA).forEach(cat => {
+  const opt = document.createElement('option');
+  opt.value = cat; opt.textContent = cat;
+  catSel.appendChild(opt);
+  DATA[cat].forEach(([sv,en,expl]) => allCards.push({sv,en,expl,cat}));
+});
+const allOpt = document.createElement('option');
+allOpt.value = 'Todas'; allOpt.textContent = 'Todas las categorías (' + allCards.length + ')';
+catSel.insertBefore(allOpt, catSel.firstChild);
+catSel.value = 'Todas';
+
+function shuffle(arr){
+  for (let i = arr.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function buildDeck(){
+  const cat = catSel.value;
+  deck = (cat === 'Todas' ? allCards : allCards.filter(c => c.cat === cat)).filter(c => !known.has(c.sv));
+  if (deck.length === 0) deck = (cat === 'Todas' ? allCards : allCards.filter(c => c.cat === cat));
+  shuffle(deck);
+  idx = 0;
+  showCard();
+}
+
+function showCard(){
+  if (deck.length === 0) { svEl.textContent = 'Sin palabras'; enEl.style.display='none'; explEl.style.display='none'; progressEl.textContent=''; return; }
+  const c = deck[idx % deck.length];
+  svEl.textContent = c.sv;
+  enEl.textContent = c.en;
+  explEl.textContent = c.expl;
+  enEl.style.display = 'none';
+  explEl.style.display = 'none';
+  flipped = false;
+  hintEl.style.display = 'block';
+  hintEl.textContent = 'Toca la ficha para ver la traducción';
+  const cat = catSel.value;
+  const total = cat === 'Todas' ? allCards.length : allCards.filter(x=>x.cat===cat).length;
+  const knownCount = cat === 'Todas' ? known.size : allCards.filter(x=>x.cat===cat && known.has(x.sv)).length;
+  progressEl.textContent = knownCount + ' / ' + total + ' dominadas';
+}
+
+function speak(){
+  const c = deck[idx % deck.length];
+  if (!c) return;
+  if (typeof window.speechSynthesis === 'undefined' || typeof SpeechSynthesisUtterance === 'undefined') {
+    hintEl.textContent = 'La pronunciación no está disponible en este visor. Abre el archivo directamente en Safari/Chrome para escucharla.';
+    hintEl.style.display = 'block';
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(c.sv);
+  u.lang = 'sv-SE';
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+cardEl.addEventListener('click', () => {
+  flipped = !flipped;
+  enEl.style.display = flipped ? 'block' : 'none';
+  explEl.style.display = flipped ? 'block' : 'none';
+  hintEl.style.display = flipped ? 'none' : 'block';
+  if (flipped) speak();
+});
+
+document.getElementById('speakBtn').addEventListener('click', speak);
+document.getElementById('knowBtn').addEventListener('click', () => {
+  const c = deck[idx % deck.length];
+  if (c) known.add(c.sv);
+  buildDeck();
+});
+document.getElementById('reviewBtn').addEventListener('click', () => {
+  idx++;
+  showCard();
+});
+document.getElementById('resetBtn').addEventListener('click', () => {
+  known.clear();
+  buildDeck();
+});
+catSel.addEventListener('change', buildDeck);
+
+buildDeck();
+</script>
+</body>
+</html>
