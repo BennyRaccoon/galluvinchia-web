@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parejas Codenames - Sueco</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f5f4ef;
+    color: #2c2c2a;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 20px 14px 60px;
+  }
+  h1 { font-size: 19px; font-weight: 500; margin: 0 0 16px; text-align: center; }
+  .controls { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  select {
+    flex: 1; min-width: 120px; padding: 9px 10px; font-size: 14px; border-radius: 8px;
+    border: 1px solid #d3d1c7; background: white;
+  }
+  button.newGame {
+    padding: 9px 14px; border-radius: 8px; border: 1px solid #2c2c2a;
+    background: #2c2c2a; color: white; font-size: 14px; cursor: pointer;
+  }
+  button.resetProgress {
+    padding: 9px 14px; border-radius: 8px; border: 1px solid #d3d1c7;
+    background: white; color: #A32D2D; font-size: 13px; cursor: pointer;
+  }
+  .stats {
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; font-size: 13px; color: #5f5e5a;
+    margin-bottom: 6px;
+  }
+  .progressBar {
+    font-size: 12px; color: #5f5e5a; margin-bottom: 12px;
+  }
+  #cycleMsg {
+    font-size: 13px; color: #8a6d1f; background: #fbf2d9; border: 1px solid #e8d69a;
+    border-radius: 8px; padding: 8px 10px; margin-bottom: 12px; display: none;
+  }
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .card {
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    background: #2c2c2a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    padding: 6px;
+    line-height: 1.2;
+    transition: transform 0.15s ease, background 0.15s ease;
+    word-break: break-word;
+  }
+  .card.flipped {
+    background: white;
+    color: #2c2c2a;
+    border: 1px solid #d3d1c7;
+  }
+  .card.sv-type.flipped { color: #1d4ed8; }
+  .card.en-type.flipped { color: #5f5e5a; }
+  .card.matched {
+    background: #eaf3e3;
+    color: #3B6D11;
+    border: 1px solid #b9d9a4;
+    cursor: default;
+  }
+  .card.wrong {
+    background: #fbe9e9;
+    border: 1px solid #e3a3a3;
+  }
+  #winMsg {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    display: none;
+  }
+  .note {
+    font-size: 12px; color: #888780; text-align: center; margin-top: 24px; line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+
+<h1>Parejas Codenames — Sueco ↔ Inglés</h1>
+
+<div class="controls">
+  <select id="catSel"></select>
+  <select id="sizeSel">
+    <option value="6">6 parejas</option>
+    <option value="8" selected>8 parejas</option>
+    <option value="10">10 parejas</option>
+    <option value="12">12 parejas</option>
+  </select>
+</div>
+<div class="controls">
+  <button class="newGame" id="newGameBtn" style="flex:1">Nueva partida</button>
+  <button class="resetProgress" id="resetProgressBtn">Reiniciar progreso</button>
+</div>
+
+<div id="cycleMsg">🔄 Ciclo completado en esta categoría — empezamos de nuevo con todas las palabras.</div>
+
+<div class="stats">
+  <span id="movesEl">Intentos: 0</span>
+  <span id="matchesEl">Parejas: 0 / 0</span>
+</div>
+<div class="progressBar" id="progressBarEl"></div>
+
+<div id="grid"></div>
+
+<div id="winMsg">🎉 ¡Completado! Has encontrado todas las parejas.</div>
+
+<p class="note">Toca una carta y luego otra. Si coinciden (palabra sueca ↔ traducción inglesa) se quedan reveladas. El progreso se guarda en tu navegador: cada partida nueva prioriza palabras que aún no has dominado, hasta cubrir toda la categoría.</p>
+
+<script>
+const DATA = {
+"Animales":[["häst","horse"],["hund","dog"],["tiger","tiger"],["lejon","lion"],["ren","reindeer"],["älg","moose"],["val","whale"],["fisk","fish"],["kanin","rabbit"],["katt","cat"],["björn","bear"],["örn","eagle"],["uggla","owl"],["mås","seagull"],["tärna","tern"],["kräfta","crayfish"],["larv","caterpillar"],["bläckfisk","octopus"],["pingvin","penguin"],["näbbdjur","platypus"],["spindel","spider"],["slända","dragonfly"],["fluga","fly"],["kor","cows"],["får","sheep"],["svin","pig"],["bock","goat"],["mullvad","mole"],["mammut","mammoth"],["känguru","kangaroo"],["mus","mouse"],["räv","fox"],["varg","wolf"],["orm","snake"],["groda","frog"],["fjäril","butterfly"],["get","goat"],["gris","pig"],["ko","cow"],["fågel","bird"],["elefant","elephant"],["giraff","giraffe"],["zebra","zebra"],["krokodil","crocodile"],["leopard","leopard"],["gepard","cheetah"],["delfin","dolphin"],["haj","shark"],["sköldpadda","turtle"],["igelkott","hedgehog"],["ekorre","squirrel"],["hare","hare"],["lodjur","lynx"],["utter","otter"],["säl","seal"],["valross","walrus"],["flodhäst","hippo"],["noshörning","rhino"],["apa","monkey"],["gorilla","gorilla"],["panda","panda"],["koala","koala"],["struts","ostrich"],["påfågel","peacock"],["flamingo","flamingo"],["humla","bumblebee"],["myra","ant"],["skalbagge","beetle"],["mal","moth"],["näktergal","nightingale"],["lax","salmon"],["torsk","cod"],["gädda","pike"],["hummer","lobster"],["krabba","crab"],["mussla","clam"]],
+"Mitología y fantasía":[["troll","troll"],["zombie","zombie"],["häxa","witch"],["enhörning","unicorn"],["dvärg","dwarf"],["drake","dragon"],["fenix","phoenix"],["odjur","beast"],["kentaur","centaur"],["spöke","ghost"],["ängel","angel"],["tomte","gnome"],["utomjording","alien"],["superhjälte","superhero"],["riddare","knight"],["ninja","ninja"],["pirat","pirate"],["dinosaurie","dinosaur"],["jätte","giant"],["älva","elf"],["varulv","werewolf"],["magiker","wizard"],["demon","demon"],["monster","monster"],["gnom","gnome"],["fantasy","fantasy"],["äventyr","adventure"],["sagovärld","fairytale world"],["mytologi","mythology"],["gud","god"],["gudinna","goddess"],["magi","magic"],["trollformel","spell"],["besvärjelse","incantation"],["amulett","amulet"],["orakel","oracle"],["profetia","prophecy"],["legend","legend"],["myt","myth"],["hjälte","hero"],["skurk","villain"],["alv","elf"],["nymf","nymph"],["valkyria","valkyrie"],["asgård","Asgard"],["oden","Odin"],["thor","Thor"],["loke","Loki"],["ragnarök","Ragnarok"],["tolkien","Tolkien"]],
+"Personas y oficios":[["krona","crown"],["kung","king"],["drottning","queen"],["prinsessa","princess"],["tron","throne"],["spira","scepter"],["soldat","soldier"],["agent","agent"],["spion","spy"],["pilot","pilot"],["kock","cook"],["lärare","teacher"],["doktor","doctor"],["advokat","lawyer"],["forskare","researcher"],["polis","police"],["dykare","diver"],["luffare","tramp"],["miljonär","millionaire"],["geni","genius"],["tjuv","thief"],["far","father"],["syster","sister"],["same","Sami"],["indian","Native American"],["prins","prince"],["bonde","farmer"],["präst","priest"],["krigare","warrior"],["sjuksköterska","nurse"],["student","student"],["ingenjör","engineer"],["programmerare","programmer"],["konstnär","artist"],["författare","writer"],["skådespelare","actor"],["musiker","musician"],["tandläkare","dentist"],["brandman","firefighter"],["snickare","carpenter"],["smed","blacksmith"],["bagare","baker"],["frisör","hairdresser"],["journalist","journalist"],["domare","judge"],["politiker","politician"],["diplomat","diplomat"],["general","general"],["kapten","captain"],["amiral","admiral"],["hertig","duke"],["hertiginna","duchess"],["greve","count"],["väktare","guard"],["fånge","prisoner"],["rebell","rebel"],["upptäcktsresande","explorer"]],
+"Países y lugares":[["sverige","Sweden"],["amerika","America"],["grekland","Greece"],["rom","Rome"],["skandinavien","Scandinavia"],["norden","the Nordics"],["moskva","Moscow"],["frankrike","France"],["europa","Europe"],["london","London"],["tokyo","Tokyo"],["afrika","Africa"],["egypten","Egypt"],["australien","Australia"],["england","England"],["kina","China"],["alperna","the Alps"],["stockholm","Stockholm"],["new york","New York"],["amazon","Amazon"],["atlantis","Atlantis"],["antarktis","Antarctica"],["medelhavet","Mediterranean"],["östersjön","Baltic Sea"],["hollywood","Hollywood"],["mars","Mars"],["spanien","Spain"],["japan","Japan"],["tyskland","Germany"],["italien","Italy"],["norge","Norway"],["danmark","Denmark"],["finland","Finland"],["ryssland","Russia"],["indien","India"],["brasilien","Brazil"],["mexiko","Mexico"],["kanada","Canada"],["portugal","Portugal"],["nederländerna","Netherlands"],["schweiz","Switzerland"],["österrike","Austria"],["polen","Poland"],["turkiet","Turkey"],["island","Iceland"],["irland","Ireland"],["skottland","Scotland"],["belgien","Belgium"],["sydkorea","South Korea"],["thailand","Thailand"],["vietnam","Vietnam"],["nya zeeland","New Zealand"],["argentina","Argentina"],["chile","Chile"],["peru","Peru"],["colombia","Colombia"]],
+"Edificios":[["biograf","cinema"],["teater","theatre"],["kyrka","church"],["fängelse","prison"],["hotell","hotel"],["sjukhus","hospital"],["skola","school"],["casino","casino"],["bank","bank"],["opera","opera house"],["ambassad","embassy"],["skyskrapa","skyscraper"],["zoo","zoo"],["arena","arena"],["stadium","stadium"],["centrum","city center"],["kåk","jail"],["bibliotek","library"],["museum","museum"],["restaurang","restaurant"],["torg","town square"],["flygplats","airport"],["palats","palace"],["slott","castle"],["fabrik","factory"],["köpcentrum","mall"],["gym","gym"],["akvarium","aquarium"],["planetarium","planetarium"],["herrgård","manor house"],["stuga","cottage"],["lada","barn"],["växthus","greenhouse"],["badhus","public baths"],["kontor","office"],["universitet","university"]],
+"Naturaleza":[["skog","forest"],["gräs","grass"],["snö","snow"],["is","ice"],["vind","wind"],["damm","dust"],["vulkan","volcano"],["fjäll","mountain"],["grotta","cave"],["dal","valley"],["strand","beach"],["klippa","cliff"],["åker","field"],["mark","ground"],["fält","field"],["gran","spruce"],["ek","oak"],["blad","leaf"],["regnbåge","rainbow"],["stjärna","star"],["måne","moon"],["planet","planet"],["sund","strait"],["stam","tribe"],["bär","berry"],["sjö","lake"],["hav","sea"],["berg","mountain"],["sol","sun"],["moln","cloud"],["regn","rain"],["äng","meadow"],["buske","bush"],["gren","branch"],["rot","root"],["stig","path"],["sand","sand"],["lera","clay"],["dimma","fog"],["storm","storm"],["åska","thunder"],["frost","frost"],["glaciär","glacier"],["ravin","ravine"],["kust","coast"],["ö","island"],["halvö","peninsula"],["öken","desert"],["tundra","tundra"],["savann","savannah"],["djungel","jungle"],["regnskog","rainforest"],["källa","spring"],["flod","river"],["å","stream"]],
+"Objetos cotidianos":[["hål","hole"],["snöre","string"],["klocka","clock"],["matta","rug"],["paraply","umbrella"],["stol","chair"],["papper","paper"],["nål","needle"],["skydd","protection"],["linje","line"],["nät","net"],["tavla","painting"],["skärm","screen"],["fläck","stain"],["bok","book"],["flaska","bottle"],["glas","glass"],["sadel","saddle"],["nyckel","key"],["spik","nail"],["gaffel","fork"],["fackla","torch"],["pipa","pipe"],["lur","old phone"],["ring","ring"],["knapp","button"],["hylla","shelf"],["våg","scale"],["klister","glue"],["stolpe","pole"],["mätare","meter"],["etikett","label"],["docka","doll"],["fat","dish"],["bord","table"],["panna","pan"],["säng","bed"],["spets","tip"],["kran","tap"],["block","block"],["rör","tube"],["valv","vault"],["skiva","disc"],["punkt","point"],["broms","brake"],["tank","tank"],["kod","code"],["cirkel","circle"],["länk","link"],["vägg","wall"],["diamant","diamond"],["kristall","crystal"],["elfenben","ivory"],["box","box"],["ram","frame"],["knut","knot"],["tång","tongs"],["sax","scissors"],["hammare","hammer"],["spegel","mirror"],["tallrik","plate"],["skruv","screw"],["kastrull","pot"],["sked","spoon"],["kudde","pillow"],["filt","blanket"],["lampa","lamp"],["telefon","phone"],["dator","computer"],["penna","pen"],["sudd","eraser"],["linjal","ruler"],["tejp","tape"],["låda","box/drawer"],["korg","basket"],["väska","bag"],["plånbok","wallet"],["regnrock","raincoat"],["stövlar","boots"],["skruvmejsel","screwdriver"],["borste","brush"]],
+"Cuerpo humano":[["hjärta","heart"],["mun","mouth"],["hand","hand"],["tand","tooth"],["tunga","tongue"],["fot","foot"],["lår","thigh"],["tumme","thumb"],["ansikte","face"],["öga","eye"],["axel","shoulder"],["huvud","head"],["ben","leg"],["kam","comb"],["man","mane"],["näsa","nose"],["öra","ear"],["arm","arm"],["mage","stomach"],["rygg","back"],["hår","hair"],["hjärna","brain"],["lunga","lung"],["lever","liver"],["muskel","muscle"],["skelett","skeleton"],["blod","blood"],["puls","pulse"],["höft","hip"],["armbåge","elbow"],["knä","knee"],["ankel","ankle"],["handled","wrist"],["haka","chin"]],
+"Ropa":[["mantel","cloak"],["pyjamas","pajamas"],["dräkt","costume"],["handske","glove"],["sko","shoe"],["bälte","belt"],["mocka","suede"],["maskerad","masquerade"],["hatt","hat"],["skjorta","shirt"],["byxor","pants"],["klänning","dress"],["jacka","jacket"],["tröja","sweater"],["strumpor","socks"],["slips","tie"],["kappa","coat"],["keps","cap"],["sjal","scarf"],["kjol","skirt"]],
+"Armas y guerra":[["kniv","knife"],["svärd","sword"],["pistol","gun"],["kanon","cannon"],["missil","missile"],["bomb","bomb"],["mina","mine"],["sköld","shield"],["yxa","axe"],["piska","whip"],["krig","war"],["ambulans","ambulance"],["skott","shot"],["krock","crash"],["pil","arrow"],["båge","bow"],["rustning","armor"],["spjut","spear"],["hjälm","helmet"],["armé","army"],["flotta","fleet"],["uniform","uniform"],["granat","grenade"],["gevär","rifle"],["armborst","crossbow"],["dolk","dagger"],["stridsyxa","battle axe"],["kanonkula","cannonball"],["fästning","fortress"],["belägring","siege"],["slagfält","battlefield"],["vapensköld","coat of arms"]],
+"Vehículos":[["bil","car"],["cykel","bicycle"],["båt","boat"],["eka","rowboat"],["bro","bridge"],["brygga","jetty"],["jet","jet"],["helikopter","helicopter"],["skåpbil","van"],["limousine","limousine"],["vagn","wagon"],["plan","plane"],["däck","tire"],["tåg","train"],["buss","bus"],["lastbil","truck"],["flygplan","airplane"],["motorcykel","motorcycle"],["skoter","scooter"],["ubåt","submarine"],["segelbåt","sailboat"],["kanot","canoe"],["traktor","tractor"],["spårvagn","tram"],["taxi","taxi"],["rymdskepp","spaceship"],["ballong","balloon"],["släde","sled"]],
+"Espacio y ciencia":[["rymd","space"],["astronaut","astronaut"],["satellit","satellite"],["saturnus","Saturn"],["laser","laser"],["teleskop","telescope"],["mikroskop","microscope"],["robot","robot"],["hologram","hologram"],["internet","internet"],["raket","rocket"],["atom","atom"],["galax","galaxy"],["universum","universe"],["meteor","meteor"],["komet","comet"],["svart hål","black hole"],["gravitation","gravity"],["kemi","chemistry"],["fysik","physics"],["molekyl","molecule"],["experiment","experiment"],["laboratorium","laboratory"]],
+"Comida y bebida":[["banan","banana"],["äpple","apple"],["päron","pear"],["choklad","chocolate"],["godis","candy"],["honung","honey"],["ketchup","ketchup"],["glass","ice cream"],["tårta","cake"],["bulle","bun"],["skinka","ham"],["morot","carrot"],["ris","rice"],["fika","coffee break"],["bomull","cotton"],["kaffe","coffee"],["bröd","bread"],["ost","cheese"],["köttbullar","meatballs"],["te","tea"],["mjölk","milk"],["smör","butter"],["ägg","egg"],["kyckling","chicken"],["pasta","pasta"],["pizza","pizza"],["soppa","soup"],["sallad","salad"],["potatis","potato"],["lök","onion"],["vitlök","garlic"],["socker","sugar"],["salt","salt"]],
+"Deportes y ocio":[["spel","game"],["lek","play"],["roulette","roulette"],["kort","card"],["runda","round"],["dans","dance"],["vals","waltz"],["konsert","concert"],["film","film"],["serie","series"],["saga","fairy tale"],["låt","song"],["pjäs","theater play"],["gunga","swing"],["lag","team"],["klöver","clover"],["fotboll","football"],["match","match"],["schack","chess"],["tennis","tennis"],["hockey","hockey"],["simning","swimming"],["löpning","running"],["gymnastik","gymnastics"],["boxning","boxing"],["brottning","wrestling"],["poker","poker"],["bingo","bingo"],["pussel","puzzle"],["gåta","riddle"],["tävling","competition"],["turnering","tournament"],["publik","audience"],["scen","stage"]],
+"Otros":[["hopp","hope"],["drag","draft"],["träff","hit"],["kall","cold"],["halt","lame"],["spår","track"],["vakuum","vacuum"],["län","county"],["lov","vacation"],["hon","she"],["ström","current"],["kraft","power"],["tid","time"],["tur","luck"],["liv","life"],["död","death"],["gift","poison"],["sjukdom","disease"],["guld","gold"],["järn","iron"],["koppar","copper"],["motor","motor"],["slant","coin"],["lager","stock"],["fil","file"],["väst","west"],["under","under"],["kors","cross"],["kontra","versus"],["tangent","key"],["dag","day"],["figur","figure"],["ruta","square"],["grad","degree"],["press","press"],["mål","goal"],["slag","blow"],["slang","hose"],["fall","case"],["skatt","treasure"],["skål","bowl"],["natt","night"],["springa","to run"],["tappa","to drop"],["krita","chalk"],["kanal","channel"],["lapp","note"],["snapphane","guerrilla fighter"],["leder","joints"],["stav","staff"],["vass","sharp"],["grav","grave"],["tunna","barrel"],["ledning","management"],["bak","back"],["klämma","clamp"],["lik","corpse"],["kö","queue"],["post","mail"],["drog","drug"],["vad","bet"],["rabatt","discount"],["luft","air"],["blixt","lightning"],["skugga","shadow"],["vår","spring"],["lucia","Lucia"],["väder","weather"],["känsla","feeling"],["dröm","dream"],["minne","memory"],["hemlighet","secret"],["sanning","truth"],["lögn","lie"],["framtid","future"],["förflutet","past"],["nutid","present"],["beslut","decision"],["idé","idea"],["vana","habit"],["lycka","happiness"],["sorg","sorrow"],["rädsla","fear"],["mod","courage"]]
+};
+
+const catSel = document.getElementById('catSel');
+const sizeSel = document.getElementById('sizeSel');
+const grid = document.getElementById('grid');
+const movesEl = document.getElementById('movesEl');
+const matchesEl = document.getElementById('matchesEl');
+const progressBarEl = document.getElementById('progressBarEl');
+const cycleMsg = document.getElementById('cycleMsg');
+const winMsg = document.getElementById('winMsg');
+const newGameBtn = document.getElementById('newGameBtn');
+const resetProgressBtn = document.getElementById('resetProgressBtn');
+
+Object.keys(DATA).forEach(cat => {
+  const opt = document.createElement('option');
+  opt.value = cat; opt.textContent = cat;
+  catSel.appendChild(opt);
+});
+const allOpt = document.createElement('option');
+allOpt.value = 'Todas'; allOpt.textContent = 'Todas las categorías';
+catSel.insertBefore(allOpt, catSel.firstChild);
+catSel.value = 'Todas';
+
+let flippedCards = [];
+let matchedCount = 0;
+let totalPairs = 0;
+let moves = 0;
+let lock = false;
+let currentChosenWords = [];
+
+function shuffle(arr){
+  for (let i = arr.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+function speakSv(text){
+  if (typeof window.speechSynthesis === 'undefined' || typeof SpeechSynthesisUtterance === 'undefined') return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'sv-SE';
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+function loadUsedStore(){
+  try { return JSON.parse(localStorage.getItem('codenamesUsedWords') || '{}'); }
+  catch(e) { return {}; }
+}
+function saveUsedStore(obj){
+  try { localStorage.setItem('codenamesUsedWords', JSON.stringify(obj)); }
+  catch(e) { /* localStorage unavailable, progress won't persist */ }
+}
+let usedStore = loadUsedStore();
+
+function getUsedSet(scope){
+  return new Set(usedStore[scope] || []);
+}
+function addUsed(scope, words){
+  const set = getUsedSet(scope);
+  words.forEach(w => set.add(w));
+  usedStore[scope] = Array.from(set);
+  saveUsedStore(usedStore);
+}
+function resetUsedScope(scope){
+  usedStore[scope] = [];
+  saveUsedStore(usedStore);
+}
+
+function getPoolForScope(scope){
+  let pool = scope === 'Todas' ? Object.values(DATA).flat() : DATA[scope];
+  const seen = new Set();
+  return pool.filter(([sv]) => { if (seen.has(sv)) return false; seen.add(sv); return true; });
+}
+
+function newGame(){
+  winMsg.style.display = 'none';
+  cycleMsg.style.display = 'none';
+  flippedCards = [];
+  matchedCount = 0;
+  moves = 0;
+  lock = false;
+
+  const scope = catSel.value;
+  const pool = getPoolForScope(scope);
+  const usedSet = getUsedSet(scope);
+  let available = pool.filter(([sv]) => !usedSet.has(sv));
+
+  const requested = parseInt(sizeSel.value, 10);
+
+  if (available.length < requested){
+    resetUsedScope(scope);
+    available = pool;
+    cycleMsg.style.display = 'block';
+  }
+
+  const n = Math.min(requested, available.length);
+  totalPairs = n;
+  const chosen = shuffle([...available]).slice(0, n);
+  currentChosenWords = chosen.map(p => p[0]);
+
+  let cards = [];
+  chosen.forEach((pair, i) => {
+    cards.push({ pairId: i, type: 'sv', text: pair[0], matched: false });
+    cards.push({ pairId: i, type: 'en', text: pair[1], matched: false });
+  });
+  cards = shuffle(cards);
+
+  grid.innerHTML = '';
+  cards.forEach((card, idx) => {
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.dataset.idx = idx;
+    el.textContent = '?';
+    el.addEventListener('click', () => onCardClick(el, card));
+    grid.appendChild(el);
+    card.el = el;
+  });
+
+  updateStats();
+}
+
+function onCardClick(el, card){
+  if (lock || card.matched || flippedCards.includes(card)) return;
+  el.classList.add('flipped', card.type + '-type');
+  el.textContent = card.text;
+  if (card.type === 'sv') speakSv(card.text);
+  flippedCards.push(card);
+
+  if (flippedCards.length === 2){
+    moves++;
+    updateStats();
+    lock = true;
+    const [a, b] = flippedCards;
+    if (a.pairId === b.pairId && a.type !== b.type){
+      setTimeout(() => {
+        a.matched = true; b.matched = true;
+        a.el.classList.remove('flipped');
+        b.el.classList.remove('flipped');
+        a.el.classList.add('matched');
+        b.el.classList.add('matched');
+        matchedCount++;
+        flippedCards = [];
+        lock = false;
+        updateStats();
+        if (matchedCount === totalPairs){
+          winMsg.style.display = 'block';
+          addUsed(catSel.value, currentChosenWords);
+          updateStats();
+        }
+      }, 500);
+    } else {
+      a.el.classList.add('wrong');
+      b.el.classList.add('wrong');
+      setTimeout(() => {
+        a.el.classList.remove('flipped', 'wrong', 'sv-type', 'en-type');
+        b.el.classList.remove('flipped', 'wrong', 'sv-type', 'en-type');
+        a.el.textContent = '?';
+        b.el.textContent = '?';
+        flippedCards = [];
+        lock = false;
+      }, 900);
+    }
+  }
+}
+
+function updateStats(){
+  movesEl.textContent = 'Intentos: ' + moves;
+  matchesEl.textContent = 'Parejas: ' + matchedCount + ' / ' + totalPairs;
+  const scope = catSel.value;
+  const pool = getPoolForScope(scope);
+  const usedSet = getUsedSet(scope);
+  progressBarEl.textContent = 'Progreso en "' + (scope === 'Todas' ? 'Todas las categorías' : scope) + '": ' + usedSet.size + ' / ' + pool.length + ' palabras dominadas';
+}
+
+newGameBtn.addEventListener('click', newGame);
+catSel.addEventListener('change', newGame);
+sizeSel.addEventListener('change', newGame);
+resetProgressBtn.addEventListener('click', () => {
+  if (confirm('¿Reiniciar todo el progreso guardado? Esto borrará qué palabras ya dominabas en todas las categorías.')){
+    usedStore = {};
+    saveUsedStore(usedStore);
+    newGame();
+  }
+});
+
+newGame();
+</script>
+</body>
+</html>
